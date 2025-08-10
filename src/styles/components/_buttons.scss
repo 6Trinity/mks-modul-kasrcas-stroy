@@ -1,1 +1,46 @@
-@use '../utils/variables' as v;
+button{
+    border: none;
+    cursor: pointer;
+    background: none;
+    transition: all 0.3s ease;
+}
+
+.button-label{
+    display: none;
+    width: 30px;
+    height: 30px;
+}
+
+#btn{
+    position: absolute;
+    right: 0;
+    padding: 1em;
+}
+
+.button-toggle-bar{
+    margin: 8px 0;
+
+    height: 3px;
+    background: #ffffff60;
+    border-radius: 2px;
+    backdrop-filter: blur(0.2em);
+    transition: all 0.5s ease;
+}
+
+.button-menu.active .button-toggle-bar:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.button-menu.active .button-toggle-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.button-menu.active .button-toggle-bar:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+@media (max-width: 1080px) {
+    .button-label{
+        display: block;
+    }
+}

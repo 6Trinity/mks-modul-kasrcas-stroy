@@ -5,8 +5,46 @@
 @use 'utils/variables';
 @use 'utils/mixins';
 @use 'utils/functions';
+@use 'utils/utility';
 
 @use 'components/buttons';
+@use 'components/menu';
 
 @use 'layouts/footer';
 @use 'layouts/header';
+
+ul li,
+ol li { 
+  @extend .list-none;
+  align-content: center;
+  height: 100%;
+}
+
+a[href] { 
+  @extend .text-none;
+  color: var(--PrimaryTextColor);
+  transition: all 0.3s ease;
+}
+
+a[href]:hover,
+a[href]:focus{ 
+    color: var(--SecondoryTextColor);
+}
+
+body{  
+  color: var(--PrimaryTextColor);
+  text-shadow: var(--PrimaryTextShadow);
+  font-family: var(--PrimaryFonts);
+}
+
+.goida{
+  height: 150vh;
+  background: #899984;
+}
+
+.logo-img{
+  width: 70px;
+}
+.logo-box{
+  position: fixed;
+}

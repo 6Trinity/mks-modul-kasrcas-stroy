@@ -1,0 +1,39 @@
+//flex
+.flex{display: flex}
+
+.flex-col{flex-direction: column}
+
+//flex свойства
+.content-center {align-content: center}
+.content-space-between {align-content: space-between}
+.items-center {align-items: center}
+.justify-around{justify-content: space-around}
+
+//grid
+.grid{display: grid}
+
+//size
+.w-full {width: 100%;}
+.min-h-screen {min-height: 100vh}
+
+//img
+.logo-img{width: var(--PrimaryLogoSize)}
+
+//decoration
+.list-none{list-style-type: none}
+.text-none{text-decoration: none}
+
+//padding
+.p-0{padding: 0}
+.p-05{padding: 0.3em}
+.p-1{padding: 1em}
+.p-2{padding: 2em}
+
+//position
+.absolute{position: absolute}
+.fixed{position: fixed;}
+.top{top: 0}
+.left{left: 0}
+.right{right: 0}
+.bottom{bottom: 0}
+
