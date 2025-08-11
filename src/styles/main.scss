@@ -1,8 +1,7 @@
 @use 'base/reset';
 @use 'base/fonts';
-@use 'base/vars';
 
-@use 'utils/variables';
+@use 'utils/variables' as v;
 @use 'utils/mixins';
 @use 'utils/functions';
 @use 'utils/utility';
@@ -20,20 +19,21 @@ ol li {
 
 a[href] { 
   @extend .text-none;
-  color: var(--PrimaryTextColor);
-  transition: all 0.3s ease;
+  transition: v.$Fast-transition;
+
+  color: var(--Primary-Text-Color);
 }
 
 a[href]:hover,
 a[href]:focus{ 
-    color: var(--SecondoryTextColor);
+    color: var(--Secondory-Text-Color);
 }
 
 body{  
-  color: var(--PrimaryTextColor);
-  text-shadow: var(--PrimaryTextShadow);
-  font-family: var(--PrimaryFonts);
-  transition: all 0.3s ease;
+  color: var(--Primary-Text-Color);
+  text-shadow: var(--Primary-Text-Shadow);
+  font-family: v.$Primary-Fonts;
+  transition: v.$Fast-transition;
 }
 
 .goida{
@@ -42,27 +42,14 @@ body{
 }
 
 .logo-img{
-  width: 80px;
-}
-
-.logo-box{
-  position: absolute;
-  left: 0;
-  padding-left: 1em;
-  padding-top: 1em;
-}
-.logo-box-m{
-  padding-left: 1em;
-  padding-top: 1em;
-  position: absolute;
-  left: 0;
-  display: none;
+  width: v.$Primary-LogoSize;
 }
 
 @media (max-width: 1080px) {
   .logo-box-m{
     display: flex;
   }
+
   .logo-box{
     display: none;
   }

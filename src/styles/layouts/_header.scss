@@ -1,37 +1,36 @@
 @use '../utils/mixins' as m;
+@use '../utils/variables' as v;
 
 .appheader{
-    min-height: 80px;
-    font-size: var(--TextSize-n);
-    font-weight: 600;
-    text-shadow: var(--InsetTextShadow);
     @include m.flex-center;
-    width: 100%;
-    position: fixed;
-    top: 0;
+
+    min-height: 80px;
+
+    font-size: v.$Text-Size-n;
+    font-weight: v.$Bold-font-weight;
+    text-shadow: var(--Inset-Text-Shadow);
 }
 
 .appheader-content{
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3),
-    3px 4px 6px rgba(0, 0, 0, 0.2),
-    5px 6px 8px rgba(0, 0, 0, 0.1),
-    7px 8px 10px rgba(0, 0, 0, 0.05);
-    border-radius: 35px;
-    background: #0000003a;
-    backdrop-filter: blur(0.1em);
-    width: clamp(750px, 60%, 1500px);
-    height: 100%;
-    transition: all 0.5s ease;
-    width: 60%;
-    height: 70px;
     @include m.flex-center;
+
+    width: clamp(750px, 60%, 1500px);
+    border-radius: var(--Primary-Box-Radius);
+    height: 70px;
+
+    box-shadow: var(--Primary-Box-Shadow);
+    @include m.Dark-Glasses;
+    transition: v.$Long-transition;
 }
 .appheader-content.scrolled{
-    width: 80%;
+    width: 70%;
     height: 80px;
+
     border-radius: 0 0 35px 35px;
 }
 
 @media (max-width: 1080px) {
-
+    .appheader-content{
+        width: 70%;
+    }
 }

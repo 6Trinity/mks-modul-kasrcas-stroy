@@ -12,17 +12,21 @@
   </head>
   <body>
     <div class="flex flex-col w-full min-h-screen">
-      <header class="appheader">
-        <div class="logo-box">
-          <img class="logo-img" src="assets/pic/Logo.png">
-        </div>
-        <div class="appheader-content">
-          <div class="logo-box-m">
+      <header class="appheader w-full fixed top">
+        <div class="logo-box absolute left p-l p-t">
+          <a href="#">
             <img class="logo-img" src="assets/pic/Logo.png">
+          </a>
+        </div>
+        <div class="appheader-content h-full">
+          <div class="logo-box-m absolute left p-l p-t none">
+            <a href="#">
+              <img class="logo-img" src="assets/pic/Logo.png">
+            </a>
           </div>
-          <nav class="menu-nav">
-            <ul class="nav-ul">
-              <li class="ul-g"><a href="#">Главная</a></li>
+          <nav class="menu-nav flex">
+            <ul class="nav-ul m-0">
+              <li class="ul-g h-full left p-1"><a href="#">Главная</a></li>
               <li><a href="#">Каталог</a></li>
               <li><a href="#">О компании</a></li>
               <li><a href="#">Отзывы</a></li>

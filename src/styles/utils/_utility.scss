@@ -1,23 +1,31 @@
-//flex
+//block
 .flex{display: flex}
-
-.flex-col{flex-direction: column}
-
-//flex свойства
-.content-center {align-content: center}
-.content-space-between {align-content: space-between}
-.items-center {align-items: center}
-.justify-around{justify-content: space-around}
+.none{display: none}
+.block{display: block}
+.grid{display: grid}
 
 //grid
-.grid{display: grid}
+.flex-col{flex-direction: column}
+.flex-row{flex-direction: row}
+
+//flex
+.content-center {align-content: center}
+.content-between {align-content: space-between}
+.content-start {align-content: start}
+.content-end {align-content: end}
+
+.items-center {align-items: center}
+.items-between {align-items: space-between}
+.items-start {align-items: start}
+.items-end {align-items: end}
+
+.justify-around{justify-content: space-around}
+.justify-between{justify-content: space-between}
 
 //size
 .w-full {width: 100%;}
+.h-full{height: 100%}
 .min-h-screen {min-height: 100vh}
-
-//img
-.logo-img{width: var(--PrimaryLogoSize)}
 
 //decoration
 .list-none{list-style-type: none}
@@ -25,13 +33,22 @@
 
 //padding
 .p-0{padding: 0}
-.p-05{padding: 0.3em}
+.p-05{padding: 0.5em}
 .p-1{padding: 1em}
 .p-2{padding: 2em}
+
+.p-l{padding-left: 1em}
+.p-r{padding-right: 1em}
+.p-t{padding-top: 1em}
+.p-b{padding-bottom: 1em}
+
+//margin
+.m-0{margin: 0}
 
 //position
 .absolute{position: absolute}
 .fixed{position: fixed;}
+
 .top{top: 0}
 .left{left: 0}
 .right{right: 0}

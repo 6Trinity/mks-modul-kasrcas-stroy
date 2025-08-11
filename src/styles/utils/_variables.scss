@@ -1,0 +1,36 @@
+    //Text
+    $Text-Size-n: 18px;
+    $Text-Size-xl: 24px;
+    $Text-Size-xxl: 30px;
+    $Text-Size-xxxl: 36px;
+
+    //fonts
+    $Bold-font-weight: 600;
+    $Primary-Fonts: "Sansation", sans-serif;
+
+    //img
+    $Primary-LogoSize: 90px;
+
+    //animation
+    $Fast-transition: all 0.3s ease;
+    $Long-transition: all 0.5s ease;
+
+:root {
+    //Color
+    --Primary-Text-Color: #ffffffd8;
+    --Secondory-Text-Color: #727272;
+    --Dark-Glasses-Color: #0000003a;
+
+    //Shadow
+    --Inset-Text-Shadow: -1px -1px 1px #000000b2;
+    --Primary-Box-Shadow: 1px 2px 4px rgba(0, 0, 0, 0.3),
+    3px 4px 6px rgba(0, 0, 0, 0.2),
+    5px 6px 8px rgba(0, 0, 0, 0.1),
+    7px 8px 10px rgba(0, 0, 0, 0.05);
+
+    //Size
+    --Primary-Box-Radius: 35px;
+
+    //Transform
+    --Primary-Transform: scale(1.1);
+}

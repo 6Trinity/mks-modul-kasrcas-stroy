@@ -1,27 +1,27 @@
 @use '../utils/mixins' as m;
+@use '../utils/variables' as v;
 
 .menu-nav{
-    display: flex;
-    width: 100%;
-    height: 100%;
+    @include m.size-full;
 }
 
 .ul-g{
-    border-radius: 35px;
-    height: 100%;
     @include m.flex-center;
-    left: 0;
-    padding: 1em;
+
+    border-radius: var(--Primary-Box-Radius);
     box-sizing: border-box;
-    background: #ffffff;
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3),
-    3px 4px 6px rgba(0, 0, 0, 0.2),
-    5px 6px 8px rgba(0, 0, 0, 0.1),
-    7px 8px 10px rgba(0, 0, 0, 0.05);
+
+    background: var(--Primary-Text-Color);
+    box-shadow: var(--Primary-Box-Shadow);
+    transition: v.$Fast-transition;
 }
 
 .ul-g a[href]{
     color: #424242;
+}
+
+.ul-g:hover{
+    transform: var(--Primary-Transform);
 }
 
 .appheader-content.scrolled .ul-g{
@@ -29,54 +29,51 @@
 }
 
 .nav-ul{
-    width: 100%;
-    height: 100%;
-    @include m.flex-center;
-    margin: 0;
-    justify-content: space-between;
+    @include m.flex-between;
+    @include m.size-full;
     padding: 0 1em 0 0 ;
 }   
 
 @media (max-width: 1080px) {
     .menu-nav{
-        transform: translateY(-20px);
+        position: fixed;
+        @include m.cals-h-size(80px);
         top: 80px;
-        height: calc(100vh - 80px);
         left: 0;
         right: 0;
-        position: fixed;
         z-index: 100;
-        width: calc(100vh - 20%);
-        margin-left: -20%;
-        opacity: 0;
-        background: #424242;
+
+        width: 143%;
+        margin-left: -21.5%;
+        border-radius: 35px 35px 0 0;
+
+        background: var(--Secondory-Text-Color);
         visibility: hidden;
-        transition: all 0.5s ease;
+
+        transition: v.$Long-transition;
         overflow-y: auto;
+        opacity: 0;
+        transform: translateY(-20px);
     }
+
     .nav-ul{
+        @include m.flex-start;
         flex-direction: column;
-        justify-content: space-around;
-        align-items: start;
+        gap: 5em;
+        padding: 2em;
     }
+
     .menu-nav.active{
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
     }
-    .appheader-menu{
-        border-radius: 0 0 35px 35px;
-        height: 80px;
-        width: 70%;
-    }
+
     .ul-g{
-        height: auto;
-        border-radius: 0;
-        padding: 0;
-        background: none;
-        box-shadow: none;
+        @include m.reset-pmb;
     }
+    
     .ul-g a[href]{
-        color: #ffffff;
+        color: var(--Primary-Text-Color);
     }
 }
