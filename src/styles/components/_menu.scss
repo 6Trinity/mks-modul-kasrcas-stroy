@@ -1,63 +1,68 @@
-.appheader-menu-nav{
-    width: 100%;
-    height: 100%;
+@use '../utils/mixins' as m;
+
+.appheader-menu{
     display: flex;
-}
-.appheader-nav-ul{
-    display: flex;
-    width: 100%;
-    margin: 0;
-    height: 100%;
-    padding: 0 0.5em 0 0;
-    align-items: center;
-    justify-content: space-between;
-    text-shadow: var(--InsetTextShadow);
-    font-weight: 600;
-}
-.nav-ul-g{
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3),
+    3px 4px 6px rgba(0, 0, 0, 0.2),
+    5px 6px 8px rgba(0, 0, 0, 0.1),
+    7px 8px 10px rgba(0, 0, 0, 0.05);
     border-radius: 35px;
+    background: #0000003a;
+    backdrop-filter: blur(0.1em);
+    width: clamp(750px, 60%, 1500px);
+    height: 100%;
+    transition: all 0.5s ease;
+}
+
+.appheader-menu.scrolled{
+    border-radius: 0 0 35px 35px;
+    height: 80px;
+    width: 70%;
+}
+.menu-nav{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.ul-g{
+    border-radius: 35px;
+    height: 100%;
+    @include m.flex-center;
+    left: 0;
     padding: 1em;
     box-sizing: border-box;
-    background: #ffffffef;
+    background: #ffffff;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3),
     3px 4px 6px rgba(0, 0, 0, 0.2),
     5px 6px 8px rgba(0, 0, 0, 0.1),
     7px 8px 10px rgba(0, 0, 0, 0.05);;
 }
-.nav-ul-g.scrolled{
+
+.ul-g a[href]{
+    color: #424242;
+}
+
+.ul-g.scrolled{
     border-radius: 0 35px 35px 35px;
 }
 
-.nav-ul-g a[href]{
-    color: #404040;
-}
+.nav-ul{
+    width: 100%;
+    height: 100%;
+    @include m.flex-center;
+    margin: 0;
+    justify-content: space-between;
+    padding: 0 1em 0 0 ;
+}   
 
 @media (max-width: 1080px) {
-    .appheader-menu-nav{
-        transform: translateY(-20px);
-        top: 80px;
-        left: 0;
-        right: 0;
-        position: fixed;
-        z-index: 100;
-
-        width: 100%;
-        opacity: 0;
-        visibility: hidden;
-        text-shadow: none;
-        transition: all 0.5s ease;
-        border-radius: 25px 25px 0 0;
-        background-color: var(    --colortext-header);
-        height: calc(100vh - 80px);
-
-        overflow-y: auto;
+    .menu-nav{
+        display: none;
     }
-    .appheader-nav-ul{
-        flex-direction: column;
-    }
-    .appheader-menu-nav.active{
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
+    .appheader-menu{
+        border-radius: 0 0 35px 35px;
+        height: 80px;
+        width: 70%;
     }
 }

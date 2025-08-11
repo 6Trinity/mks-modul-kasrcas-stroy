@@ -16,8 +16,6 @@
 ul li,
 ol li { 
   @extend .list-none;
-  align-content: center;
-  height: 100%;
 }
 
 a[href] { 
@@ -35,16 +33,34 @@ body{
   color: var(--PrimaryTextColor);
   text-shadow: var(--PrimaryTextShadow);
   font-family: var(--PrimaryFonts);
+  transition: all 0.3s ease;
 }
 
 .goida{
   height: 150vh;
-  background: #899984;
+  background: url(assets/pic/test2.png);
 }
 
 .logo-img{
-  width: 70px;
+  width: 80px;
 }
+
 .logo-box{
-  position: fixed;
+  position: absolute;
+  left: 0;
+  padding-left: 1em;
+  padding-top: 1em;
+}
+.logo-box-m{
+  padding-left: 1em;
+  display: none;
+}
+
+@media (max-width: 1080px) {
+  .logo-box-m{
+    display: flex;
+  }
+  .logo-box{
+    display: none;
+  }
 }

@@ -27,16 +27,16 @@ button{
     transition: all 0.5s ease;
 }
 
-.button-menu.active .button-toggle-bar:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
+#btn.active .button-toggle-bar:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
 }
 
-.button-menu.active .button-toggle-bar:nth-child(2) {
+#btn.active .button-toggle-bar:nth-child(2) {
     opacity: 0;
 }
 
-.button-menu.active .button-toggle-bar:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
+#btn.active .button-toggle-bar:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
 }
 
 @media (max-width: 1080px) {

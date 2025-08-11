@@ -1,33 +1,23 @@
+@use '../utils/mixins' as m;
+
 .appheader{
-    height: 80px;
-    font-size: var(--TextSize-xl);
-    justify-content: center;
+    min-height: 80px;
+    font-size: var(--TextSize-n);
+    font-weight: 600;
+    text-shadow: var(--InsetTextShadow);
+    @include m.flex-center;
+    width: 100%;
+    position: fixed;
+    top: 0;
 }
 
 .appheader-content{
-    height: 70px;
-    min-width: 800px;
     display: flex;
-    justify-content:space-between;
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3),
-    3px 4px 6px rgba(0, 0, 0, 0.2),
-    5px 6px 8px rgba(0, 0, 0, 0.1),
-    7px 8px 10px rgba(0, 0, 0, 0.05);
-    border-radius: 35px;
-    backdrop-filter: blur(0.2em);
-    transition: all 0.7s ease;
-}
-
-.appheader-content.scrolled{
-    height: 80px;
-    min-width: 70%;
-    border-radius: 0 0 35px 35px;
+    width: 100%;
+    height: 70px;
+    @include m.flex-center;
 }
 
 @media (max-width: 1080px) {
-    .appheader-content{
-        height: 80px;
-        min-width: 70%;
-        border-radius: 0 0 35px 35px;
-    }
+    
 }
