@@ -12,12 +12,26 @@
 }
 
 .appheader-content{
-    display: flex;
-    width: 100%;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3),
+    3px 4px 6px rgba(0, 0, 0, 0.2),
+    5px 6px 8px rgba(0, 0, 0, 0.1),
+    7px 8px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 35px;
+    background: #0000003a;
+    backdrop-filter: blur(0.1em);
+    width: clamp(750px, 60%, 1500px);
+    height: 100%;
+    transition: all 0.5s ease;
+    width: 60%;
     height: 70px;
     @include m.flex-center;
 }
+.appheader-content.scrolled{
+    width: 80%;
+    height: 80px;
+    border-radius: 0 0 35px 35px;
+}
 
 @media (max-width: 1080px) {
-    
+
 }

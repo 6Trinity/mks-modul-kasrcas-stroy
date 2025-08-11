@@ -11,8 +11,9 @@ button{
     height: 30px;
 }
 
-#btn{
+.button-menu{
     position: absolute;
+    margin-top: -8px;
     right: 0;
     padding: 1em;
 }
@@ -21,21 +22,20 @@ button{
     margin: 8px 0;
 
     height: 3px;
-    background: #ffffff60;
+    background: #c4c4c4e0;
     border-radius: 2px;
     backdrop-filter: blur(0.2em);
     transition: all 0.5s ease;
 }
-
-#btn.active .button-toggle-bar:nth-child(1) {
+.button-menu.active .button-toggle-bar:nth-child(1) {
     transform: translateY(11px) rotate(45deg);
 }
 
-#btn.active .button-toggle-bar:nth-child(2) {
+.button-menu.active .button-toggle-bar:nth-child(2) {
     opacity: 0;
 }
 
-#btn.active .button-toggle-bar:nth-child(3) {
+.button-menu.active .button-toggle-bar:nth-child(3) {
     transform: translateY(-11px) rotate(-45deg);
 }
 

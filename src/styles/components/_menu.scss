@@ -1,24 +1,5 @@
 @use '../utils/mixins' as m;
 
-.appheader-menu{
-    display: flex;
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3),
-    3px 4px 6px rgba(0, 0, 0, 0.2),
-    5px 6px 8px rgba(0, 0, 0, 0.1),
-    7px 8px 10px rgba(0, 0, 0, 0.05);
-    border-radius: 35px;
-    background: #0000003a;
-    backdrop-filter: blur(0.1em);
-    width: clamp(750px, 60%, 1500px);
-    height: 100%;
-    transition: all 0.5s ease;
-}
-
-.appheader-menu.scrolled{
-    border-radius: 0 0 35px 35px;
-    height: 80px;
-    width: 70%;
-}
 .menu-nav{
     display: flex;
     width: 100%;
@@ -36,14 +17,14 @@
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3),
     3px 4px 6px rgba(0, 0, 0, 0.2),
     5px 6px 8px rgba(0, 0, 0, 0.1),
-    7px 8px 10px rgba(0, 0, 0, 0.05);;
+    7px 8px 10px rgba(0, 0, 0, 0.05);
 }
 
 .ul-g a[href]{
     color: #424242;
 }
 
-.ul-g.scrolled{
+.appheader-content.scrolled .ul-g{
     border-radius: 0 35px 35px 35px;
 }
 
@@ -58,11 +39,44 @@
 
 @media (max-width: 1080px) {
     .menu-nav{
-        display: none;
+        transform: translateY(-20px);
+        top: 80px;
+        height: calc(100vh - 80px);
+        left: 0;
+        right: 0;
+        position: fixed;
+        z-index: 100;
+        width: calc(100vh - 20%);
+        margin-left: -20%;
+        opacity: 0;
+        background: #424242;
+        visibility: hidden;
+        transition: all 0.5s ease;
+        overflow-y: auto;
+    }
+    .nav-ul{
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: start;
+    }
+    .menu-nav.active{
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
     }
     .appheader-menu{
         border-radius: 0 0 35px 35px;
         height: 80px;
         width: 70%;
+    }
+    .ul-g{
+        height: auto;
+        border-radius: 0;
+        padding: 0;
+        background: none;
+        box-shadow: none;
+    }
+    .ul-g a[href]{
+        color: #ffffff;
     }
 }
