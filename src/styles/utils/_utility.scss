@@ -1,3 +1,6 @@
+@use '../utils/variables' as v;
+@use '../utils/mixins' as m;
+
 //block
 .flex{display: flex}
 .none{display: none}
@@ -21,6 +24,7 @@
 
 .justify-around{justify-content: space-around}
 .justify-between{justify-content: space-between}
+.justify-center{justify-content: center}
 
 //size
 .w-full {width: 100%;}
@@ -54,3 +58,19 @@
 .right{right: 0}
 .bottom{bottom: 0}
 
+.t-m{
+    font-size: v.$Text-Size-m;
+}
+.t-xl{
+    font-size: v.$Text-Size-xl;
+}
+.t-xxl{
+    font-size: v.$Text-Size-xxl;
+}
+.t-xxxl{
+    font-size: v.$Text-Size-xxxl;
+}
+
+.bg-dark-glass{
+    background: var(--Dark-Glasses-Color);
+}

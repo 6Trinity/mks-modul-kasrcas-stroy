@@ -20,6 +20,7 @@ button{
     margin: 8px 0;
     height: 3px;
     background: var(--Secondory-Text-Color);
+    box-shadow: var(--Primary-Box-Shadow);
     border-radius: 2px;
     backdrop-filter: var(--PrimaryBlur);
     transition: v.$Fast-transition;
