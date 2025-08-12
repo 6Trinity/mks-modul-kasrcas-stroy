@@ -15,13 +15,13 @@
       <header class="appheader w-full fixed top">
         <div class="logo-box absolute left p-l p-t">
           <a href="#">
-            <img class="logo-img" src="assets/pic/Logo.png">
+            <img class="logo-img" src="assets/pic/Logo.png" alt="Логотип МКС" title="МодульКаркасСтрой">
           </a>
         </div>
-        <div class="appheader-content h-full">
+        <section class="appheader-content h-full">
           <div class="logo-box-m absolute left p-l p-t none">
             <a href="#">
-              <img class="logo-img" src="assets/pic/Logo.png">
+              <img class="logo-img" src="assets/pic/Logo.png" alt="Логотип МКС" title="МодульКаркасСтрой">
             </a>
           </div>
           <nav class="menu-nav flex">
@@ -34,19 +34,28 @@
               <li><a href="#">Преймущества</a></li>
             </ul>
           </nav>
-          <button class="button-menu" id="btn-menu">
-            <span class="button-label flex flex-col content-space-between">
+          <button class="button-menu absolute right p-1" id="btn-menu">
+            <span class="button-label flex flex-col content-between none">
               <div class="button-toggle-bar w-full"></div>
               <div class="button-toggle-bar w-full"></div>
               <div class="button-toggle-bar w-full"></div>
             </span>
           </button>
-        </div>
+        </section>
       </header>
       <main>
         <div class="goida"></div>
       </main>
-      <footer></footer>
+      <footer class="appfooter">
+        <section class="appfooter-content">
+          <div class="cop1">
+            <div><a><img class="map" src="assets/pic/map.png"></a></div>
+            <div><a><img class="map" src="assets/pic/map.png"></a></div>
+            <div><a><img class="map" src="assets/pic/map.png"></a></div>
+          </div>
+          <div class="cop"><p>© 2025 ‘МКС’ Модуль Каркас Строй | designed by Martynov</p></div>
+        </section>
+      </footer>
     </div>
     <script type="module" src="/scripts/main.js"></script>
   </body>

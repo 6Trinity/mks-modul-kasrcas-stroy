@@ -18,8 +18,10 @@
 :root {
     //Color
     --Primary-Text-Color: #ffffffd8;
-    --Secondory-Text-Color: #727272;
+    --Secondory-Text-Color: #b9b9b9;
     --Dark-Glasses-Color: #0000003a;
+    --Dark-Glasses-bold-Color: #000000c9;
+    --PrimaryBlur: blur(0.2em);
 
     //Shadow
     --Inset-Text-Shadow: -1px -1px 1px #000000b2;
@@ -27,6 +29,10 @@
     3px 4px 6px rgba(0, 0, 0, 0.2),
     5px 6px 8px rgba(0, 0, 0, 0.1),
     7px 8px 10px rgba(0, 0, 0, 0.05);
+    --Higleligt-Box-Shadow: 1px 2px 4px rgba(0, 0, 0, 0.5),
+    3px 4px 6px rgba(0, 0, 0, 0.4),
+    5px 6px 8px rgba(0, 0, 0, 0.3),
+    7px 8px 10px rgba(0, 0, 0, 0.2);
 
     //Size
     --Primary-Box-Radius: 35px;

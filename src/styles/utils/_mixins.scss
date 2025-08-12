@@ -1,3 +1,5 @@
+@use '../utils/variables' as v;
+
 @mixin flex-center {
   display: flex;
   justify-content: center;
@@ -14,6 +16,7 @@
   height: auto;
   border-radius: 0;
   padding: 0;
+  border: none;
   background: none;
   box-shadow: none;
 }
@@ -24,7 +27,6 @@
   align-items: center;
 }
 
-
 @mixin size-full {
   display: flex;
   width: 100%;
@@ -33,9 +35,26 @@
 
 @mixin Dark-Glasses {
   background: var(--Dark-Glasses-Color);
-  backdrop-filter: blur(0.1em);
+  backdrop-filter: var(--PrimaryBlur);
+}
+@mixin Dark-Glasses-bold {
+  background: var(--Dark-Glasses-bold-Color);
+  backdrop-filter: var(--PrimaryBlur);
 }
 
 @mixin cals-h-size($size) {
   height: calc(100vh - $size);
+}
+
+@mixin inset-text {
+  font-family: v.$Primary-Fonts;
+  font-size: v.$Text-Size-n;
+  font-weight: v.$Bold-font-weight;
+  text-shadow: var(--Inset-Text-Shadow);
+}
+
+@mixin block{
+  border-radius: var(--Primary-Box-Radius);
+  box-shadow: var(--Primary-Box-Shadow);
+  box-sizing: border-box;
 }

@@ -2,7 +2,7 @@
 @use 'base/fonts';
 
 @use 'utils/variables' as v;
-@use 'utils/mixins';
+@use 'utils/mixins' as m;
 @use 'utils/functions';
 @use 'utils/utility';
 
@@ -19,8 +19,8 @@ ol li {
 
 a[href] { 
   @extend .text-none;
-  transition: v.$Fast-transition;
 
+  transition: v.$Fast-transition;
   color: var(--Primary-Text-Color);
 }
 
@@ -30,10 +30,10 @@ a[href]:focus{
 }
 
 body{  
-  color: var(--Primary-Text-Color);
-  text-shadow: var(--Primary-Text-Shadow);
-  font-family: v.$Primary-Fonts;
+  @include m.inset-text;
+
   transition: v.$Fast-transition;
+  scrollbar-color: var(--Dark-Glasses-bold-Color) var(--Dark-Glasses-Color);
 }
 
 .goida{
@@ -43,6 +43,12 @@ body{
 
 .logo-img{
   width: v.$Primary-LogoSize;
+
+}
+
+.logo-img:hover{
+  transform: var(--Primary-Transform);
+  transition: v.$Fast-transition;
 }
 
 @media (max-width: 1080px) {

@@ -10,18 +10,18 @@
 
     border-radius: var(--Primary-Box-Radius);
     box-sizing: border-box;
-
     background: var(--Primary-Text-Color);
     box-shadow: var(--Primary-Box-Shadow);
     transition: v.$Fast-transition;
 }
 
-.ul-g a[href]{
-    color: #424242;
+.ul-g a[href], .ul-g a[href]:hover{
+    color: var(--Dark-Glasses-Color);
 }
 
 .ul-g:hover{
     transform: var(--Primary-Transform);
+    box-shadow: var(--Higleligt-Box-Shadow);
 }
 
 .appheader-content.scrolled .ul-g{
@@ -36,8 +36,9 @@
 
 @media (max-width: 1080px) {
     .menu-nav{
-        position: fixed;
         @include m.cals-h-size(80px);
+        @include m.Dark-Glasses-bold;
+        position: fixed;
         top: 80px;
         left: 0;
         right: 0;
@@ -47,7 +48,6 @@
         margin-left: -21.5%;
         border-radius: 35px 35px 0 0;
 
-        background: var(--Secondory-Text-Color);
         visibility: hidden;
 
         transition: v.$Long-transition;
@@ -72,8 +72,16 @@
     .ul-g{
         @include m.reset-pmb;
     }
-    
+
+    .ul-g:hover{
+        transform: none;
+        box-shadow: none;
+    }
+
     .ul-g a[href]{
         color: var(--Primary-Text-Color);
+    }
+    .ul-g a[href]:hover{
+        color: var(--Secondory-Text-Color)
     }
 }

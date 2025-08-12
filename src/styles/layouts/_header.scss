@@ -3,29 +3,23 @@
 
 .appheader{
     @include m.flex-center;
+    @include m.inset-text;
 
     min-height: 80px;
-
-    font-size: v.$Text-Size-n;
-    font-weight: v.$Bold-font-weight;
-    text-shadow: var(--Inset-Text-Shadow);
 }
 
 .appheader-content{
     @include m.flex-center;
+    @include m.Dark-Glasses;
+    @include m.block;
 
     width: clamp(750px, 60%, 1500px);
-    border-radius: var(--Primary-Box-Radius);
     height: 70px;
-
-    box-shadow: var(--Primary-Box-Shadow);
-    @include m.Dark-Glasses;
     transition: v.$Long-transition;
 }
 .appheader-content.scrolled{
     width: 70%;
     height: 80px;
-
     border-radius: 0 0 35px 35px;
 }
 
