@@ -37,8 +37,8 @@
 @media (max-width: 1080px) {
     .menu-nav{
         @include m.cals-h-size(80px);
-        @include m.Dark-Glasses-bold;
         position: fixed;
+        background: var(--Dark-Color);
         top: 80px;
         left: 0;
         right: 0;

@@ -3,38 +3,29 @@
 
 .appfooter{
     min-height: 350px;
-    background: var(--Dark-Glasses-bold-Color);
-    bottom: 0;
-    display: flex;
-    box-sizing: border-box; 
-    text-shadow: var(--Primary-Text-Shadow);
-    box-shadow:  1px -2px 4px rgba(0, 0, 0, 0.3),
-      3px -4px 6px rgba(0, 0, 0, 0.2),
-      5px -6px 8px rgba(0, 0, 0, 0.1),
-      7px -8px 10px rgba(0, 0, 0, 0.05);
+    background: url(/assets/pic/image.png);
+    background-size: cover;
+    background-attachment: fixed;
+    box-shadow: var(--Secondory-Box-Shadow) !important;
+    @include m.block;
+    border-radius: 0;
 }
+
 .appfooter-content{
-    display: grid;
     grid-template: 1fr 40px / 1fr;
-    width: 100%;
+    background: var(--Dark-Glasses-bold-Color);
 }
 
 .appfooter-contacts{
-    display: grid;
     grid-template: 1fr/ 1fr 1fr 1fr;
 }
 
 .contacts-box{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1em;
-    box-sizing: border-box;
+    @include m.flex-column;
 }
 
 @media (max-width: 1080px) {
     .appfooter-contacts{
-        display: grid;
-        grid-template: 1fr 1fr/1fr;
+        grid-template: 1fr 1fr 1fr/1fr;
     }
 }

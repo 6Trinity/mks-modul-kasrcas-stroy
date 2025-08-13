@@ -25,11 +25,30 @@
 .justify-around{justify-content: space-around}
 .justify-between{justify-content: space-between}
 .justify-center{justify-content: center}
+.justify-start{justify-content: start}
 
 //size
 .w-full {width: 100%;}
 .h-full{height: 100%}
 .min-h-screen {min-height: 100vh}
+
+.logo-img{
+  width: v.$Primary-LogoSize;
+  height: v.$Primary-LogoSize;
+}
+.icon-img{
+  height: v.$Primary-iconSize;
+  width: v.$Primary-iconSize;
+}
+.favicon-img{
+  height: v.$Primary-FaviconSize;
+  width: v.$Primary-FaviconSize;
+}
+
+.logo-img:hover, .icon-img:hover{
+  transform: var(--Primary-Transform);
+  transition: v.$Long-transition;
+}
 
 //decoration
 .list-none{list-style-type: none}
@@ -46,6 +65,20 @@
 .p-t{padding-top: 1em}
 .p-b{padding-bottom: 1em}
 
+.p-l2{padding-left: 2em}
+.p-r2{padding-right: 2em}
+.p-t2{padding-top: 2em}
+.p-b2{padding-bottom: 2em}
+
+
+.p-lr{
+    padding-left: 1em;
+    padding-right: 1em;
+}
+.p-lr2{
+    padding-left: 2em;
+    padding-right: 2em;
+}
 //margin
 .m-0{margin: 0}
 
@@ -58,6 +91,7 @@
 .right{right: 0}
 .bottom{bottom: 0}
 
+//text
 .t-m{
     font-size: v.$Text-Size-m;
 }
@@ -70,7 +104,17 @@
 .t-xxxl{
     font-size: v.$Text-Size-xxxl;
 }
+.t-big{
+    font-size: v.$Text-Size-big;
+}
+.t-bold{
+    font-weight: v.$Bold-font-weight;
+}
+.t-line2{
+    line-height: 2;;
+}
 
+//color
 .bg-dark-glass{
     background: var(--Dark-Glasses-Color);
 }

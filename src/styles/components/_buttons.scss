@@ -19,11 +19,19 @@ button{
 .button-toggle-bar{
     margin: 8px 0;
     height: 3px;
-    background: var(--Secondory-Text-Color);
-    box-shadow: var(--Primary-Box-Shadow);
     border-radius: 2px;
-    backdrop-filter: var(--PrimaryBlur);
-    transition: v.$Fast-transition;
+    background: var(--Secondory-Text-Color);
+    @include m.button;
+}
+.button-glav{
+    @include m.button;
+    height: 35px;
+    width: 100px;
+    background: var(--Primary-Text-Color);
+    border-radius: 15px;
+}
+.button-glav:hover{
+    transform: var(--Primary-Transform);
 }
 
 .button-menu.active .button-toggle-bar:nth-child(1) {

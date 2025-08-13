@@ -12,6 +12,13 @@
   align-items: start;
 }
 
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+  align-content: start;
+  align-items: center
+}
+
 @mixin reset-pmb {
   height: auto;
   border-radius: 0;
@@ -49,7 +56,7 @@
 @mixin inset-text {
   font-family: v.$Primary-Fonts;
   font-size: v.$Text-Size-n;
-  font-weight: v.$Bold-font-weight;
+  font-weight: v.$light-font-weight;
   color: var(--Primary-Text-Color);
   text-shadow: var(--Inset-Text-Shadow);
 }
@@ -58,4 +65,10 @@
   border-radius: var(--Primary-Box-Radius);
   box-shadow: var(--Primary-Box-Shadow);
   box-sizing: border-box;
+}
+
+@mixin button{
+  box-shadow: var(--Primary-Box-Shadow);
+  backdrop-filter: var(--PrimaryBlur);
+  transition: v.$Fast-transition;
 }

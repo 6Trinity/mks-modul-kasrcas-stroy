@@ -11,6 +11,7 @@
 
 @use 'layouts/footer';
 @use 'layouts/header';
+@use 'layouts/main';
 
 ul li,
 ol li { 
@@ -20,6 +21,7 @@ ol li {
 a[href] { 
   @extend .text-none;
 
+  font-weight: v.$Bold-font-weight;
   transition: v.$Fast-transition;
   color: var(--Primary-Text-Color);
 }
@@ -32,9 +34,7 @@ a[href]:focus{
 body{  
   @include m.inset-text;
 
-  background: radial-gradient(at 20% 30%, rgba(160,103,234, 0.2) 0%, transparent 40%),
-  radial-gradient(at 80% 70%, rgba(255, 92, 168, 0.2) 0%, transparent 40%),
-  linear-gradient(to bottom, #4a4a57, #485374);
+  background: var(--Primary-bg);
   transition: v.$Fast-transition;
   animation: gradientAnimation 20s ease infinite;
   background-size: 400% 400%;
@@ -45,22 +45,6 @@ body{
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
-}
-
-.goida{
-  height: 200vh;
-}
-
-.logo-img{
-  width: v.$Primary-LogoSize;
-}
-.icon-img{
-  height: 35px;
-}
-
-.logo-img:hover, .icon-img:hover{
-  transform: var(--Primary-Transform);
-  transition: v.$Long-transition;
 }
 
 @media (max-width: 1080px) {

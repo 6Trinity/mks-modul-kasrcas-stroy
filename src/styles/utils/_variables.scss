@@ -4,13 +4,17 @@
     $Text-Size-xl: 24px;
     $Text-Size-xxl: 30px;
     $Text-Size-xxxl: 36px;
+    $Text-Size-big: 48px;
 
     //fonts
-    $Bold-font-weight: 600;
+    $Bold-font-weight: 700;
+    $light-font-weight: 300;
     $Primary-Fonts: "Sansation", sans-serif;
 
     //img
     $Primary-LogoSize: 90px;
+    $Primary-iconSize: 35px;
+    $Primary-FaviconSize: 20px;
 
     //animation
     $Fast-transition: all 0.3s ease;
@@ -22,15 +26,23 @@
     --Secondory-Text-Color: #b9b9b9;
     --Dark-Glasses-Color: #0000003a;
     --Dark-Glasses-bold-Color: #000000c9;
+    --Dark-Color: #000000f1;
     --PrimaryBlur: blur(0.2em);
+    --Primary-bg: radial-gradient(at 40% 50%, rgba(118, 234, 103, 0.397) 0%, transparent 40%),
+    radial-gradient(at 80% 70%, rgba(87, 219, 219, 0.418) 0%, transparent 40%),
+    linear-gradient(to bottom, #dcecb0c9, #359e3131);
 
     //Shadow
     --Inset-Text-Shadow: -1px -1px 1px #000000b2;
-    --Primary-Text-Shadow: 1px 1px 2px #ffffff;
+    --Primary-Text-Shadow: 1px 1px 1px #000000;
     --Primary-Box-Shadow: 1px 2px 4px rgba(0, 0, 0, 0.3),
     3px 4px 6px rgba(0, 0, 0, 0.2),
     5px 6px 8px rgba(0, 0, 0, 0.1),
     7px 8px 10px rgba(0, 0, 0, 0.05);
+    --Secondory-Box-Shadow: -1px 0 4px rgba(0, 0, 0, 0.3),
+    -3px 0 6px rgba(0, 0, 0, 0.2),
+    -5px 0 8px rgba(0, 0, 0, 0.1),
+    -7px 0 10px rgba(0, 0, 0, 0.05);
     --Higleligt-Box-Shadow: 1px 2px 4px rgba(0, 0, 0, 0.5),
     3px 4px 6px rgba(0, 0, 0, 0.4),
     5px 6px 8px rgba(0, 0, 0, 0.3),
