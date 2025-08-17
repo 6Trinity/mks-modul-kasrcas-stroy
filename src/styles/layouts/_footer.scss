@@ -1,28 +1,6 @@
 @use '../utils/variables' as v;
 @use '../utils/mixins' as m;
 
-.appfooter{
-    min-height: 350px;
-    background: url(/assets/pic/image.png);
-    background-size: cover;
-    background-attachment: fixed;
-    box-shadow: var(--Secondory-Box-Shadow) !important;
-    @include m.block;
-    border-radius: 0;
-}
-
-.appfooter-content{
-    grid-template: 1fr 40px / 1fr;
-    background: var(--Dark-Glasses-bold-Color);
-}
-
-.appfooter-contacts{
-    grid-template: 1fr/ 1fr 1fr 1fr;
-}
-
-.contacts-box{
-    @include m.flex-column;
-}
 
 @media (max-width: 1080px) {
     .appfooter-contacts{

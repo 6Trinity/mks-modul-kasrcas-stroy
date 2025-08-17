@@ -13,46 +13,55 @@
 @use 'layouts/header';
 @use 'layouts/main';
 
-ul li,
-ol li { 
-  @extend .list-none;
+body{
+    font-family: v.$font-sans;
+    font-size: v.$text-lg;
+    font-weight: v.$font-normal;
+    text-shadow: var(--text-shadow-primary);
+    background: var(--bg-primary);
+    color: var(--text-primary);
 }
 
-a[href] { 
-  @extend .text-none;
-
-  font-weight: v.$Bold-font-weight;
-  transition: v.$Fast-transition;
-  color: var(--Primary-Text-Color);
+button{
+    border: none;
+    background: none;
+    cursor: pointer;
 }
 
-a[href]:hover,
-a[href]:focus{ 
-    color: var(--Secondory-Text-Color);
+a[href]{
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: v.$font-bold;
+    text-shadow: var(--text-shadow-inset);
+    transition: all 0.3s ease;    
 }
 
-body{  
-  @include m.inset-text;
-
-  background: var(--Primary-bg);
-  transition: v.$Fast-transition;
-  animation: gradientAnimation 20s ease infinite;
-  background-size: 400% 400%;
-  scrollbar-color: var(--Dark-Glasses-bold-Color) var(--Dark-Glasses-Color);
+a:hover,
+a:focus{
+    color: var(--text-highlight);
+    text-shadow: var(--text-shadow-highlight);
+    transform:translateY(-1px);
 }
 
-@keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+ul li, 
+ol li{
+    list-style-type: none;
+}
+
+.logo-img{
+    width: 80px;
+    height: 80px;
+    transition: v.$transition-3;
+}
+
+.logo-img:hover{
+    transform: var(--transform-primary);
+}
+
+main{
+    height: 200vh;
 }
 
 @media (max-width: 1080px) {
-  .logo-box-m{
-    display: flex;
-  }
-
-  .logo-box{
-    display: none;
-  }
+  
 }

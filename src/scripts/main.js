@@ -2,15 +2,15 @@ import '@/styles/main.scss';
 
 document.addEventListener('DOMContentLoaded', function() {
     const scrollThreshold = 50;
+    const btn_menu = this.querySelector('.btn-toggle');
     const header = this.querySelector('.appheader-content');
-    const menu = this.querySelector('.menu-nav');
-    const btnmenu = this.querySelector('.button-menu');
+    const menu = this.querySelector('.appheader-nav');
 
     const toggleBodyScroll = (enable) => {
         document.body.style.overflow = enable ? '' : 'hidden';
     };
 
-    window.addEventListener('scroll', () => {
+     window.addEventListener('scroll', () => {
         if (window.scrollY > scrollThreshold) {
             header.classList.add('scrolled');
         } else {
@@ -18,17 +18,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    btnmenu.addEventListener('click', () =>{
-        btnmenu.classList.toggle('active');
+    btn_menu.addEventListener('click', () =>{
+        btn_menu.classList.toggle('active');
         menu.classList.toggle('active');
         toggleBodyScroll(!menu.classList.contains('active'));
     })
 
-    document.querySelectorAll('.menu-nav a').forEach(link => {
+    document.querySelectorAll('.appheader-nav a').forEach(link => {
         link.addEventListener('click', (e) => {
 
             menu.classList.remove('active');
-            btnmenu.classList.remove('active');
+            btn_menu.classList.remove('active');
             toggleBodyScroll(true);
 
             const targetId = link.getAttribute('href');

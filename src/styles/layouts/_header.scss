@@ -1,30 +1,65 @@
 @use '../utils/mixins' as m;
 @use '../utils/variables' as v;
+@use '../utils/utility';
 
 .appheader{
-    @include m.flex-center;
-    @include m.inset-text;
-
-    min-height: 80px;
+    height: 100px;
 }
 
 .appheader-content{
-    @include m.flex-center;
-    @include m.Dark-Glasses;
-    @include m.block;
-
-    width: clamp(750px, 60%, 1500px);
-    height: 70px;
-    transition: v.$Long-transition;
+    @include m.block-construct(clamp(650px, 50%, 1500px), 
+    90px, v.$rounded-xl, var(--bg-darkglasses-deep), v.$transition-4, var(--box-shadow-primary));
+    backdrop-filter: blur(--box-blur);
 }
+
+.highlight-li{
+    @include m.block-construct(auto, auto, v.$rounded-xl, var(--bg-highlight), v.$transition-4, var(--box-shadow-light));
+    padding: 0 1em;
+}
+
+.highlight-li:hover{
+    transform: var(--transform-primary);
+    box-shadow: var(--box-shadow-primary);
+    a[href]{
+        color: var(--text-primary);
+        text-shadow: var(--text-shadow-inset);
+    }
+}
+
 .appheader-content.scrolled{
-    width: 70%;
-    height: 80px;
-    border-radius: 0 0 35px 35px;
+    border-radius: 0 0 v.$rounded-xl v.$rounded-xl;
+    height: 100px;
+    width: clamp(650px, 60%, 1500px);
+    .highlight-li{
+        border-radius: 0 v.$rounded-xl;
+    }
+}
+
+.appheader-ul{
+    li, a{
+        height: 100%;
+        @extend .flex-center;
+    }
 }
 
 @media (max-width: 1080px) {
     .appheader-content{
-        width: 70%;
+        width: clamp(250px, 50%, 800px);
+    }
+    .appheader-content.scrolled{
+        width: clamp(250px, 60%, 800px);
+    }
+    .highlight-li{
+        background: none;
+        padding: 0;
+    }
+    .highlight-li:hover{
+        transform: none;
+        box-shadow: none;
+        a[href]{
+            color: var(--text-highlight);
+            text-shadow: var(--text-shadow-highlight);
+            transform:translateY(-1px);
+        }
     }
 }

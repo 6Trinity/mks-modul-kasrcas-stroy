@@ -1,28 +1,7 @@
 @use '../utils/variables' as v;
 @use '../utils/mixins' as m;
 
-.main-page{
-  height: 100vh;
-  background: url(/assets/pic/image.png);
-  background-size: cover;
-  border-radius: 0 0 35px 35px;
-  box-shadow: var(--Primary-Box-Shadow);
-  display: grid;
-  grid-template: 2fr 1fr/1fr;
-}
 
-.main-page-content{
-  background: var(--Dark-Glasses-Color);
-  border-radius: 0 0 35px 35px;
-  display: grid;
-  grid-template: 1fr/2fr 1fr;
-}
+@media (max-width: 1080px) {
 
-.main-page-content1{
-    display: flex;
-    flex-direction: column;
-}
-
-.two{
-    margin-top: 100px;
 }

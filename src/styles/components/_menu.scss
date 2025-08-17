@@ -1,87 +1,36 @@
 @use '../utils/mixins' as m;
 @use '../utils/variables' as v;
+@use '../utils/utility';
 
-.menu-nav{
-    @include m.size-full;
-}
-
-.ul-g{
-    @include m.flex-center;
-
-    border-radius: var(--Primary-Box-Radius);
-    box-sizing: border-box;
-    background: var(--Primary-Text-Color);
-    box-shadow: var(--Primary-Box-Shadow);
-    transition: v.$Fast-transition;
-}
-
-.ul-g a[href], .ul-g a[href]:hover{
-    color: var(--Dark-Glasses-Color);
-}
-
-.ul-g:hover{
-    transform: var(--Primary-Transform);
-    box-shadow: var(--Higleligt-Box-Shadow);
-}
-
-.appheader-content.scrolled .ul-g{
-    border-radius: 0 35px 35px 35px;
-}
-
-.nav-ul{
-    @include m.flex-between;
-    @include m.size-full;
-    padding: 0 1em 0 0 ;
-}   
 
 @media (max-width: 1080px) {
-    .menu-nav{
-        @include m.cals-h-size(80px);
+    .appheader-nav{
+        background: #000000;
         position: fixed;
-        background: var(--Dark-Color);
-        top: 80px;
+        top: 100px;
+        height: calc(100vh - 100px);
         left: 0;
         right: 0;
         z-index: 100;
-
-        width: 143%;
-        margin-left: -21.5%;
-        border-radius: 35px 35px 0 0;
-
         visibility: hidden;
-
-        transition: v.$Long-transition;
+        transition: all 0.5s ease;
         overflow-y: auto;
         opacity: 0;
-        transform: translateY(-20px);
+        width: 50%;
+        border-radius: 0 v.$rounded-xl v.$rounded-xl 0;
+        transform: translateX(-200px);
     }
-
-    .nav-ul{
-        @include m.flex-start;
+    .appheader-ul{
         flex-direction: column;
-        gap: 5em;
-        padding: 2em;
+        align-items: start;
+        box-sizing: border-box;
+        gap: 1em;
+        padding: 1em 2em;
     }
 
-    .menu-nav.active{
+    .appheader-nav.active{
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
-    }
-
-    .ul-g{
-        @include m.reset-pmb;
-    }
-
-    .ul-g:hover{
-        transform: none;
-        box-shadow: none;
-    }
-
-    .ul-g a[href]{
-        color: var(--Primary-Text-Color);
-    }
-    .ul-g a[href]:hover{
-        color: var(--Secondory-Text-Color)
     }
 }

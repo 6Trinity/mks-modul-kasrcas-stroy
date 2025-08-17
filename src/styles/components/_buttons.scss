@@ -1,53 +1,27 @@
 @use '../utils/variables' as v;
 @use '../utils/mixins' as m;
 
-button{
-    cursor: pointer;
-    @include m.reset-pmb ;
-    transition: v.$Fast-transition;
-}
-
-.button-label{
+.btn-toggle{
     width: 30px;
     height: 30px;
 }
 
-.button-menu{
-    margin-top: -8px;
+.btn-toggle-bar{
+    @include m.block-construct(100%, 4px, v.$rounded-xs, var(--text-primary), v.$transition-5, var(--box-shadow-primary));
 }
 
-.button-toggle-bar{
-    margin: 8px 0;
-    height: 3px;
-    border-radius: 2px;
-    background: var(--Secondory-Text-Color);
-    @include m.button;
-}
-.button-glav{
-    @include m.button;
-    height: 35px;
-    width: 100px;
-    background: var(--Primary-Text-Color);
-    border-radius: 15px;
-}
-.button-glav:hover{
-    transform: var(--Primary-Transform);
+.btn-menu:hover .btn-toggle-bar{box-shadow: var(--box-shadow-highlight)}
+
+.btn-toggle.active{
+    .btn-toggle-bar:nth-child(1) {transform: translateY(10px) rotate(45deg)}
+    .btn-toggle-bar:nth-child(2) {opacity: 0}
+    .btn-toggle-bar:nth-child(3) {transform: translateY(-10px) rotate(-45deg)}
+
 }
 
-.button-menu.active .button-toggle-bar:nth-child(1) {
-    transform: translateY(11px) rotate(45deg);
-}
-
-.button-menu.active .button-toggle-bar:nth-child(2) {
-    opacity: 0;
-}
-
-.button-menu.active .button-toggle-bar:nth-child(3) {
-    transform: translateY(-11px) rotate(-45deg);
-}
 
 @media (max-width: 1080px) {
-    .button-label{
+    .btn-menu{
         display: block;
     }
 }

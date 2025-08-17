@@ -1,74 +1,11 @@
 @use '../utils/variables' as v;
 
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin flex-start {
-  display: flex;
-  justify-content: start;
-  align-items: start;
-}
-
-@mixin flex-column {
-  display: flex;
-  flex-direction: column;
-  align-content: start;
-  align-items: center
-}
-
-@mixin reset-pmb {
-  height: auto;
-  border-radius: 0;
-  padding: 0;
-  border: none;
-  background: none;
-  box-shadow: none;
-}
-
-@mixin flex-between {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-@mixin size-full {
-  display: flex;
-  width: 100%;
-  height: 100%;
-}
-
-@mixin Dark-Glasses {
-  background: var(--Dark-Glasses-Color);
-  backdrop-filter: var(--PrimaryBlur);
-}
-@mixin Dark-Glasses-bold {
-  background: var(--Dark-Glasses-bold-Color);
-  backdrop-filter: var(--PrimaryBlur);
-}
-
-@mixin cals-h-size($size) {
-  height: calc(100vh - $size);
-}
-
-@mixin inset-text {
-  font-family: v.$Primary-Fonts;
-  font-size: v.$Text-Size-n;
-  font-weight: v.$light-font-weight;
-  color: var(--Primary-Text-Color);
-  text-shadow: var(--Inset-Text-Shadow);
-}
-
-@mixin block{
-  border-radius: var(--Primary-Box-Radius);
-  box-shadow: var(--Primary-Box-Shadow);
-  box-sizing: border-box;
-}
-
-@mixin button{
-  box-shadow: var(--Primary-Box-Shadow);
-  backdrop-filter: var(--PrimaryBlur);
-  transition: v.$Fast-transition;
+@mixin block-construct($width: auto, $height: auto, $border-radius: 0, $background: var(--bg-darkglasses-deep), $transition: $transition-3, $box-shadow: var(--box-shadow-primary)){
+    width: $width;
+    height: $height;
+    border-radius: $border-radius;
+    background: $background;
+    transition: $transition;
+    box-shadow: $box-shadow;
+    box-sizing: border-box;
 }
