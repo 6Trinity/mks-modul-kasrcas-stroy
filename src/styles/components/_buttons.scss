@@ -7,7 +7,7 @@
 }
 
 .btn-toggle-bar{
-    @include m.block-construct(100%, 4px, v.$rounded-xs, var(--text-primary), v.$transition-5, var(--box-shadow-primary));
+    @include m.block_construct(100%, 4px, v.$rounded-xs, var(--text-primary), v.$transition-5, var(--box-shadow-primary));
 }
 
 .btn-menu:hover .btn-toggle-bar{box-shadow: var(--box-shadow-highlight)}
@@ -16,9 +16,7 @@
     .btn-toggle-bar:nth-child(1) {transform: translateY(10px) rotate(45deg)}
     .btn-toggle-bar:nth-child(2) {opacity: 0}
     .btn-toggle-bar:nth-child(3) {transform: translateY(-10px) rotate(-45deg)}
-
 }
-
 
 @media (max-width: 1080px) {
     .btn-menu{

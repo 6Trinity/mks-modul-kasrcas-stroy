@@ -7,13 +7,13 @@
 }
 
 .appheader-content{
-    @include m.block-construct(clamp(650px, 50%, 1500px), 
+    @include m.block_construct(clamp(650px, 50%, 1500px), 
     90px, v.$rounded-xl, var(--bg-darkglasses-deep), v.$transition-4, var(--box-shadow-primary));
-    backdrop-filter: blur(--box-blur);
+    backdrop-filter: blur(var(--box-blur));
 }
 
 .highlight-li{
-    @include m.block-construct(auto, auto, v.$rounded-xl, var(--bg-highlight), v.$transition-4, var(--box-shadow-light));
+    @include m.block_construct(auto, auto, v.$rounded-xl, var(--bg-highlight), v.$transition-4, var(--box-shadow-light));
     padding: 0 1em;
 }
 
@@ -21,8 +21,7 @@
     transform: var(--transform-primary);
     box-shadow: var(--box-shadow-primary);
     a[href]{
-        color: var(--text-primary);
-        text-shadow: var(--text-shadow-inset);
+        @include m.text_highlight(var(--text-primary), var(--text-shadow-inset), none);
     }
 }
 
@@ -33,6 +32,7 @@
     .highlight-li{
         border-radius: 0 v.$rounded-xl;
     }
+
 }
 
 .appheader-ul{
@@ -44,22 +44,27 @@
 
 @media (max-width: 1080px) {
     .appheader-content{
-        width: clamp(250px, 50%, 800px);
+        width: clamp(200px, 50%, 800px);
     }
+
     .appheader-content.scrolled{
-        width: clamp(250px, 60%, 800px);
+        width: clamp(200px, 60%, 800px);
+        .appheader-nav{
+            width: 170%;
+        }
     }
+
     .highlight-li{
+        box-shadow: none;
         background: none;
         padding: 0;
     }
+
     .highlight-li:hover{
         transform: none;
         box-shadow: none;
         a[href]{
-            color: var(--text-highlight);
-            text-shadow: var(--text-shadow-highlight);
-            transform:translateY(-1px);
+            @include m.text_highlight;
         }
     }
 }

@@ -14,12 +14,13 @@
 @use 'layouts/main';
 
 body{
-    font-family: v.$font-sans;
-    font-size: v.$text-lg;
-    font-weight: v.$font-normal;
-    text-shadow: var(--text-shadow-primary);
     background: var(--bg-primary);
-    color: var(--text-primary);
+    @include m.text_construct;
+    font-family: v.$font-sans;
+}
+
+div{
+    box-sizing: border-box;
 }
 
 button{
@@ -30,17 +31,13 @@ button{
 
 a[href]{
     text-decoration: none;
-    color: var(--text-primary);
-    font-weight: v.$font-bold;
-    text-shadow: var(--text-shadow-inset);
-    transition: all 0.3s ease;    
+    @include m.text_construct(var(--text-primary), var(--text-shadow-inset), v.$text-lg , v.$font-bold);
+    transition: all 0.3s ease;  
 }
 
 a:hover,
 a:focus{
-    color: var(--text-highlight);
-    text-shadow: var(--text-shadow-highlight);
-    transform:translateY(-1px);
+    @include m.text_highlight;
 }
 
 ul li, 
@@ -56,10 +53,6 @@ ol li{
 
 .logo-img:hover{
     transform: var(--transform-primary);
-}
-
-main{
-    height: 200vh;
 }
 
 @media (max-width: 1080px) {

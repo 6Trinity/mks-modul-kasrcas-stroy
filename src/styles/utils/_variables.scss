@@ -34,16 +34,16 @@
 
 
 :root{
-    --bg-primary: rgb(217, 223, 144);
+    --bg-primary: rgb(255, 255, 255);
     --bg-secondory: rgb(223, 229, 128);
-    --bg-highlight: linear-gradient(45deg, rgb(179, 255, 191), rgba(203, 255, 214, 0.651));
+    --bg-highlight: rgba(0, 0, 0, 0.9);
     --bg-glasses: rgba(255, 255, 255, 0.1);
     --bg-glasses-deep: rgba(255, 255, 255, 0.3);
     --bg-darkglasses: rgba(0, 0, 0, 0.1);
     --bg-darkglasses-deep: rgba(0, 0, 0, 0.3);
 
     --text-primary: rgb(255, 255, 255);
-    --text-highlight: rgb(150, 255, 197);
+    --text-highlight: rgb(77, 192, 54);
 
     --box-blur: 0.2em;
 

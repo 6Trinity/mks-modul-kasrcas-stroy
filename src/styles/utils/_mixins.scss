@@ -1,11 +1,41 @@
 @use '../utils/variables' as v;
 
-@mixin block-construct($width: auto, $height: auto, $border-radius: 0, $background: var(--bg-darkglasses-deep), $transition: $transition-3, $box-shadow: var(--box-shadow-primary)){
+@mixin block_construct(
+    $width: auto, 
+    $height: auto, 
+    $border-radius: 0, 
+    $background: var(--bg-darkglasses-deep), 
+    $transition: $transition-3, 
+    $box-shadow: var(--box-shadow-primary)
+    ){
     width: $width;
     height: $height;
     border-radius: $border-radius;
     background: $background;
     transition: $transition;
     box-shadow: $box-shadow;
-    box-sizing: border-box;
+}
+
+@mixin text_highlight(
+    $color: var(--text-highlight), 
+    $text-shadow: var(--text-shadow-highlight), 
+    $transform: translateY(-1px)
+    ){
+    color: $color;
+    text-shadow: $text-shadow;
+    transform: $transform;
+}
+
+@mixin text_construct(
+    $color: var(--text-primary), 
+    $text-shadow: var(--text-shadow-primary), 
+    $font-size: v.$text-lg, 
+    $font-weight: v.$font-normal,
+    $line-height: 1.5
+    ){
+    color: $color;
+    text-shadow: $text-shadow;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;
 }

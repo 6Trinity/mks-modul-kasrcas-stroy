@@ -1,6 +1,10 @@
 @use '../utils/variables' as v;
 @use '../utils/mixins' as m;
 
+main{
+    height: 100vh;
+    background: url('/assets/pic/back.webp');
+}
 
 @media (max-width: 1080px) {
 
