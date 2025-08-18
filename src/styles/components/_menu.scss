@@ -13,6 +13,7 @@
     @include m.block_construct(auto, auto, v.$rounded-base);
     top: 85px;
     left: 165px;
+    z-index: 200;
 }
 
 .dropmenu-ul{
@@ -28,12 +29,38 @@
     }
 }
 
+.highlight-li{
+    @include m.block_construct(100%, 100%, v.$rounded-xl, var(--bg-highlight), v.$transition-4, var(--box-shadow-light));
+    padding: 0 1em;
+}
+
+.highlight-li:hover{
+    transform: var(--transform-primary);
+    box-shadow: var(--box-shadow-primary);
+    a[href]{
+        @include m.text_highlight(var(--text-primary), var(--text-shadow-inset), none);
+    }
+}
+
+.appmainmenu-nav{
+    position: relative;
+}
+
+.appmainmenu-ul{
+    li{
+        width: 80px;
+        height: 100%;
+        @extend .flex-center;
+    }
+}
+
 @media (max-width: 1080px) {
+
     .appheadermenu-nav{
         position: fixed;
         visibility: hidden;
         top: 100px;
-        z-index: 100;
+        z-index: 1000;
         opacity: 0;
         margin-left: -40vw;
         overflow-y: auto;
@@ -63,5 +90,25 @@
             justify-content: start;
             padding: 1em
         };
+        .highlight-li{
+            box-shadow: none;
+            background: none;
+            padding: 0;
+        }
+
+        .highlight-li:hover{
+            transform: none;
+            box-shadow: none;
+            a[href]{
+                @include m.text_highlight;
+            }
+        }
+    }
+}
+@media (max-width: 480px) {
+    .appmainmenu-ul{
+        padding: 0;
+        gap: 0;
+        justify-content: space-around;
     }
 }

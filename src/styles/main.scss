@@ -19,7 +19,10 @@ body{
     font-family: v.$font-sans;
 }
 
-div{
+div,
+section,
+nav,
+ul{
     box-sizing: border-box;
 }
 

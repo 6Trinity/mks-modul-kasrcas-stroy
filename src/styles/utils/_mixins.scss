@@ -29,7 +29,7 @@
 @mixin text_construct(
     $color: var(--text-primary), 
     $text-shadow: var(--text-shadow-primary), 
-    $font-size: v.$text-lg, 
+    $font-size: v.$text-xl, 
     $font-weight: v.$font-normal,
     $line-height: 1.5
     ){

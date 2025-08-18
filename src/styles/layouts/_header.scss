@@ -4,6 +4,7 @@
 
 .appheader{
     height: 100px;
+    z-index: 100;
 }
 
 .appheader-content{
@@ -20,38 +21,11 @@
     }   
 }
 
-.highlight-li{
-    @include m.block_construct(100%, 100%, v.$rounded-xl, var(--bg-highlight), v.$transition-4, var(--box-shadow-light));
-    padding: 0 1em;
-}
-
-.highlight-li:hover{
-    transform: var(--transform-primary);
-    box-shadow: var(--box-shadow-primary);
-    a[href]{
-        @include m.text_highlight(var(--text-primary), var(--text-shadow-inset), none);
-    }
-}
-
 @media (max-width: 1080px) {
     .appheader-content{
         width: clamp(200px, 50%, 800px);
         &.scrolled{
             width: clamp(200px, 60%, 800px);
-        }
-    }
-
-    .highlight-li{
-        box-shadow: none;
-        background: none;
-        padding: 0;
-    }
-
-    .highlight-li:hover{
-        transform: none;
-        box-shadow: none;
-        a[href]{
-            @include m.text_highlight;
         }
     }
 }

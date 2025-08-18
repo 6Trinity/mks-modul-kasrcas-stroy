@@ -1,11 +1,31 @@
 @use '../utils/variables' as v;
 @use '../utils/mixins' as m;
 
-main{
-    height: 110vh;
+.appmain-section{
     background: url('/assets/pic/back.webp');
+    height: 100vh;
+}
+
+.appmain-content{
+    grid-template: 40px 1fr 1fr/1fr;
+    min-height: 40vh;
+    background: var(--bg-darkglasses);
+}
+
+.span-highlight{
+    width: 70vw;
+    font-size: v.$text-6xl;
+    text-shadow: var(--text-shadow-highlight);
 }
 
 @media (max-width: 1080px) {
-
+    .span-highlight{
+        font-size: v.$text-4xl;
+        width: 100%;
+    }
+}
+@media (max-width: 480px) {
+    .appmain-content{
+        padding: 0.5em;
+    }
 }
