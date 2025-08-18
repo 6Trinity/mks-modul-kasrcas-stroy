@@ -55,12 +55,12 @@
 .justify-around{justify-content: space-around}
 
 .items-start{align-items: flex-start}
-.items-start{align-items:center}
-.items-start{align-items: flex-end}
+.items-center{align-items:center}
+.items-end{align-items: flex-end}
 
 .justify-items-start{justify-items: flex-start}
-.justify-items-start{justify-items:center}
-.justify-items-start{justify-items: flex-end}
+.justify-items-center{justify-items:center}
+.justify-items-end{justify-items: flex-end}
 
 //gap
 .gap-0{gap: 0}

@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const scrollThreshold = 50;
     const btn_menu = this.querySelector('.btn-toggle');
     const header = this.querySelector('.appheader-content');
-    const menu = this.querySelector('.appheader-nav');
+    const menu = this.querySelector('.appheadermenu-nav');
 
     const toggleBodyScroll = (enable) => {
         document.body.style.overflow = enable ? '' : 'hidden';
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         toggleBodyScroll(!menu.classList.contains('active'));
     })
 
-    document.querySelectorAll('.appheader-nav a').forEach(link => {
+    document.querySelectorAll('.appheadermenu-nav a').forEach(link => {
         link.addEventListener('click', (e) => {
 
             menu.classList.remove('active');

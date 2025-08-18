@@ -5,7 +5,7 @@
     $height: auto, 
     $border-radius: 0, 
     $background: var(--bg-darkglasses-deep), 
-    $transition: $transition-3, 
+    $transition: v.$transition-3, 
     $box-shadow: var(--box-shadow-primary)
     ){
     width: $width;
@@ -38,4 +38,23 @@
     font-size: $font-size;
     font-weight: $font-weight;
     line-height: $line-height;
+}
+
+@mixin column_construct(
+    $height: auto, 
+    $width: auto,
+    $gap: 0, 
+    $padding: 1em 2em, 
+    ){
+    display: flex;
+    flex-direction: column;
+    height: $height;
+    width: $width;
+    gap: $gap;
+    padding: $padding;
+}
+
+@mixin full-size {
+    width: 100%;
+    height: 100%;
 }

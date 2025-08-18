@@ -17,10 +17,21 @@
           <img class="logo-img" src="/assets/pic/logo.png">
         </div>
         <section class="appheader-content relative flex-center">
-          <nav class="appheader-nav m-0 w-full h-full">
-            <ul class="appheader-ul flex-center p-0 pr-em m-0 h-full justify-between">
-              <li class="highlight-li"><a href="#">Главная</a></li>
-              <li><a href="#">Каталог</a></li>
+          <nav class="appheadermenu-nav m-0 w-full h-full">
+            <ul class="appheadermenu-ul flex-center p-0 m-0 h-full">
+              <li class="highlight-li"><a href="#appmain">Главная</a></li>
+              <li class="li-dropmenu">
+                <a href="#">Каталог</a>
+                <nav class="dropmenu-nav absolute none">
+                  <ul class="dropmenu-ul">
+                    <li><a href="#">Баня для нищих</a></li>
+                    <li><a href="#">Баня для менее нищих</a></li>
+                    <li><a href="#">Баня для средних</a></li>
+                    <li><a href="#">Баня для богатых</a></li>
+                    <li><a href="#">Баня для очень богатых</a></li>
+                  </ul>
+                </nav>
+              </li>
               <li><a href="#">О нас</a></li>
               <li><a href="#">Гарантии</a></li>
               <li><a href="#">Преймущества</a></li>
@@ -37,8 +48,12 @@
           </button>
         </section>
       </header>
-      <main class="appmain">
-
+      <main class="appmain" id="appmain">
+        <section>
+          <div>
+            Гойда
+          </div>
+        </section>
       </main>
       <footer class="appfooter">
         

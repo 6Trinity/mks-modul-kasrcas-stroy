@@ -2,34 +2,66 @@
 @use '../utils/variables' as v;
 @use '../utils/utility';
 
+.appheadermenu-ul{
+    li, a{
+        @include m.full-size;
+        @extend .flex-center;
+    }
+}
+
+.dropmenu-nav{
+    @include m.block_construct(auto, auto, v.$rounded-base);
+    top: 85px;
+    left: 165px;
+}
+
+.dropmenu-ul{
+    @include m.column_construct();
+    a{
+        justify-content: start
+    }
+}
+
+.li-dropmenu:hover{
+    .dropmenu-nav{
+        display: flex;
+    }
+}
 
 @media (max-width: 1080px) {
-    .appheader-nav{
+    .appheadermenu-nav{
         position: fixed;
+        visibility: hidden;
         top: 100px;
         z-index: 100;
-        visibility: hidden;
-        overflow-y: auto;
         opacity: 0;
+        margin-left: -40vw;
+        overflow-y: auto;
+
         transform: translateX(-200px);
         @include m.block_construct(
-            200%, calc(100vh - 100px), 
+            60vw, calc(100vh - 100px), 
             0 v.$rounded-xl v.$rounded-xl 0,
             var(--bg-highlight),
-            v.$transition-5,
+            v.$transition-2,
             none
         );
+        &.active{
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        };
     }
-    .appheader-ul{
-        flex-direction: column;
-        align-items: start;
-        gap: 1em;
-        padding: 1em 2em;
-    }
-
-    .appheader-nav.active{
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
+    .li-dropmenu:hover{
+            .dropmenu-nav{
+                display: none;
+            }
+        }
+    .appheadermenu-ul{
+        @include m.column_construct();
+        a{
+            justify-content: start;
+            padding: 1em
+        };
     }
 }
