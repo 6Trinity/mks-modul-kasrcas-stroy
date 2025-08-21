@@ -58,3 +58,12 @@
     width: 100%;
     height: 100%;
 }
+
+@mixin block_transform(
+    $transform: var(--transform-primary),
+    $box-shadow: var(--box-shadow-primary)
+    ) {
+    transform: $transform;
+    box-shadow: $box-shadow;
+}
+

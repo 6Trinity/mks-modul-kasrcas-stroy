@@ -10,7 +10,7 @@
 }
 
 .dropmenu-nav{
-    @include m.block_construct(auto, auto, v.$rounded-base);
+    @include m.block_construct(auto, auto, v.$rounded-base, var(--bg-highlight));
     top: 85px;
     left: 165px;
     z-index: 200;
@@ -29,33 +29,19 @@
     }
 }
 
-.highlight-li{
-    @include m.block_construct(100%, 100%, v.$rounded-xl, var(--bg-highlight), v.$transition-4, var(--box-shadow-light));
-    padding: 0 1em;
-}
-
-.highlight-li:hover{
-    transform: var(--transform-primary);
-    box-shadow: var(--box-shadow-primary);
-    a[href]{
-        @include m.text_highlight(var(--text-primary), var(--text-shadow-inset), none);
-    }
-}
-
-.appmainmenu-nav{
-    position: relative;
-}
-
-.appmainmenu-ul{
-    li{
-        width: 80px;
-        height: 100%;
+.appmain-baner-ul{
+    width: 960px;
+    a{
+        @include m.full-size;
         @extend .flex-center;
     }
-}
+    .highlight-li{
+        width: 200px;
+        height: 50px;
+    }
+}  
 
 @media (max-width: 1080px) {
-
     .appheadermenu-nav{
         position: fixed;
         visibility: hidden;
@@ -64,7 +50,6 @@
         opacity: 0;
         margin-left: -40vw;
         overflow-y: auto;
-
         transform: translateX(-200px);
         @include m.block_construct(
             60vw, calc(100vh - 100px), 
@@ -79,23 +64,24 @@
             transform: translateX(0);
         };
     }
+
     .li-dropmenu:hover{
-            .dropmenu-nav{
-                display: none;
-            }
+        .dropmenu-nav{
+            display: none;
         }
+    }
+
     .appheadermenu-ul{
         @include m.column_construct();
         a{
             justify-content: start;
             padding: 1em
-        };
+        }
         .highlight-li{
             box-shadow: none;
             background: none;
             padding: 0;
         }
-
         .highlight-li:hover{
             transform: none;
             box-shadow: none;
@@ -104,11 +90,9 @@
             }
         }
     }
-}
-@media (max-width: 480px) {
-    .appmainmenu-ul{
-        padding: 0;
-        gap: 0;
-        justify-content: space-around;
+
+    .appmain-baner-ul{
+        width: 100%; 
     }
 }
+

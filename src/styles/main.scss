@@ -17,6 +17,7 @@ body{
     background: var(--bg-primary);
     @include m.text_construct;
     font-family: v.$font-sans;
+    transition: v.$transition-5;
 }
 
 div,
@@ -24,6 +25,12 @@ section,
 nav,
 ul{
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+h1{
+    font-size: v.$text-6xl;
 }
 
 button{
@@ -54,11 +61,54 @@ ol li{
     transition: v.$transition-3;
 }
 
-.logo-img:hover{
+.icon-img{
+    width: 40px;
+    height: 40px;
+    transition: v.$transition-3;
+}
+
+.logo-img:hover,
+.icon-img:hover{
     transform: var(--transform-primary);
 }
 
+.highlight-baner{
+    @include m.block_construct(fit-content, fit-content, v.$rounded-xl, var(--text-highlight), v.$transition-4, var(--box-shadow-light));
+    padding: 1em;
+}
+
+.highlight-baner:hover{ 
+    @include m.block_transform();
+    a[href]{
+        @include m.text_highlight(var(--text-primary), var(--text-shadow-inset), none);
+    }
+}
+
+.highlight-li{
+    @include m.block_construct(auto, auto, v.$rounded-xl, var(--bg-highlight), v.$transition-4, var(--box-shadow-light));
+}
+
+.highlight-li:hover{
+    @include m.block_transform();
+    a[href]{
+        @include m.text_highlight(var(--text-primary), var(--text-shadow-inset), none);
+    }
+}
 
 @media (max-width: 1080px) {
-  
+    body{
+        font-size: v.$text-lg;
+    }
+    h1{
+        font-size: v.$text-5xl;
+    }
+}
+
+@media (max-width: 480px) {
+    body{
+        font-size: v.$text-sm;
+    }
+    h1{
+        font-size: v.$text-3xl;
+    }
 }

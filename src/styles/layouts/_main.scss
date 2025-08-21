@@ -1,31 +1,51 @@
 @use '../utils/variables' as v;
 @use '../utils/mixins' as m;
+@use '../utils/utility';
 
-.appmain-section{
-    background: url('/assets/pic/back.webp');
-    height: 100vh;
-}
-
-.appmain-content{
-    grid-template: 40px 1fr 1fr/1fr;
-    min-height: 40vh;
-    background: var(--bg-darkglasses);
-}
-
-.span-highlight{
-    width: 70vw;
-    font-size: v.$text-6xl;
-    text-shadow: var(--text-shadow-highlight);
-}
-
-@media (max-width: 1080px) {
-    .span-highlight{
-        font-size: v.$text-4xl;
-        width: 100%;
+.appmain-baner-section{
+    background: url('/assets/pic/back.png');
+    background-size: cover ;
+    h1{
+        width: 960px;
     }
 }
-@media (max-width: 480px) {
-    .appmain-content{
-        padding: 0.5em;
+
+.appmain-baner-content{
+    min-height: 40vh;
+}
+
+.appmain-block{
+    width: 960px;
+}
+
+.appmain-baner-box{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    border-right: 1px solid white;
+}
+
+.appmain-baner-box:hover{
+    img{
+        transform: var(--transform-primary);
+    }
+}  
+
+@media (max-width: 1080px) {
+    .appmain-block{
+        width: 100%;
+        flex-wrap: wrap;
+        margin-bottom: 60px;
+    }
+    
+    .appmain-baner-box{
+        border-right: 0;
+        border-bottom: 1px solid white;
+    }
+
+    .appmain-baner-section{
+        h1{
+            width: 100%;
+        }
     }
 }
