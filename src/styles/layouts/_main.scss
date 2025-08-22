@@ -2,50 +2,122 @@
 @use '../utils/mixins' as m;
 @use '../utils/utility';
 
-.appmain-baner-section{
-    background: url('/assets/pic/back.png');
-    background-size: cover ;
+.appmain-section-baner{
+    background-size: cover;
+    min-height: 95vh;
+    @include m.block_construct(
+        100%, 
+        auto, 
+        0 0 v.$rounded-xl v.$rounded-xl, 
+        url('/assets/pic/back.png')
+    )
+}
+
+.appmainbaner-content{
+    margin-top: 190px;
+    width: 90%;
+    min-height: 50vh;
     h1{
-        width: 960px;
+        width: 80%;
+    }
+    a[href]{
+        @include m.full-size;
+        @extend .flex-center;
     }
 }
 
-.appmain-baner-content{
-    min-height: 40vh;
+.appmainbaner-nav{
+    width: clamp(580px, 40%, 1500px)
 }
 
-.appmain-block{
-    width: 960px;
+.appmainbaner-ul{
+    .highlight-li{
+        width: 150px;
+        height: 40px;
+    }
 }
 
-.appmain-baner-box{
+.appmainbaner-conteiner{
+    margin-bottom: 0.5em;
+    backdrop-filter: blur(0.2em);
+    text-shadow: var(--text-shadow-inset);
+    @include m.block_construct(
+        100%, 
+        auto, 
+        v.$rounded-xl
+    )
+}
+
+.appmainbaner-conteiner-item{
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: start;
-    border-right: 1px solid white;
+    width: clamp(150px, 20%, 40%);
+    height: 100%;
+    img{
+        margin-right: 0.5em;
+    }
+
 }
 
-.appmain-baner-box:hover{
+.appmainbaner-conteiner-item:hover{
     img{
-        transform: var(--transform-primary);
+        transform: var(--transform-primary)
     }
-}  
+}
+.border-tonggle{    
+    position: absolute;
+    right: 0;
+    @include m.block_construct(
+        2px, 
+        70px, 
+        v.$rounded-xs,
+        var(--bg-primary)
+    )
+}
 
 @media (max-width: 1080px) {
-    .appmain-block{
-        width: 100%;
-        flex-wrap: wrap;
-        margin-bottom: 60px;
-    }
-    
-    .appmain-baner-box{
-        border-right: 0;
-        border-bottom: 1px solid white;
+    .appmainbaner-content{
+        width: 100%
     }
 
-    .appmain-baner-section{
+    .appmainbaner-nav{
+        width: clamp(300px, 100%, 1080px)
+    }
+
+    .appmainbaner-content{
         h1{
             width: 100%;
         }
+    }
+
+    .appmainbaner-conteiner{
+        flex-wrap: wrap;
+        margin-top: 0.5em;
+    }
+
+    .appmainbaner-div{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .appmainbaner-ul{
+        justify-content: space-between;
+        gap: 0;
+        .highlight-li{
+            width: 100%;
+        }
+    }
+
+    .appmainbaner-conteiner-item{
+        width: 100%;
+    }
+
+    .border-tonggle{    
+        bottom: 0;
+        width: 70px;
+        height: 2px;
+        left: 0;
     }
 }

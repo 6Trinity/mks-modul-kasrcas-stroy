@@ -29,18 +29,6 @@
     }
 }
 
-.appmain-baner-ul{
-    width: 960px;
-    a{
-        @include m.full-size;
-        @extend .flex-center;
-    }
-    .highlight-li{
-        width: 200px;
-        height: 50px;
-    }
-}  
-
 @media (max-width: 1080px) {
     .appheadermenu-nav{
         position: fixed;
@@ -89,10 +77,6 @@
                 @include m.text_highlight;
             }
         }
-    }
-
-    .appmain-baner-ul{
-        width: 100%; 
     }
 }
 

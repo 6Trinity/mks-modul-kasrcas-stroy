@@ -43,4 +43,19 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    document.querySelectorAll('.appfooter-nav a').forEach(link => {
+        link.addEventListener('click', (e) => {
+
+            const targetId = link.getAttribute('href');
+            if (targetId.startsWith('#')) {
+                e.preventDefault();
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
 });

@@ -49,7 +49,7 @@
 .content-around{align-content: space-around}
 
 .justify-start{justify-content: start}
-.contejustifynt-center{justify-content:center}
+.justify-center{justify-content:center}
 .justify-end{justify-content: end}
 .justify-between{justify-content: space-between}
 .justify-around{justify-content: space-around}
@@ -186,6 +186,14 @@
 .right-em{right: 1em}
 .right-2em{right: 2em}
 
+.t-bold{font-weight: v.$font-bold}
+.t-exbold{font-weight: v.$font-extrabold}
 
+.ts-base{font-size: v.$text-base;}
 
-
+.t-line2{
+    line-height: 2;
+}
+.t-2xl{
+    font-size: v.$text-2xl;
+}

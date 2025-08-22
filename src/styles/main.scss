@@ -23,7 +23,8 @@ body{
 div,
 section,
 nav,
-ul{
+ul,
+p{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -67,9 +68,21 @@ ol li{
     transition: v.$transition-3;
 }
 
+.favicon-img{
+    width: 60px;
+    height: 60px;
+    transition: v.$transition-3;
+}
+
 .logo-img:hover,
-.icon-img:hover{
+.icon-img:hover,
+.favicon-img:hover{
     transform: var(--transform-primary);
+}
+
+.small-img{
+    width: 20px;
+    height: 20px
 }
 
 .highlight-baner{
@@ -96,17 +109,14 @@ ol li{
 }
 
 @media (max-width: 1080px) {
-    body{
-        font-size: v.$text-lg;
-    }
     h1{
         font-size: v.$text-5xl;
     }
 }
 
 @media (max-width: 480px) {
-    body{
-        font-size: v.$text-sm;
+    body, a[href]{
+        font-size: v.$text-base;
     }
     h1{
         font-size: v.$text-3xl;
