@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    document.querySelectorAll('.appfooter-nav a').forEach(link => {
+    document.querySelectorAll('.appfooter-menu a').forEach(link => {
         link.addEventListener('click', (e) => {
 
             const targetId = link.getAttribute('href');

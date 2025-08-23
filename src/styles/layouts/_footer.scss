@@ -1,33 +1,28 @@
 @use '../utils/variables' as v;
 @use '../utils/mixins' as m;
+@use '../utils/utility';
 
 .appfooter{
-    display: flex;
     min-height: 400px;
-    background: url('/assets/pic/mm01-christian-tonko_15.jpg');
+    text-shadow: var(--text-shadow-inset);
     background-size: cover;
-    background-attachment:fixed;
-    width: 100%;
-    box-shadow: inset var(--box-shadow-primary);
+    @include m.block_construct(
+        100%, 
+        auto, 
+        0, 
+        url('/assets/pic/mm01-christian-tonko_15.jpg'), 
+        v.$transition-3, 
+        inset var(--box-shadow-primary)
+    )
 }
 
 .appfooter-content{
-    display: grid;
-    width: 100%;
-    min-height: 100%;
     background: var(--bg-deepdark);
     grid-template: 1fr 40px/1fr;
-    padding: 1em;
     a[href]{
         font-weight: v.$font-normal;
         font-size: v.$text-base;
     }
-}
-
-.appfooter-copyright{
-    display: flex;
-    justify-content: center;
-    align-items: end;
 }
 
 .appfooter-top{
@@ -39,34 +34,23 @@
     width: 180px;
     height: 180px;
 }
+
 .appfooter-contacts-items{
-    display: flex;
-    align-items: center;
+    @extend .flex-start;
+    a{
+        height: 100%;
+        @extend .flex-center;
+    }
 }
 
-.appfooter-contacts-baner{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.appfooter-contacts-items:hover{
+    img{
+        transform: var(--transform-primary);
+    }
 }
 
-.appfooter-contacts{
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-}
-
-.appfooter-menu{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.appfooter-ul{
-    display: flex;
-    flex-direction: column;
-    gap: 1em
-}
 @media (max-width: 1080px) {
+
 }
 
 @media (max-width: 780px) {
@@ -76,8 +60,10 @@
     .appfooter-ul{
         flex-direction: row;
     }
-    .appfooter-menu{
-        justify-content: center;
+    .appfooter-copir{
+        font-size: v.$text-xs;
+        a[href ]{
+           font-size: v.$text-xs;
+        }
     }
-
 }
