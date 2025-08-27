@@ -1,68 +1,65 @@
 @use '../utils/variables' as v;
 
-@mixin block_construct(
+@mixin mixin-block-construct(
     $width: auto, 
     $height: auto, 
     $border-radius: 0, 
     $background: var(--bg-darkglasses-deep), 
-    $transition: v.$transition-3, 
+    $transition: v.$transition-base, 
     $box-shadow: var(--box-shadow-primary)
-    ){
+){
     width: $width;
     height: $height;
     border-radius: $border-radius;
     background: $background;
     transition: $transition;
     box-shadow: $box-shadow;
+    @content;
 }
 
-@mixin text_highlight(
-    $color: var(--text-highlight), 
-    $text-shadow: var(--text-shadow-highlight), 
-    $transform: translateY(-1px)
-    ){
-    color: $color;
-    text-shadow: $text-shadow;
-    transform: $transform;
-}
-
-@mixin text_construct(
+@mixin mixin-text-construct(
     $color: var(--text-primary), 
     $text-shadow: var(--text-shadow-primary), 
-    $font-size: v.$text-xl, 
-    $font-weight: v.$font-normal,
+    $font-size: v.$text-lg, 
+    $font-weight: v.$font-light,
+    $font-family: v.$font-sans,
     $line-height: 1.5
-    ){
+){
     color: $color;
     text-shadow: $text-shadow;
     font-size: $font-size;
     font-weight: $font-weight;
     line-height: $line-height;
+    font-family: $font-family;
+    transition: v.$transition-base;  
 }
 
-@mixin column_construct(
-    $height: auto, 
-    $width: auto,
-    $gap: 0, 
-    $padding: 1em 2em, 
-    ){
-    display: flex;
-    flex-direction: column;
-    height: $height;
-    width: $width;
-    gap: $gap;
-    padding: $padding;
+@mixin mixin-text-highlight(
+    $color: var(--text-highlight), 
+    $text-shadow: var(--text-shadow-highlight)
+){
+    color: $color;
+    text-shadow: $text-shadow;
 }
 
-@mixin full-size {
+@mixin mixin-full-size {
     width: 100%;
     height: 100%;
 }
 
-@mixin block_transform(
+@mixin mixin-img-constructor(
+    $width: auto,
+    $height: auto
+){
+    width: $width;
+    height: $height;
+    transition: v.$transition-base
+}
+
+@mixin mixin-block_transform(
     $transform: var(--transform-primary),
-    $box-shadow: var(--box-shadow-primary)
-    ) {
+    $box-shadow: var(--box-shadow-highlight)
+){
     transform: $transform;
     box-shadow: $box-shadow;
 }

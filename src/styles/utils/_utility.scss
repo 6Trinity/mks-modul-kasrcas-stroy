@@ -186,18 +186,15 @@
 .right-em{right: 1em}
 .right-2em{right: 2em}
 
-.t-bold{font-weight: v.$font-bold}
-.t-exbold{font-weight: v.$font-extrabold}
+.text-base{font-size: v.$text-base}
+.text-lg{font-size: v.$text-lg}
+.text-xl{font-size: v.$text-xl}
+.text-2xl{font-size: v.$text-2xl}
+.text-3xl{font-size: v.$text-3xl}
+.text-4xl{font-size: v.$text-4xl}
+.text-5xl{font-size: v.$text-5xl}
+.text-6xl{font-size: v.$text-6xl}
+.text-7xl{font-size: v.$text-7xl}
 
-.ts-base{font-size: v.$text-base;}
 
-.t-line2{
-    line-height: 2;
-}
-.t-2xl{
-    font-size: v.$text-2xl;
-}
 
-.color-highlight{
-    color: var(--text-highlight);
-} 

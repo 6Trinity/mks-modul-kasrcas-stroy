@@ -1,25 +1,36 @@
 @use '../utils/variables' as v;
 @use '../utils/mixins' as m;
 
-.btn-toggle{
+.appheader_menu-toggle{
+    @include m.mixin-block-construct(
+        100%, 
+        4px, 
+        v.$rounded-xs, 
+        var(--text-secondory), 
+        v.$transition-long, 
+        var(--text-shadow-inset)
+    )
+}
+
+.menu_button-box{
     width: 30px;
     height: 30px;
 }
 
-.btn-toggle-bar{
-    @include m.block_construct(100%, 4px, v.$rounded-xs, var(--text-primary), v.$transition-5, var(--box-shadow-primary));
+.appheader_menu-button:hover{
+    .appheader_menu-toggle{
+        box-shadow: var(--box-shadow-highlight)
+    }
+} 
+
+.appheader_menu-button.active{
+    .appheader_menu-toggle:nth-child(1) {transform: translateY(10px) rotate(45deg)}
+    .appheader_menu-toggle:nth-child(2) {opacity: 0}
+    .appheader_menu-toggle:nth-child(3) {transform: translateY(-10px) rotate(-45deg)}
 }
 
-.btn-menu:hover .btn-toggle-bar{box-shadow: var(--box-shadow-highlight)}
-
-.btn-toggle.active{
-    .btn-toggle-bar:nth-child(1) {transform: translateY(10px) rotate(45deg)}
-    .btn-toggle-bar:nth-child(2) {opacity: 0}
-    .btn-toggle-bar:nth-child(3) {transform: translateY(-10px) rotate(-45deg)}
-}
-
-@media (max-width: 1080px) {
-    .btn-menu{
-        display: block;
+@media (max-width: 1024px) {
+    .appheader_menu-button{
+        display: flex;
     }
 }

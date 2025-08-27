@@ -1,123 +1,105 @@
-@use '../utils/variables' as v;
 @use '../utils/mixins' as m;
+@use '../utils/variables' as v;
 @use '../utils/utility';
 
+.appmain_h{
+    font-size: v.$text-6xl;
+}
 .appmain-section-baner{
+    background: url('/assets/pic/back.png');
+    background-position: 10%;
     background-size: cover;
-    min-height: 95vh;
-    @include m.block_construct(
-        100%, 
-        auto, 
-        0 0 v.$rounded-xl v.$rounded-xl, 
-        url('/assets/pic/back.png')
-    )
 }
 
-.appmainbaner-content{
-    margin-top: 190px;
-    width: 90%;
-    min-height: 50vh;
-    h1{
-        width: 80%;
-    }
-    a[href]{
-        @include m.full-size;
-        @extend .flex-center;
-    }
+.section_baner-content{
+    margin-top: 130px;
+    min-width: 90vw;
+    min-height: 70vh;
 }
 
-.appmainbaner-nav{
-    width: clamp(580px, 40%, 1500px)
+.baner_content_top-content{
+    width: 800px;
 }
 
-.appmainbaner-ul{
-    .highlight-li{
-        width: 150px;
-        height: 40px;
+.appmain-board{
+    width: 700px;
+    @include m.mixin-block-construct(
+        700px,
+        auto,
+        v.$rounded-lg,
+        var(--bg-darkglasses-deep)
+    ){
+        backdrop-filter: blur(0.2em);
     }
 }
 
-.appmainbaner-conteiner{
-    margin-bottom: 0.5em;
-    backdrop-filter: blur(0.2em);
-    text-shadow: var(--text-shadow-inset);
-    @include m.block_construct(
-        100%, 
-        auto, 
-        v.$rounded-xl
-    )
-}
-
-.appmainbaner-conteiner-item{
-    position: relative;
+.appmain_board-item{
     display: flex;
-    flex-direction: column;
-    width: clamp(150px, 20%, 40%);
-    height: 100%;
-    img{
-        margin-right: 0.5em;
-    }
-
-}
-
-.appmainbaner-conteiner-item:hover{
-    img{
-        transform: var(--transform-primary)
-    }
-}
-.border-tonggle{    
-    position: absolute;
-    right: 0;
-    @include m.block_construct(
-        2px, 
-        70px, 
-        v.$rounded-xs,
-        var(--bg-primary)
-    )
-}
-
-@media (max-width: 1080px) {
-    .appmainbaner-content{
-        width: 100%
-    }
-
-    .appmainbaner-nav{
-        width: clamp(300px, 100%, 1080px)
-    }
-
-    .appmainbaner-content{
-        h1{
-            width: 100%;
+    &:hover{
+        img{
+            transform: var(--transform-primary);
         }
     }
+}
 
-    .appmainbaner-conteiner{
-        flex-wrap: wrap;
-        margin-top: 0.5em;
+.horizontal-bar{
+     @include m.mixin-block-construct(
+        2px,
+        100px,
+        v.$rounded-xs,
+        var(--text-highlight)
+    )
+}
+
+.appmain_menu-ul{
+    a[href]{
+        @extend .flex-center;
+        @include m.mixin-full-size()
     }
+    li{
+        padding: 0;
+        height: 40px;
+        width: clamp(50px, 150px, 100%);
+    }
+}
 
-    .appmainbaner-div{
+.appmain-section-baner-highlight{
+    a[href]{
+        @extend .flex-center;
+        @include m.mixin-full-size()
+    }
+    @include m.mixin-block-construct(
+        300px,
+        50px,
+        v.$rounded-lg,
+        var(--text-highlight)
+    )
+}
+
+@media (max-width: 1090px) {
+
+}
+
+@media (max-width: 790px) {
+    .appmain-board{
+        width: 100%;
         flex-direction: column;
     }
+
+    .appmain_board-item{
+        flex-direction: column;
+    }
+
+    .horizontal-bar{
+        height: 2px;
+        width: 100px;
+    }
 }
 
-@media (max-width: 480px) {
-    .appmainbaner-ul{
-        justify-content: space-between;
-        gap: 0;
-        .highlight-li{
-            width: 100%;
-        }
-    }
+@media (max-width: 490px) {
+    
+}
 
-    .appmainbaner-conteiner-item{
-        width: 100%;
-    }
+@media (max-width: 390px) {
 
-    .border-tonggle{    
-        bottom: 0;
-        width: 70px;
-        height: 2px;
-        left: 0;
-    }
 }

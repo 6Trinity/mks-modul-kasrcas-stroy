@@ -2,81 +2,125 @@
 @use '../utils/variables' as v;
 @use '../utils/utility';
 
-.appheadermenu-ul{
-    li, a{
-        @include m.full-size;
+.appheader_menu-nav{
+    @include m.mixin-full-size()
+}
+
+.appheader_menu-ul{
+    li, a[href]{
         @extend .flex-center;
+        @include m.mixin-full-size()
     }
 }
 
-.dropmenu-nav{
-    @include m.block_construct(auto, auto, v.$rounded-base, var(--bg-highlight));
-    top: 85px;
-    left: 165px;
-    z-index: 200;
-}
-
-.dropmenu-ul{
-    @include m.column_construct();
-    a{
-        justify-content: start
-    }
-}
-
-.li-dropmenu:hover{
-    .dropmenu-nav{
+.appheader_dropmenu-li:hover{
+    .appheader_dropmenu-nav{
         display: flex;
     }
 }
 
-@media (max-width: 1080px) {
-    .appheadermenu-nav{
+.appheader_dropmenu-nav{
+    top: 70px;
+    left: 150px;
+}
+
+.appheader_highlight-li{
+    @include m.mixin-block-construct(
+        auto, 
+        auto, 
+        v.$rounded-xl, 
+        var(--bg-highlight)
+    ){
+        padding: 0 1em;
+    }
+    &:hover{
+        a[href],
+        a[href]:hover,
+        a[href]:focus{
+            color: var(--text-primary);
+            text-shadow: var(--text-shadow-inset)
+        }
+        @include m.mixin-block_transform()
+    }
+}
+
+.appheader_dropmenu-ul{
+    a[href]{
+        justify-content: start;
+    }
+    @include m.mixin-block-construct(
+        auto, 
+        auto, 
+        v.$rounded-base, 
+        var(--bg-highlight)
+    )
+}
+
+@media (max-width: 1090px) {
+    .appheader_menu-nav{
         position: fixed;
         visibility: hidden;
-        top: 100px;
+        top: 80px;
         z-index: 1000;
+        left: -25vw;
         opacity: 0;
-        margin-left: -40vw;
         overflow-y: auto;
         transform: translateX(-200px);
-        @include m.block_construct(
-            60vw, calc(100vh - 100px), 
+        @include m.mixin-block-construct(
+            50vw, 
+            calc(100vh - 80px), 
             0 v.$rounded-xl v.$rounded-xl 0,
             var(--bg-highlight),
-            v.$transition-2,
+            (opacity 0.5s ease, transform 0.5s ease),
             none
         );
         &.active{
             opacity: 1;
             visibility: visible;
             transform: translateX(0);
-        };
+        }
     }
 
-    .li-dropmenu:hover{
-        .dropmenu-nav{
+    .appheader_dropmenu-li:hover{
+        .appheader_dropmenu-nav{
             display: none;
         }
     }
 
-    .appheadermenu-ul{
-        @include m.column_construct();
-        a{
+    .appheader_menu-ul{
+        padding: 1em;
+        flex-direction: column;
+        gap: 2em;
+        a[href]{
             justify-content: start;
-            padding: 1em
+            width: 100%;
         }
-        .highlight-li{
-            box-shadow: none;
+        li{
+            height: auto;
+        }
+        .appheader_highlight-li{
             background: none;
-            padding: 0;
-        }
-        .highlight-li:hover{
-            transform: none;
             box-shadow: none;
-            a[href]{
-                @include m.text_highlight;
+            padding: 0;
+            &:hover{
+                a[href]:hover{
+                    @include m.mixin-text-highlight
+                }
+                @include m.mixin-block_transform(none, none)
             }
         }
     }
 }
 
+@media (max-width: 790px) {
+
+}
+
+@media (max-width: 490px) {
+    .appheader_menu-nav{
+        width: 80vw;
+        a[href]{
+            font-size: v.$text-lg;
+        }
+    }
+}
