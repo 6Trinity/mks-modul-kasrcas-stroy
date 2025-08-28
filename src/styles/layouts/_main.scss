@@ -9,6 +9,14 @@
     box-shadow: var(--box-shadow-primary);
 }
 
+.appmain-baner-highlight{
+    .highlight-li{
+        width: 300px;
+        height: 50px;
+        background: var(--text-highlight)
+    }
+}
+
 .section_baner-content{
     margin-top: 90px;
     min-width: 90vw;
@@ -48,28 +56,10 @@
 }
 
 .appmain_menu-ul{
-    a[href]{
-        @extend .flex-center;
-        @include m.mixin-full-size()
-    }
     li{
-        padding: 0;
         height: 40px;
         width: clamp(50px, 150px, 100%);
     }
-}
-
-.appmain-section-baner-highlight{
-    a[href]{
-        @extend .flex-center;
-        @include m.mixin-full-size()
-    }
-    @include m.mixin-block-construct(
-        300px,
-        50px,
-        v.$rounded-lg,
-        var(--text-highlight)
-    )
 }
 
 @media (max-width: 1090px) {

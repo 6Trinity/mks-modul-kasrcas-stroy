@@ -24,36 +24,17 @@
     left: 150px;
 }
 
-.appheader_highlight-li{
-    @include m.mixin-block-construct(
-        auto, 
-        auto, 
-        v.$rounded-xl, 
-        var(--bg-highlight)
-    ){
-        padding: 0 1em;
-    }
-    &:hover{
-        a[href],
-        a[href]:hover,
-        a[href]:focus{
-            color: var(--text-primary);
-            text-shadow: var(--text-shadow-inset)
-        }
-        @include m.mixin-block_transform()
-    }
-}
-
 .appheader_dropmenu-ul{
-    a[href]{
-        justify-content: start;
-    }
     @include m.mixin-block-construct(
         auto, 
         auto, 
         v.$rounded-base, 
         var(--bg-highlight)
-    )
+    ){
+        a[href]{
+            justify-content: start;
+        }
+    }
 }
 
 @media (max-width: 1090px) {

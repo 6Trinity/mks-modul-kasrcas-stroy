@@ -4,58 +4,73 @@
 
 .appfooter{
     margin-top: 5vh;
-    min-height: 400px;
-    width: 100%;
-    display: flex;
     background: url('/assets/pic/mm01-christian-tonko_15.jpg');
+    a[href]{
+        text-shadow: var(--text-shadow-primary);
+        font-weight: v.$font-light
+    }
 }
 
 .appfooter-section{
-    display: flex;
-    width: 100%;
-    min-height: 100%;
-    background: var(--bg-darkglasses-deep);
-    box-shadow: var(--box-shadow-inset);
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
+    @include m.mixin-block-construct(
+        $box-shadow: var(--box-shadow-inset),
+        $background: var(--bg-darkglasses-extra)
+    ){
+        @include m.mixin-full-size()
+    }
 }
 
 .appfooter_section-bot{
-    height: 40px;
+    height: 50px;
+    background: var(--bg-darkglasses);
+    color: var(--text-secondory);
+    a[href]{
+        font-size: v.$text-sm;
+        color: var(--text-secondory);
+    }
 }
 
-.appfooter_section-top{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 1em;
-}
-
-.appfooter_section-top-logobox{
-    width: clamp(300px, 500px, 100%)
+.appfooter_section_top-logobox{
+    width: clamp(200px, 500px, 100%);
+    .highlight-li{
+        width: clamp(200px, 100%, 500px);
+        height: 50px;
+        background: var(--text-highlight);
+    }
 }
 
 .appfooter-contacts{
-    align-items: center;
-    gap: 1em;
-    width: clamp(300px, 450px, 100%);
+    width: clamp(200px, 500px, 100%);
 }
+
+.appfooter-menu{
+    width: clamp(300px, 500px, 100%);
+}
+
+.hor-bar{
+    @include m.mixin-block-construct(
+        70%,
+        2px,
+        v.$rounded-xs,
+        var(--text-highlight)
+    )
+}
+
+.appfooter-contacts-item{
+    &:hover{
+        img{
+            transform: var(--transform-primary);
+        }
+    }
+}
+
 
 @media (max-width: 1090px) {
     .appfooter_section-top{
         flex-direction: column;
+        align-items: center;
         gap: 1em;
     }
-}
-
-@media (max-width: 790px) {
-
-}
-
-@media (max-width: 490px) {
-
 }
 
 @media (max-width: 390px) {

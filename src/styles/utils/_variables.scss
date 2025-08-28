@@ -34,11 +34,12 @@
     --bg-highlight: rgba(0, 0, 0, 0.9);
     --bg-darkglasses: rgba(0, 0, 0, 0.3);
     --bg-darkglasses-deep: rgba(0, 0, 0, 0.6);
+    --bg-darkglasses-extra: rgba(0, 0, 0, 0.8);
     --bg-test: rgba(40, 40, 46);
 
     --text-primary: rgb(255, 255, 255);
-    --text-secondory: rgb(255, 255, 255);
-    --text-highlight: rgb(122, 163, 145);
+    --text-secondory: rgb(226, 226, 226);
+    --text-highlight: rgb(96, 126, 112);
 
     --box-shadow-primary: 1px 2px 4px rgba(0, 0, 0, 0.7),
     2px 4px 6px rgba(0, 0, 0, 0.5),
@@ -64,5 +65,5 @@
     -1px -1px 1px rgba(0, 0, 0, 0.5),
     -1.5px -1.5px 1px rgba(0, 0, 0, 0.3);
 
-    --transform-primary: scale(1.05);
+    --transform-primary: scale(1.03);
 }

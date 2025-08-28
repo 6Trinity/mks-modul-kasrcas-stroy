@@ -5,11 +5,14 @@
 .appheader{
     height: 80px;
     z-index: 100;
+    a[href]{
+        font-weight: v.$font-bold;
+    }
 }
 
 .appheader-section{
     &.scrolled{
-        .appheader_highlight-li{
+        .highlight-li{
             border-radius: 0 v.$rounded-xl; 
         }
         @include m.mixin-block-construct(
@@ -42,12 +45,4 @@
             }
         }
     }
-}
-
-@media (max-width: 790px) {
-
-}
-
-@media (max-width: 490px) {
-
 }

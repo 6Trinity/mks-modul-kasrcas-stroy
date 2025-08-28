@@ -19,15 +19,13 @@ body{
 }
 
 a[href]{
-    @include m.mixin-text-construct(
+        @include m.mixin-text-construct(
         var(--text-primary), 
         var(--text-shadow-inset), 
-        v.$text-lg , 
-        v.$font-bold
+        v.$text-lg 
     );
-    &:hover,
-    &:focus{
-        @include m.mixin-text-highlight;
+    &:hover{
+        @include m.mixin-text-highlight
     }
 }
 
@@ -68,6 +66,29 @@ a[href]{
     font-weight: v.$font-bold;
 }
 
+.highlight-li{
+    @include m.mixin-block-construct(
+        auto, 
+        auto, 
+        v.$rounded-xl, 
+        var(--bg-highlight)
+    ){
+        padding: 0 1em;
+        @extend .flex-center;
+        a[href]{
+            @include m.mixin-full-size();
+            @extend .flex-center;
+            text-shadow: var(--text-shadow-inset);
+            &:hover{
+                color: var(--text-primary);
+                text-shadow: var(--text-shadow-inset)
+            }
+        }
+    }
+    &:hover{
+        @include m.mixin-block_transform()
+    }
+}
 
 
 
