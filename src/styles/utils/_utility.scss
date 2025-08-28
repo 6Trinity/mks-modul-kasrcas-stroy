@@ -64,6 +64,7 @@
 
 //gap
 .gap-0{gap: 0}
+.gap-05{gap: 0.5em}
 .gap-em{gap: 1em}
 .gap-2em{gap: 2em}
 .gap-3em{gap: 3em}
@@ -129,6 +130,9 @@
 .mr-em{
     margin-right: 1em;
 }
+.mr-01em{
+    margin-right: 0.1em;
+}
 
 //width
 .w-full{width: 100%}
@@ -186,6 +190,8 @@
 .right-em{right: 1em}
 .right-2em{right: 2em}
 
+.text-xs{font-size: v.$text-xs}
+.text-sm{font-size: v.$text-sm}
 .text-base{font-size: v.$text-base}
 .text-lg{font-size: v.$text-lg}
 .text-xl{font-size: v.$text-xl}
@@ -195,6 +201,8 @@
 .text-5xl{font-size: v.$text-5xl}
 .text-6xl{font-size: v.$text-6xl}
 .text-7xl{font-size: v.$text-7xl}
+
+.text-bold{font-weight: v.$font-bold;}
 
 
 

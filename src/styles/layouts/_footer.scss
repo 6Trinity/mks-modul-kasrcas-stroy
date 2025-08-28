@@ -1,0 +1,65 @@
+@use '../utils/mixins' as m;
+@use '../utils/variables' as v;
+@use '../utils/utility';
+
+.appfooter{
+    margin-top: 5vh;
+    min-height: 400px;
+    width: 100%;
+    display: flex;
+    background: url('/assets/pic/mm01-christian-tonko_15.jpg');
+}
+
+.appfooter-section{
+    display: flex;
+    width: 100%;
+    min-height: 100%;
+    background: var(--bg-darkglasses-deep);
+    box-shadow: var(--box-shadow-inset);
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+.appfooter_section-bot{
+    height: 40px;
+}
+
+.appfooter_section-top{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.appfooter_section-top-logobox{
+    width: clamp(300px, 500px, 100%)
+}
+
+.appfooter-contacts{
+    align-items: center;
+    gap: 1em;
+    width: clamp(300px, 450px, 100%);
+}
+
+@media (max-width: 1090px) {
+    .appfooter_section-top{
+        flex-direction: column;
+        gap: 1em;
+    }
+}
+
+@media (max-width: 790px) {
+
+}
+
+@media (max-width: 490px) {
+
+}
+
+@media (max-width: 390px) {
+    .appfooter_section-bot{
+        font-size: v.$text-xs;
+    }
+}

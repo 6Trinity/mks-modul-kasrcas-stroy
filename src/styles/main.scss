@@ -31,6 +31,10 @@ a[href]{
     }
 }
 
+.xl-img{
+    @include m.mixin-img-constructor(160px, 160px)
+}
+
 .base-img{
     @include m.mixin-img-constructor(80px, 80px)
 }
@@ -49,10 +53,29 @@ a[href]{
     transform: var(--transform-primary);
 }
 
+.appmain_h{
+    font-size: v.$text-6xl;
+    font-weight: v.$font-bold;
+}
+
+.appmain_h2{
+    font-size: v.$text-3xl;
+    font-weight: v.$font-bold;
+}
+
+.appmain_h5{
+    font-size: v.$text-xl;
+    font-weight: v.$font-bold;
+}
+
+
+
+
 @media (max-width: 1090px) {
     .appmain_h{
         font-size: v.$text-5xl;
     }
+    
 }
 
 @media (max-width: 790px) {
@@ -69,6 +92,12 @@ a[href]{
     .appmain_h{
         font-size: v.$text-4xl;
     }
+    .appmain_h5{
+        font-size: v.$text-lg;
+    }
+    .appmain_h2{
+        font-size: v.$text-2xl;
+    }
 }
 
 @media (max-width: 390px) {
@@ -80,5 +109,8 @@ a[href]{
     }
     .appmain_h{
         font-size: v.$text-3xl;
+    }
+    .appmain_h5{
+        font-size: v.$text-base;
     }
 }

@@ -2,17 +2,15 @@
 @use '../utils/variables' as v;
 @use '../utils/utility';
 
-.appmain_h{
-    font-size: v.$text-6xl;
-}
 .appmain-section-baner{
     background: url('/assets/pic/back.png');
     background-position: 10%;
     background-size: cover;
+    box-shadow: var(--box-shadow-primary);
 }
 
 .section_baner-content{
-    margin-top: 130px;
+    margin-top: 90px;
     min-width: 90vw;
     min-height: 70vh;
 }
@@ -22,9 +20,8 @@
 }
 
 .appmain-board{
-    width: 700px;
     @include m.mixin-block-construct(
-        700px,
+        clamp(750px, 800px, 100%),
         auto,
         v.$rounded-lg,
         var(--bg-darkglasses-deep)
@@ -34,7 +31,6 @@
 }
 
 .appmain_board-item{
-    display: flex;
     &:hover{
         img{
             transform: var(--transform-primary);
@@ -97,7 +93,7 @@
 }
 
 @media (max-width: 490px) {
-    
+
 }
 
 @media (max-width: 390px) {
