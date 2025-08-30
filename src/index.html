@@ -15,7 +15,7 @@
         <div class="w-full flex-col min-h-screen"> 
             <header class="appheader w-full fixed flex-center">
                 <a class="absolute left-0" href="#">
-                    <img class="base-img" src="/assets/pic/logo.png">
+                    <img class="base-img" loading="lazy" alt="логотип" src="/assets/pic/logo.png">
                 </a>
                 <section class="appheader-section flex-center">
                     <nav class="appheader_menu-nav">
@@ -80,7 +80,7 @@
                             <div class="appmain_board-item flex gap-05">
                                 <div class="flex-col">
                                     <div class="flex-start">
-                                        <img class="xs-img" src="/assets/pic/icon/icons8-calendar-80.png">
+                                        <img class="xs-img" loading="lazy" alt="значок" src="/assets/pic/icon/icons8-calendar-80.png">
                                         <span class="appmain_h5">30 дней</span>
                                     </div>
                                     <p>Lorem ipsum dolor sit amet</p>
@@ -90,7 +90,7 @@
                             <div class="appmain_board-item flex gap-05">
                                 <div class="flex-col">
                                     <div class="flex-start">
-                                        <img class="xs-img mr-01em" src="/assets/pic/icon/icons8-handshake-80.png">
+                                        <img class="xs-img mr-01em" loading="lazy" alt="значок" src="/assets/pic/icon/icons8-handshake-80.png">
                                         <span class="appmain_h5">Надежно</span>
                                     </div>
                                     <p>Lorem ipsum dolor sit amet</p>
@@ -100,7 +100,7 @@
                             <div class="appmain_board-item flex gap-05">
                                 <div class="flex-col">
                                     <div class="flex-start">
-                                        <img class="xs-img" src="/assets/pic/icon/icons8-protect-80.png">
+                                        <img class="xs-img" loading="lazy" alt="значок" src="/assets/pic/icon/icons8-protect-80.png">
                                         <span class="appmain_h5">Гарантии</span>
                                     </div>
                                     <p>Lorem ipsum dolor sit amet</p>
@@ -110,7 +110,7 @@
                             <div class="appmain_board-item flex gap-05">
                                 <div class="flex-col">
                                     <div class="flex-start">
-                                        <img class="xs-img" src="/assets/pic/icon/icons8-warranty-80.png">
+                                        <img class="xs-img" loading="lazy" alt="значок" src="/assets/pic/icon/icons8-warranty-80.png">
                                         <span class="appmain_h5">Бесплатно</span>
                                     </div>
                                     <p>Lorem ipsum dolor sit amet</p>
@@ -119,13 +119,80 @@
                         </div>       
                     </div>
                 </section>
+                <section class="appmain-section-contacs" id="appmain-section-contacs">
+                    <div class="section-contacs-block">
+                        <div class="section_contacs-content">
+                            <div class="section_contacs-box">
+                                <span class="appmain_h2 text-bold">Как с нами связаться ?</span>
+                                <div class="hor-bar"></div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna 
+                                    aliqua.
+                                </p>
+                                <div class="section_contacs-ff">
+                                    <div class="section_contacs-ff-item">
+                                        <img loading="lazy" alt="значок" class="xs-img" src="/assets/pic/icon/icons8-calendar-96.png">
+                                        <div class="flex-col">
+                                            <span class="appmain_h5">График</span>
+                                            <a title="График: c 08:00 до 23:00" href="#">Ежедневно с 08:00 до 23:00</a>
+                                        </div>
+                                    </div>
+                                    <div class="section_contacs-ff-item">
+                                        <img loading="lazy" alt="значок" class="xs-img" src="/assets/pic/icon/icons8-location-96.png">
+                                        <div class="flex-col">
+                                            <span class="appmain_h5">Адрес</span>
+                                            <a title="График: c 08:00 до 23:00" href="#">Челябинск, р-н Ленинский, 1-я Электровозная ул. 24</a>
+                                        </div>
+                                    </div>
+                                    <div class="section_contacs-ff-item">
+                                        <img loading="lazy" alt="значок" class="xs-img" src="/assets/pic/icon/icons8-phone-96.png">
+                                        <div class="flex-col">
+                                            <span class="appmain_h5">Телефон</span>
+                                            <a title="График: c 08:00 до 23:00" href="#">+7 909 085 20-40</a>
+                                        </div>
+                                    </div>
+                                    <div class="section_contacs-ff-item">
+                                        <img loading="lazy" alt="значок" class="xs-img" src="/assets/pic/icon/icons8-email-96.png">
+                                        <div class="flex-col">
+                                            <span class="appmain_h5">Почта</span>
+                                            <a title="График: c 08:00 до 23:00" href="#">goida@mail.ru</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <form class="feedback-form" id="feedbackForm" action="#" method="POST">
+                                <h3 class="form-title">Оставьте заявку</h3>
+                                <p class="form-subtitle">Мы перезвоним вам в течение 15 минут</p>
+                                <input type="hidden" name="subject" value="Заявка с сайта МКС Модуль Каркас Строй">
+                                <div class="input-group">
+                                    <label for="userName" class="input-label">Ваше имя</label>
+                                    <input type="text" id="userName" name="name" class="form-input" placeholder="Например, Иван" required>
+                                </div>
+                                <div class="input-group">
+                                    <label for="userPhone" class="input-label">Телефон *</label>
+                                    <input type="tel" id="userPhone" name="phone" class="form-input" placeholder="+7 (999) 123-45-67" required>
+                                </div>
+                                <div class="input-group">
+                                    <label for="userMessage" class="input-label">Сообщение (необязательно)</label>
+                                    <textarea id="userMessage" name="message" class="form-textarea" placeholder="Расскажите о вашей будущей бане или задайте вопрос" rows="4"></textarea>
+                                </div>
+                                <button type="submit" class="form-submit-btn">Отправить заявку</button>
+                                <p class="form-agreement"> Нажимая на кнопку, вы соглашаетесь с 
+                                    <a href="/politika-konfidencialnosti" target="_blank">политикой обработки персональных данных</a>
+                                </p>
+                            </form>
+                        </div>
+                        <iframe class="appmain_map-frame" src="https://yandex.ru/map-widget/v1/?from=api-maps&ll=61.417304%2C55.115877&mode=search&ol=geo&origin=jsapi21&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjA0NTgwMRJQ0KDQvtGB0YHQuNGPLCDQp9C10LvRj9Cx0LjQvdGB0LosIDEt0Y8g0K3Qu9C10LrRgtGA0L7QstC-0LfQvdCw0Y8g0YPQu9C40YbQsCwgMjQiCg1Rq3VCFah2XEI%2C&z=17" frameborder="1" allowfullscreen="true"></iframe>
+                    </div>
+                </section>
             </main>
             <footer class="appfooter w-full flex">
                 <section class="appfooter-section flex-col">
                     <div class="appfooter_section-top flex justify-between p-em w-full h-full">
                         <div class="appfooter_section_top-logobox flex-col gap-em">
                             <div class="flex-center">
-                                <img class="xl-img" src="/assets/pic/logo.png">
+                                <img class="xl-img" loading="lazy" alt="Логотип" src="/assets/pic/logo.png">
                                 <span class="appmain_h2 text-bold">МКС<br>Модуль Каркас Строй</span>
                             </div>
                             <p>
@@ -139,11 +206,11 @@
                             <span class="appmain_h2 text-bold">Помощь в выборе</span>
                             <div class="hor-bar"></div>
                             <div class="flex-col gap-05">
-                                <a href="#">Сроки и стоимость</a>
-                                <a href="#">Типовые проекты</a>
-                                <a href="#">Подбор по параметрам</a>
-                                <a href="#">Что о нас говорят</a>
-                                <a href="#">Задать нам вопрос</a>
+                                <a title="Сроки и стоимость/Timing and cost" href="#">Сроки и стоимость</a>
+                                <a title="Типовые проекты/Typical projects" href="#">Типовые проекты</a>
+                                <a title="Подбор по параметрам/Selection by parameters" href="#">Подбор по параметрам</a>
+                                <a title="Что о нас говорят/What they say about us" href="#">Что о нас говорят</a>
+                                <a title="Задать нам вопрос/Ask us a question" href="#appmain-section-contacs">Задать нам вопрос</a>
                             </div>
                         </div>
                         <div class="appfooter-contacts flex-col items-center gap-em">
@@ -151,20 +218,20 @@
                             <div class="hor-bar"></div>
                             <div class="flex-col items-start gap-05">
                                 <div class="appfooter-contacts-item flex-center gap-em">
-                                    <img class="xs-img" src="/assets/pic/icon/icons8-calendar-96.png">
-                                    <a href="#">Ежедневно с 08:00 до 23:00</a>
+                                    <img loading="lazy" alt="значок" class="xs-img" src="/assets/pic/icon/icons8-calendar-96.png">
+                                    <a title="График: c 08:00 до 23:00" href="#">Ежедневно с 08:00 до 23:00</a>
                                 </div>
                                 <div class="appfooter-contacts-item flex-center gap-em">
-                                    <img class="xs-img" src="/assets/pic/icon/icons8-location-96.png">
-                                    <a href="https://yandex.ru/maps/56/chelyabinsk/house/1_ya_elektrovoznaya_ulitsa_24/YkgYcgZnSkUDQFtvfX1wdHRkYw==/?from=api-maps&ll=61.417304%2C55.115877&origin=jsapi21&z=17">Челябинск, р-н Ленинский, 1-я Электровозная ул. 24</a>
+                                    <img loading="lazy" alt="значок" class="xs-img" src="/assets/pic/icon/icons8-location-96.png">
+                                    <a title="Адрес: Челябинск, р-н Ленинский, 1-я Электровозная ул. 24" href="https://yandex.ru/maps/56/chelyabinsk/house/1_ya_elektrovoznaya_ulitsa_24/YkgYcgZnSkUDQFtvfX1wdHRkYw==/?from=api-maps&ll=61.417304%2C55.115877&origin=jsapi21&z=17">Челябинск, р-н Ленинский, 1-я Электровозная ул. 24</a>
                                 </div>
                                 <div class="appfooter-contacts-item flex-center gap-em">
-                                    <img class="xs-img" src="/assets/pic/icon/icons8-phone-96.png">
-                                    <a href="tel:+79990852040">+7 909 085 20-40</a>
+                                    <img loading="lazy" alt="значок" class="xs-img" src="/assets/pic/icon/icons8-phone-96.png">
+                                    <a title="Телефон: +7 909 085 20-40" href="tel:+79990852040">+7 909 085 20-40</a>
                                 </div>
                                 <div class="appfooter-contacts-item flex-center gap-em">
-                                    <img class="xs-img" src="/assets/pic/icon/icons8-email-96.png">
-                                    <a href="mailto:goida@mail.ru">goida@mail.ru</a>
+                                    <img loading="lazy" alt="значок" class="xs-img" src="/assets/pic/icon/icons8-email-96.png">
+                                    <a title="Почта: goida@mail.ru" href="mailto:goida@mail.ru">goida@mail.ru</a>
                                 </div>
                             </div>
                             <div class="flex">

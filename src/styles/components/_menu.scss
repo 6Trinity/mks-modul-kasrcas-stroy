@@ -79,7 +79,7 @@
         li{
             height: auto;
         }
-        .appheader_highlight-li{
+        .highlight-li{
             background: none;
             box-shadow: none;
             padding: 0;
@@ -91,10 +91,6 @@
             }
         }
     }
-}
-
-@media (max-width: 790px) {
-
 }
 
 @media (max-width: 490px) {

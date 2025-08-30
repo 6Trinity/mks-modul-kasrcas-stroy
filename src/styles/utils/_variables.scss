@@ -30,12 +30,16 @@
 
 
 :root{
-    --bg-primary: rgb(148, 161, 156);
+    --bg-primary: linear-gradient(
+        135deg,
+        #3c4e47 0%,
+        #556963 50%,
+        #2c3b34 100%
+    );
     --bg-highlight: rgba(0, 0, 0, 0.9);
     --bg-darkglasses: rgba(0, 0, 0, 0.3);
     --bg-darkglasses-deep: rgba(0, 0, 0, 0.6);
     --bg-darkglasses-extra: rgba(0, 0, 0, 0.8);
-    --bg-test: rgba(40, 40, 46);
 
     --text-primary: rgb(255, 255, 255);
     --text-secondory: rgb(226, 226, 226);

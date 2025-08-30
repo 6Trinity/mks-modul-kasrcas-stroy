@@ -2,6 +2,7 @@
 @use '../utils/variables' as v;
 @use '../utils/utility';
 
+// Главная страница
 .appmain-section-baner{
     background: url('/assets/pic/back.png');
     background-position: 10%;
@@ -19,12 +20,12 @@
 
 .section_baner-content{
     margin-top: 90px;
-    min-width: 90vw;
+    width: clamp(200px, 90vw, 100%);
     min-height: 70vh;
 }
 
 .baner_content_top-content{
-    width: 800px;
+    width: clamp(200px, 800px, 100%);
 }
 
 .appmain-board{
@@ -62,11 +63,83 @@
     }
 }
 
-@media (max-width: 1090px) {
+// Контакты
+.appmain-section-contacs{
+    margin-top: 5vh;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
 
+.section-contacs-block{
+    display: flex;
+    width: 90vw;
+    min-height: 100%;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: space-between;
+}
+
+.section_contacs-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.section_contacs-box{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: clamp(200px, 50%, 100%);
+    .hor-bar{
+        width: 100%;
+    }
+}
+
+.section_contacs-ff{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.section_contacs-ff-item{
+    text-shadow: var(--text-shadow-inset);
+    display: flex;
+    padding: 1em;
+    gap: 1em;
+    border-radius: v.$rounded-lg;
+    align-items: center;
+    background: var(--bg-darkglasses-extra);
+    box-shadow: var(--box-shadow-primary);
+    &:hover{
+        img{
+            transform: var(--transform-primary)
+        }
+    }
+}
+
+.appmain_map-frame{
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: v.$rounded-lg;
+    box-shadow: var(--box-shadow-primary);
+}
+
+
+
+@media (max-width: 1090px) {
+    .section_contacs-content{
+        flex-direction: column;
+    }
+    .section_contacs-box{
+        width: 100%;
+    }
 }
 
 @media (max-width: 790px) {
+    // Главная страница
     .appmain-board{
         width: 100%;
         flex-direction: column;
