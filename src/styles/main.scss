@@ -15,6 +15,7 @@
 
 body{
     background: var(--bg-primary);
+    background-attachment: fixed;
     @include m.mixin-text_construct
 }
 

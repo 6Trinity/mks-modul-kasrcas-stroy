@@ -37,7 +37,7 @@
                             <li><a href="#">Гарантии</a></li>
                             <li><a href="#">Преймущества</a></li>
                             <li><a href="#">Отзывы</a></li>
-                            <li><a href="#">Контакты</a></li>
+                            <li><a href="#appmain-section-contacs">Контакты</a></li>
                         </ul>
                     </nav>
                     <button class="appheader_menu-button none">
@@ -119,10 +119,10 @@
                         </div>       
                     </div>
                 </section>
-                <section class="appmain-section-contacs" id="appmain-section-contacs">
-                    <div class="section-contacs-block">
-                        <div class="section_contacs-content">
-                            <div class="section_contacs-box">
+                <section class="appmain-section-contacs min-h-screen w-full flex justify-center" id="appmain-section-contacs">
+                    <div class="section_contacs-content flex-col justify-between relative gap-em">
+                        <div class="contacs_content-top w-full flex gap-em">
+                            <div class="contacs-content-block flex-col gap-em pt-em">
                                 <span class="appmain_h2 text-bold">Как с нами связаться ?</span>
                                 <div class="hor-bar"></div>
                                 <p>
@@ -130,29 +130,29 @@
                                     sed do eiusmod tempor incididunt ut labore et dolore magna 
                                     aliqua.
                                 </p>
-                                <div class="section_contacs-ff">
-                                    <div class="section_contacs-ff-item">
+                                <div class="flex-col gap-em">
+                                    <div class="section_contacs-item flex-start gap-em p-em">
                                         <img loading="lazy" alt="значок" class="xs-img" src="/assets/pic/icon/icons8-calendar-96.png">
                                         <div class="flex-col">
                                             <span class="appmain_h5">График</span>
                                             <a title="График: c 08:00 до 23:00" href="#">Ежедневно с 08:00 до 23:00</a>
                                         </div>
                                     </div>
-                                    <div class="section_contacs-ff-item">
+                                    <div class="section_contacs-item flex-start gap-em p-em">
                                         <img loading="lazy" alt="значок" class="xs-img" src="/assets/pic/icon/icons8-location-96.png">
                                         <div class="flex-col">
                                             <span class="appmain_h5">Адрес</span>
                                             <a title="График: c 08:00 до 23:00" href="#">Челябинск, р-н Ленинский, 1-я Электровозная ул. 24</a>
                                         </div>
                                     </div>
-                                    <div class="section_contacs-ff-item">
+                                    <div class="section_contacs-item flex-start gap-em p-em">
                                         <img loading="lazy" alt="значок" class="xs-img" src="/assets/pic/icon/icons8-phone-96.png">
                                         <div class="flex-col">
                                             <span class="appmain_h5">Телефон</span>
                                             <a title="График: c 08:00 до 23:00" href="#">+7 909 085 20-40</a>
                                         </div>
                                     </div>
-                                    <div class="section_contacs-ff-item">
+                                    <div class="section_contacs-item flex-start gap-em p-em">
                                         <img loading="lazy" alt="значок" class="xs-img" src="/assets/pic/icon/icons8-email-96.png">
                                         <div class="flex-col">
                                             <span class="appmain_h5">Почта</span>
@@ -161,29 +161,39 @@
                                     </div>
                                 </div>
                             </div>
-                            <form class="feedback-form" id="feedbackForm" action="#" method="POST">
-                                <h3 class="form-title">Оставьте заявку</h3>
-                                <p class="form-subtitle">Мы перезвоним вам в течение 15 минут</p>
-                                <input type="hidden" name="subject" value="Заявка с сайта МКС Модуль Каркас Строй">
-                                <div class="input-group">
-                                    <label for="userName" class="input-label">Ваше имя</label>
-                                    <input type="text" id="userName" name="name" class="form-input" placeholder="Например, Иван" required>
-                                </div>
-                                <div class="input-group">
-                                    <label for="userPhone" class="input-label">Телефон *</label>
-                                    <input type="tel" id="userPhone" name="phone" class="form-input" placeholder="+7 (999) 123-45-67" required>
-                                </div>
-                                <div class="input-group">
-                                    <label for="userMessage" class="input-label">Сообщение (необязательно)</label>
-                                    <textarea id="userMessage" name="message" class="form-textarea" placeholder="Расскажите о вашей будущей бане или задайте вопрос" rows="4"></textarea>
-                                </div>
-                                <button type="submit" class="form-submit-btn">Отправить заявку</button>
-                                <p class="form-agreement"> Нажимая на кнопку, вы соглашаетесь с 
-                                    <a href="/politika-konfidencialnosti" target="_blank">политикой обработки персональных данных</a>
-                                </p>
-                            </form>
+                            <div class="contacs-content-form flex absolute right-0">
+                                <form class="feedback-form flex-col gap-2em p-em" id="feedbackForm" action="#" method="POST">
+                                    <div class="flex-col">
+                                        <span class="appmain_h2 text-bold">Оставьте заявку</span>
+                                        <p>Мы перезвоним вам в течение 1 часа</p>
+                                    </div>
+                                    <input type="hidden" name="subject" value="Заявка с сайта МКС Модуль Каркас Строй">
+                                    <div class="flex-col gap-em">
+                                        <div class="flex-start gap-em">
+                                            <label for="userName" class="input-label">Ваше имя</label>
+                                            <input type="text" id="userName" name="name">
+                                        </div>
+                                        <div class="flex-start gap-em">
+                                            <label for="userPhone" class="input-label">Телефон</label>
+                                            <input type="tel" id="userPhone" name="phone" placeholder="+7 (999) 999-99-99" required>
+                                        </div>
+                                        <div class="flex-start gap-em">
+                                            <label for="userEmail" class="input-label">Email</label>
+                                            <input type="email" id="userEmail" name="email" placeholder="@email">
+                                        </div>
+                                        <div class="gap-em flex-col">
+                                            <label for="userMessage">Сообщение (необязательно)</label>
+                                            <textarea id="userMessage" name="message" placeholder="Расскажите о вашей будущей бане или задайте вопрос" rows="4"></textarea>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="highlight-li">Отправить заявку</button>
+                                    <p class="text-sm"> Нажимая на кнопку, вы соглашаетесь с 
+                                        <a href="pages/PolitPersondata.html" target="_blank">политикой обработки персональных данных</a>
+                                    </p>
+                                </form>
+                            </div>
                         </div>
-                        <iframe class="appmain_map-frame" src="https://yandex.ru/map-widget/v1/?from=api-maps&ll=61.417304%2C55.115877&mode=search&ol=geo&origin=jsapi21&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjA0NTgwMRJQ0KDQvtGB0YHQuNGPLCDQp9C10LvRj9Cx0LjQvdGB0LosIDEt0Y8g0K3Qu9C10LrRgtGA0L7QstC-0LfQvdCw0Y8g0YPQu9C40YbQsCwgMjQiCg1Rq3VCFah2XEI%2C&z=17" frameborder="1" allowfullscreen="true"></iframe>
+                        <iframe class="appmain_map-frame w-full" src="https://yandex.ru/map-widget/v1/?from=api-maps&ll=61.417304%2C55.115877&mode=search&ol=geo&origin=jsapi21&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjA0NTgwMRJQ0KDQvtGB0YHQuNGPLCDQp9C10LvRj9Cx0LjQvdGB0LosIDEt0Y8g0K3Qu9C10LrRgtGA0L7QstC-0LfQvdCw0Y8g0YPQu9C40YbQsCwgMjQiCg1Rq3VCFah2XEI%2C&z=17" frameborder="1" allowfullscreen="true"></iframe>
                     </div>
                 </section>
             </main>
@@ -210,7 +220,7 @@
                                 <a title="Типовые проекты/Typical projects" href="#">Типовые проекты</a>
                                 <a title="Подбор по параметрам/Selection by parameters" href="#">Подбор по параметрам</a>
                                 <a title="Что о нас говорят/What they say about us" href="#">Что о нас говорят</a>
-                                <a title="Задать нам вопрос/Ask us a question" href="#appmain-section-contacs">Задать нам вопрос</a>
+                                <a title="Задать нам вопрос/Ask us a question" href="#feedbackForm">Задать нам вопрос</a>
                             </div>
                         </div>
                         <div class="appfooter-contacts flex-col items-center gap-em">

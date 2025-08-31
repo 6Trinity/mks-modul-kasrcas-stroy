@@ -202,7 +202,8 @@
 .text-6xl{font-size: v.$text-6xl}
 .text-7xl{font-size: v.$text-7xl}
 
-.text-bold{font-weight: v.$font-bold;}
+.text-bold{font-weight: v.$font-bold}
+.text-light{font-weight: v.$font-light}
 
 .text-c-secondory{color: var(--text-secondory)}
 .text-c-dark{color: var(--bg-darkglasses-extra);}

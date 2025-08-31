@@ -5,6 +5,38 @@ document.addEventListener('DOMContentLoaded', function() {
     const button_header = this.querySelector('.appheader_menu-button');
     const header = this.querySelector('.appheader-section');
     const header_menu = this.querySelector('.appheader_menu-nav');
+    const phoneInput = document.getElementById('userPhone');
+
+    phoneInput.addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\D/g, '');
+        let formattedValue = '+7';
+    
+        if (value.length > 1) {
+            const restNumbers = value.substring(1);
+      
+            if (restNumbers.length > 0) {
+                formattedValue += ' (' + restNumbers.substring(0, 3);
+            }
+            if (restNumbers.length > 3) {
+                formattedValue += ') ' + restNumbers.substring(3, 6);
+            }
+            if (restNumbers.length > 6) {
+                formattedValue += '-' + restNumbers.substring(6, 8);
+            }
+            if (restNumbers.length > 8) {
+                formattedValue += '-' + restNumbers.substring(8, 10);
+            }
+        }
+        e.target.value = formattedValue;
+    })
+
+    phoneInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Backspace' && /[^\d]/.test(phoneInput.value[phoneInput.selectionStart - 1])) {
+            e.preventDefault();
+            phoneInput.selectionStart = phoneInput.selectionStart - 1;
+            phoneInput.selectionEnd = phoneInput.selectionStart - 1;
+        }
+    })
 
     const toggleBodyScroll = (enable) => {
         document.body.style.overflow = enable ? '' : 'hidden';
@@ -49,8 +81,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const formData = new FormData(this);
         const message = `
             📞 *Новая заявка с сайта!* 
-            Имя: ${formData.get('name')}
-            Телефон: ${formData.get('phone')}
+            Имя: ${formData.get('name')|| 'Не указано'}
+            Телефон: ${formData.get('phone')|| 'Не указано'}
+            Почта: ${formData.get('email')|| 'Не указано'}
             Сообщение: ${formData.get('message') || 'Не указано'}
         `;
 
@@ -70,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => {
             console.error('Ошибка:', error);
-            alert('Что-то пошло не так. Попробуйте позвонить нам по телефону.');
+            alert('Что-то пошло не так. Попробуйте позвонить нам по телефону или отправить письмо на почту.');
         })
     })
 })
