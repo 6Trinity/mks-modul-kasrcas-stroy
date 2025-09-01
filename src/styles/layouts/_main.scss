@@ -2,6 +2,20 @@
 @use '../utils/variables' as v;
 @use '../utils/utility';
 
+//Политика конф
+.appmain-polit-con{
+    @include m.mixin-block-construct(
+        90%,
+        null,
+        v.$rounded-lg,
+        var(--bg-darkglasses-deep),
+    ){
+        margin-top: 100px;
+        backdrop-filter: blur(0.2em);
+    }
+
+}
+
 // Главная страница
 .appmain-section-baner{
     background: url('/assets/pic/back.png');
@@ -66,10 +80,15 @@
 // Контакты
 .appmain-section-contacs{
     margin-top: 5vh;
+    input, 
+    textarea{
+        padding: 8px;
+        border-bottom: 2px solid var(--text-highlight);
+    }
 }
 
 .section_contacs-content{
-    width: 90vw;
+    width: 90%
 }
 
 .contacs-content-block{
@@ -85,6 +104,7 @@
         $background: var(--bg-darkglasses-extra), 
     ){
         text-shadow: var(--text-shadow-inset);
+        backdrop-filter: blur(0.2em);
         &:hover{
             img{
                 transform: var(--transform-primary)
@@ -106,11 +126,12 @@
 .contacs-content-form{
     @include m.mixin-block-construct(
         clamp(200px, 49%, 100%),
-        70%,
+        65%,
         v.$rounded-lg, 
         url('/assets/pic/75053ec34942f60bd319bd40ae4d278e.png')
     ){
         background-size: cover;
+        min-height: 650px;
         text-shadow: var(--text-shadow-inset);
     }
 }
@@ -146,23 +167,6 @@
     width: 100px;
 }
 
-input, 
-textarea{
-    color: var(--text-primary);
-    padding: 8px;
-    border-bottom: 2px solid var(--text-highlight);
-}
-
-input::placeholder, 
-textarea::placeholder{ 
-    transition: opacity 0.3s 
-}
-
-input:focus::placeholder, 
-textarea::placeholder{ 
-    opacity: 0.5 
-}
-
 @media (max-width: 1090px) {
     .contacs_content-top{
         flex-direction: column;
@@ -173,6 +177,7 @@ textarea::placeholder{
     .contacs-content-form{
         width: 100%;
         position: relative;
+        min-height: 0;
     }
 }
 
