@@ -16,12 +16,18 @@
 
 body{
     background: var(--bg-primary);
-    @include m.mixin-text_construct
+    @include m.mixin-text_construct;
+    scrollbar-width: thin;
+    scrollbar-color: var(--text-highlight) transparent;
 }
 
-main{
+.layout{
     background-image: url('/assets/pic/fon-listja.png');
     background-attachment: fixed;
+}
+
+.appmain{
+    backdrop-filter: blur(0.5em)
 }
 
 a[href]{
@@ -51,6 +57,12 @@ a[href]{
     @include m.mixin-img-constructor(35px, 35px)
 }
 
+.card-img{
+    width: 300px;
+    height: 300px;
+    border-radius: v.$rounded-lg;
+}
+
 .base-img:hover,
 .sm-img:hover,
 .xs-img:hover{
@@ -62,8 +74,18 @@ a[href]{
     font-weight: v.$font-bold;
 }
 
+.appmain_h1{
+    font-size: v.$text-5xl;
+    font-weight: v.$font-bold;
+}
+
 .appmain_h2{
     font-size: v.$text-3xl;
+    font-weight: v.$font-bold;
+}
+
+.appmain_h3{
+    font-size: v.$text-2xl;
     font-weight: v.$font-bold;
 }
 
@@ -111,6 +133,9 @@ textarea:focus::placeholder{
     .appmain_h{
         font-size: v.$text-5xl;
     }
+    .appmain_h1{
+        font-size: v.$text-4xl;;
+    }
     
 }
 
@@ -128,11 +153,21 @@ textarea:focus::placeholder{
     .appmain_h{
         font-size: v.$text-4xl;
     }
+    .appmain_h1{
+        font-size: v.$text-3xl;
+    }
     .appmain_h5{
         font-size: v.$text-lg;
     }
     .appmain_h2{
         font-size: v.$text-2xl;
+    }
+    .appmain_h3{
+        font-size: v.$text-xl;
+    }
+    .card-img{
+        width: 90px;
+        height: 90px;
     }
 }
 
@@ -148,5 +183,8 @@ textarea:focus::placeholder{
     }
     .appmain_h5{
         font-size: v.$text-base;
+    }
+    .appmain_h3{
+        font-size: v.$text-lg;
     }
 }

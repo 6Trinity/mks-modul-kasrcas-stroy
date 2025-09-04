@@ -11,9 +11,9 @@
         <link rel="icon" type="image/x-icon" href="/assets/pic/icon/logo.ico">
         <title>МКС Модуль Каркас Строй</title>
     </head>
-    <body>
-        <div class="w-full flex-col min-h-screen"> 
-            <header class="appheader w-full fixed flex-center">
+    <body class="flex-col items-center">
+        <div class="layout w-full max-w-hd flex-col min-h-screen"> 
+            <header class="appheader w-full max-w-hd fixed flex-center">
                 <a class="absolute left-0" href="#">
                     <img class="base-img" loading="lazy" alt="логотип" src="/assets/pic/logo.png">
                 </a>
@@ -35,7 +35,7 @@
                             </li>
                             <li><a href="#">О нас</a></li>
                             <li><a href="#">Гарантии</a></li>
-                            <li><a href="#">Преймущества</a></li>
+                            <li><a href="#appmain-section-advantages">Преймущества</a></li>
                             <li><a href="#">Отзывы</a></li>
                             <li><a href="#appmain-section-contacs">Контакты</a></li>
                         </ul>
@@ -49,8 +49,8 @@
                     </button>
                 </section>
             </header>
-            <main class="appmain w-full min-h-screen">
-                <section class="appmain-section-baner min-h-screen items-end flex justify-center p-em gap-em" id="appmain-section-baner">
+            <main class="appmain flex-col"> 
+                <section class="appmain-section-baner max-h-hd min-h-screen items-end flex justify-center p-em gap-em" id="appmain-section-baner">
                     <div class="section_baner-content flex-col flex-between">
                         <div class="baner_content-top flex w-full justify-start">
                             <div class="baner_content_top-content flex-col gap-05">
@@ -119,10 +119,43 @@
                         </div>       
                     </div>
                 </section>
-                <section class="">
-                    
+                <section class="appmain-section-advantages flex justify-center" id="appmain-section-advantages">
+                    <div class="section_advantages-content flex-col items-center">
+                        <span class="appmain_h1">Нас выбирают за</span>
+                        <span class="appmain_h2 mb-em">Качество и надежность</span>
+                        <div class="hor-bar"></div>
+                        <div class="section_advantages-list flex justify-center gap-2em w-full p-em flex-wrap">
+                            <div class="section_advantages-item">
+                                <p>Утепление - 100 мм (пол, стены, потолок) для сохранения тепла</p>
+                            </div>
+                            <div class="section_advantages-item">
+                                <p>Фасад – планкен, фальшбрус сорт АБ и профлист С-20</p>
+                            </div>
+                            <div class="section_advantages-item">
+                                <p>Крыша – утепленная металлочерепица с гидро- и пароизоляцией для надежной защиты</p>
+                            </div>
+                            <div class="section_advantages-item">
+                                <p>Фундамент – винтовые сваи или ЖБ опоры</p>
+                            </div>
+                            <div class="section_advantages-item">
+                                <p>Окна – пвх профиль 70 мм, двойные энергосберегающие стеклопакеты</p>
+                            </div>
+                            <div class="section_advantages-item">
+                                <p>Освещение – уникальные потолки с мощными светильниками</p>
+                            </div>
+                            <div class="section_advantages-item">
+                                <p>Отопление — электрокотёл, тёплый пол или ИК-панели</p>
+                            </div>
+                            <div class="section_advantages-item">
+                                <p>Электрика – полностью разведена и готова, щиток, автоматы, розетки, выключатели</p>
+                            </div>
+                            <div class="section_advantages-item">
+                                <p>Отделка – всё выполненно из сортов премиального дерева (красная лиственница, липа) </p>
+                            </div>
+                        </div>
+                    </div>
                 </section>
-                <section class="appmain-section-contacs min-h-screen w-full flex justify-center" id="appmain-section-contacs">
+                <section class="appmain-section-contacs flex justify-center" id="appmain-section-contacs">
                     <div class="section_contacs-content flex-col justify-between relative gap-em">
                         <div class="contacs_content-top w-full flex gap-em">
                             <div class="contacs-content-block flex-col gap-em pt-em">
@@ -200,7 +233,7 @@
                     </div>
                 </section>
             </main>
-            <footer class="appfooter w-full flex">
+            <footer class="appfooter flex">
                 <section class="appfooter-section flex-col">
                     <div class="appfooter_section-top flex justify-between p-em w-full h-full">
                         <div class="appfooter_section_top-logobox flex-col gap-em">
@@ -256,7 +289,7 @@
                     </div>
                     <div class="appfooter_section-bot text-sm w-full flex-col items-center">
                         <p>© 2025 МКС Модуль Каркас Строй | designed by &nbsp;<a href="#">Martynov</a></p>
-                        <a href="/pages/PolitConfidenc.html">Политика конфиденциальности</a>
+                        <a href="/pages/PolitConfidenc.html" target="_blank">Политика конфиденциальности</a>
                     </div>
                 </section>
             </footer>
