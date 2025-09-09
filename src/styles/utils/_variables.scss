@@ -22,7 +22,8 @@
     $rounded-2xl: 38px;
     $rounded-3xl: 45px;
 
-    $blur-base: blur(0.3em);
+    $blur-base: blur(0.2em);
+    $blur-glass: blur(1em);
 
     $transition-fast: all 0.2s ease;
     $transition-base: all 0.3s ease;
@@ -31,21 +32,22 @@
 
 :root{
     --bg-primary: 
-    radial-gradient(
-        ellipse at 20% 30%, 
-        rgba(49, 105, 79, 0.4) 0%,
-        transparent 60%
-    ),
-    radial-gradient(
-        ellipse at 80% 70%, 
-        rgba(88, 167, 137, 0.5) 0%,
-        transparent 50%
-    ),
-    linear-gradient(
-        to bottom, 
-        #ade7d1, 
-        #4e6b61 
-    );
+        radial-gradient(
+            ellipse at 20% 30%, 
+            rgba(70, 180, 129, 0.4) 0%,
+            transparent 60%
+        ),
+        radial-gradient(
+            ellipse at 80% 70%, 
+            rgba(89, 218, 168, 0.5) 0%,
+            transparent 50%
+        ),
+        linear-gradient(
+            to bottom, 
+            #ade7d1, 
+            #73998a 
+        );
+
     --bg-highlight: rgba(0, 0, 0, 0.9);
     --bg-darkglasses: rgba(0, 0, 0, 0.3);
     --bg-darkglasses-deep: rgba(0, 0, 0, 0.6);
@@ -80,4 +82,5 @@
     -1.5px -1.5px 1px rgba(0, 0, 0, 0.3);
 
     --transform-primary: scale(1.02);
+    --transform-highlight: scale(1.1);
 }

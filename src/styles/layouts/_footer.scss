@@ -4,8 +4,8 @@
 
 .appfooter{
     background: url('/assets/pic/mm01-christian-tonko_15.jpg');
+    text-shadow: var(--text-shadow-inset);
     a[href]{
-        text-shadow: var(--text-shadow-primary);
         font-weight: v.$font-light
     }
 }
@@ -15,7 +15,7 @@
         $box-shadow: var(--box-shadow-inset),
         $background: var(--bg-darkglasses-extra)
     ){
-        @include m.mixin-full-size()
+        @include m.mixin-full-size();
     }
 }
 
@@ -44,15 +44,6 @@
 
 .appfooter-menu{
     width: clamp(300px, 500px, 100%);
-}
-
-.hor-bar{
-    @include m.mixin-block-construct(
-        70%,
-        2px,
-        v.$rounded-xs,
-        var(--text-highlight)
-    )
 }
 
 .appfooter-contacts-item{

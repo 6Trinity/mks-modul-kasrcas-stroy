@@ -134,6 +134,9 @@
 .mr-01em{
     margin-right: 0.1em;
 }
+.mb-2em{
+    margin-bottom: 2em;
+}
 
 //width
 .w-full{width: 100%}
@@ -212,7 +215,8 @@
 .text-c-secondory{color: var(--text-secondory)}
 .text-c-dark{color: var(--bg-darkglasses-extra)}
 
-.bg-dark{background: var(--bg-darkglasses-deep);}
+.bg-dark{background: var(--bg-darkglasses-deep)}
+.bg-highlight{background: var(--text-highlight)}
 
 
 

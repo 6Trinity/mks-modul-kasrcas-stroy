@@ -1,6 +1,10 @@
 @use '../utils/variables' as v;
 @use '../utils/mixins' as m;
 
+button{
+    text-shadow: var(--text-shadow-inset);
+}
+
 .appheader_menu-toggle{
     @include m.mixin-block-construct(
         100%, 

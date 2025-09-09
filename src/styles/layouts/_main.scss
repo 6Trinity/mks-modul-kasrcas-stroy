@@ -22,11 +22,12 @@
     background-position: 10%;
     background-size: cover;
     box-shadow: var(--box-shadow-primary);
+    margin-bottom: 15vh;
 }
 
 .appmain-baner-highlight{
     .highlight-li{
-        width: 300px;
+        width: clamp(50px, 300px, 100%);
         height: 50px;
         background: var(--text-highlight)
     }
@@ -49,13 +50,14 @@
         var(--bg-darkglasses-deep)
     ){
         backdrop-filter: blur(0.2em);
+        text-shadow: var(--text-shadow-inset);
     }
 }
 
 .appmain_board-item{
     &:hover{
         img{
-            transform: var(--transform-primary);
+            transform: var(--transform-highlight);
         }
     }
 }
@@ -78,12 +80,7 @@
 
 // Контакты
 .appmain-section-contacs{
-    input, 
-    textarea{
-        padding: 8px;
-        border-bottom: 2px solid var(--text-highlight); 
-    }
-    padding-bottom: 15vh;
+    margin-bottom: 15vh;
 }
 
 .section_contacs-content{
@@ -100,13 +97,13 @@
 .section_contacs-item{
     @include m.mixin-block-construct(
         $border-radius: v.$rounded-lg, 
-        $background: var(--bg-darkglasses-extra), 
+        $background: var(--bg-darkglasses-extra)
     ){
         text-shadow: var(--text-shadow-inset);
-        backdrop-filter: blur(0.2em);
+        backdrop-filter: blur(1em);
         &:hover{
             img{
-                transform: var(--transform-primary)
+                transform: var(--transform-highlight)
             }
         }
     }
@@ -122,6 +119,21 @@
     }
 }
 
+form{
+    .highlight-li{
+        background: var(--text-highlight);
+        padding: 1em;
+    }
+    a[href]{
+        font-size: v.$text-sm;
+    }
+    input, 
+    textarea{
+        padding: 8px;
+        border-bottom: 2px solid var(--text-highlight); 
+    }
+}
+
 .contacs-content-form{
     @include m.mixin-block-construct(
         clamp(200px, 49%, 100%),
@@ -132,45 +144,35 @@
         none
     ){
         background-size: cover;
-        min-height: 650px;
+        min-height: 680px;
         text-shadow: var(--text-shadow-inset);
     }
-}
-
-.feedback-form{
-    @include m.mixin-block-construct(
-        100%,
-        null,
-        v.$rounded-lg, 
-        var(--bg-darkglasses-deep)
-    ){
-        backdrop-filter: blur(0.2em)
-    }
-    .highlight-li{
+    .feedback-form{
         @include m.mixin-block-construct(
-            200px,
+            100%,
             null,
             v.$rounded-lg, 
             var(--bg-darkglasses-deep)
         ){
-            color: var(--text-primary);
-            padding: 1em;
-            background: var(--text-highlight);
-            text-shadow: var(--text-shadow-inset);
+            backdrop-filter: v.$blur-base
         }
-    }
-    a[href]{
-        font-size: v.$text-sm;
+        .highlight-li{
+            width:200px;
+        }
     }
 }
 
+.contacs-input-label{
+    @extend .flex-between;
+    width: 310px;
+}
+
 .input-label{
-    width: 100px;
+    width: 90px;
 }
 
 //Преймущества
 .appmain-section-advantages{
-    padding-top: 15vh;
     padding-bottom: 15vh;
 }
 
@@ -194,21 +196,9 @@
 }
 
 .section_advantages-item{
-    @extend .flex-start;
-    @include m.mixin-block-construct(
-        clamp(200px, 420px, 100%),
-        200px,
-        v.$rounded-lg,
-        none
-    ){
-        background-size: cover;
-        background-repeat: no-repeat;
-        text-shadow: var(--text-shadow-inset);
-        font-weight: v.$font-bold
-    }
     p{
         @include m.mixin-block-construct(
-            60%,
+            62%,
             100%,
             v.$rounded-lg,
             var(--bg-darkglasses-deep)
@@ -221,13 +211,127 @@
         box-shadow: var(--box-shadow-highlight);
         transform: translateY(-2px);
         p{
-            width: 62%;
+            width: 63%;
             backdrop-filter: v.$blur-base;
+        }
+    }
+    @extend .flex-start;
+    @include m.mixin-block-construct(
+        clamp(200px, 420px, 100%),
+        200px,
+        v.$rounded-lg,
+        none
+    ){
+        background-size: cover;
+        background-repeat: no-repeat;
+        text-shadow: var(--text-shadow-inset);
+    }
+}
+
+//Калькулятор банер
+.appmain-section-calculator_baner{
+    margin-bottom: 10vh;
+}
+
+.section-calculator-baner{
+    width: 90%;
+}
+
+.section-calculator-baner_content{
+    margin-top: 5vh;
+    text-shadow: var(--text-shadow-inset);
+    .feedback-form{
+        @include m.mixin-block-construct(
+            400px,
+            100%,
+            v.$rounded-lg
+        ){
+            backdrop-filter: v.$blur-glass;
         }
     }
 }
 
-//Отзывы
+.calculator_baner{
+    @include m.mixin-block-construct(
+        clamp(fit-content, 750px, 100%),
+        auto,
+        v.$rounded-lg,
+        var(--bg-darkglasses-deep),
+
+    ){
+        backdrop-filter: blur(1em)
+    }
+}
+
+.calculator-baner_step{
+    display: none;
+    @extend .flex-between;
+    @include m.mixin-block-construct(
+        100%,
+        100%,
+        v.$rounded-lg,
+        var(--bg-darkglasses)
+
+    ){
+        flex-direction: column;
+        padding: 1em;
+        gap: 2em;
+    }
+    &.active{
+        display: flex;
+    }
+}
+
+.calculator-baner-step_options{
+    display: flex;
+}
+
+.calculator-baner_nav{
+    .highlight-li{
+        padding: 1em;
+    }
+}
+
+.baner-step-options_button{
+    padding: 1em;
+    @extend .flex-col;
+    align-items: center;
+    transition: v.$transition-base;
+    border-radius: v.$rounded-lg;
+    gap: 1em;
+    img{
+        border-radius: v.$rounded-lg;
+    }
+    &:hover{
+        background: var(--bg-darkglasses);
+        @include m.mixin-block_transform
+    }
+}
+
+.baner-content-form_content{
+    @include m.mixin-block-construct(
+        100%,
+        100%,
+        v.$rounded-lg,
+        var(--bg-darkglasses),
+        null,
+        var(--box-shadow-inset)
+    ){
+        padding: 1em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 1490px){
+    //калькулятор
+    .section-calculator-baner_content{
+        .feedback-form{
+            display: none;
+        }
+    }
+}
 
 @media (max-width: 1090px) {
     //контакты
@@ -246,6 +350,16 @@
     }
 }
 
+@media (max-width: 890px){
+    //калькулятор
+    .calculator_baner{
+        width: 100%;
+    }
+    .calculator-baner-step_options{
+        flex-wrap: wrap;
+    }
+}
+
 @media (max-width: 790px) {
     // Главная страница
     .appmain-board{
@@ -261,6 +375,15 @@
         height: 2px;
         width: 100px;
     }
+
+    //калькулятор
+    .baner-step-options_button{
+        width: clamp(150px, 43%, 100%);
+        img{
+            width: 100%;
+        }
+    }
+
 }
 
 @media (max-width: 490px) {
@@ -268,13 +391,19 @@
     .section_advantages-list{
         flex-direction: column;
     }
+
+    .contacs-input-label{
+        width: 100%;
+    }
+
+    //преймущества
     .section_advantages-item{
         height: 150px;
     }
-
 }
 
 @media (max-width: 390px) {
+
 }
 
 @media (min-width: 1921px) {
