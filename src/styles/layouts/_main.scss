@@ -11,7 +11,8 @@
         var(--bg-darkglasses-deep),
     ){
         margin-top: 100px;
-        backdrop-filter: blur(0.2em);
+        margin-bottom: 10vh;
+        backdrop-filter: v.$blur-base;
     }
 
 }
@@ -87,7 +88,7 @@
     width: 90%
 }
 
-.contacs-content-block{
+.contacs-content-top-list{
     width: clamp(200px, 50%, 100%);
     .hor-bar{
         width: 100%;
@@ -134,14 +135,12 @@ form{
     }
 }
 
-.contacs-content-form{
+.contacs-content_form{
     @include m.mixin-block-construct(
-        clamp(200px, 49%, 100%),
-        auto,
-        v.$rounded-lg, 
-        url('/assets/pic/75053ec34942f60bd319bd40ae4d278e.png'),
-        null,
-        none
+        $width: clamp(200px, 49%, 100%), 
+        $border-radius: v.$rounded-lg, 
+        $background: url('/assets/pic/75053ec34942f60bd319bd40ae4d278e.png'), 
+        $box-shadow: var(--box-shadow-primary)
     ){
         background-size: cover;
         min-height: 680px;
@@ -149,10 +148,11 @@ form{
     }
     .feedback-form{
         @include m.mixin-block-construct(
-            100%,
-            null,
-            v.$rounded-lg, 
-            var(--bg-darkglasses-deep)
+            $width: 100%, 
+            $height: 100%, 
+            $border-radius: v.$rounded-lg, 
+            $background: var(--bg-darkglasses), 
+            $box-shadow: var(--box-shadow-inset)
         ){
             backdrop-filter: v.$blur-base
         }
@@ -160,6 +160,11 @@ form{
             width:200px;
         }
     }
+}
+
+.contacs-content-form_content{
+    background: var(--bg-darkglasses);
+    border-radius: v.$rounded-lg;
 }
 
 .contacs-input-label{
@@ -233,103 +238,121 @@ form{
     margin-bottom: 10vh;
 }
 
-.section-calculator-baner{
+.section_calculator_baner-content{
     width: 90%;
-}
-
-.section-calculator-baner_content{
-    margin-top: 5vh;
-    text-shadow: var(--text-shadow-inset);
-    .feedback-form{
-        @include m.mixin-block-construct(
-            400px,
-            100%,
-            v.$rounded-lg
-        ){
-            backdrop-filter: v.$blur-glass;
-        }
+    .hor-bar{
+        margin-bottom: 5vh;
     }
 }
 
 .calculator_baner{
     @include m.mixin-block-construct(
-        clamp(fit-content, 750px, 100%),
+        clamp(800px, 45%, 100%),
         auto,
-        v.$rounded-lg,
-        var(--bg-darkglasses-deep),
-
+        v.$rounded-lg
     ){
-        backdrop-filter: blur(1em)
+        backdrop-filter: v.$blur-glass;
+        text-shadow: var(--text-shadow-inset);
     }
 }
 
-.calculator-baner_step{
+.calculator_baner-step{
     display: none;
-    @extend .flex-between;
-    @include m.mixin-block-construct(
-        100%,
-        100%,
-        v.$rounded-lg,
-        var(--bg-darkglasses)
-
-    ){
-        flex-direction: column;
-        padding: 1em;
-        gap: 2em;
-    }
     &.active{
         display: flex;
     }
-}
-
-.calculator-baner-step_options{
-    display: flex;
-}
-
-.calculator-baner_nav{
-    .highlight-li{
-        padding: 1em;
-    }
-}
-
-.baner-step-options_button{
-    padding: 1em;
-    @extend .flex-col;
-    align-items: center;
-    transition: v.$transition-base;
-    border-radius: v.$rounded-lg;
-    gap: 1em;
-    img{
-        border-radius: v.$rounded-lg;
-    }
-    &:hover{
-        background: var(--bg-darkglasses);
-        @include m.mixin-block_transform
-    }
-}
-
-.baner-content-form_content{
     @include m.mixin-block-construct(
+        100%, 
         100%,
-        100%,
-        v.$rounded-lg,
-        var(--bg-darkglasses),
-        null,
-        var(--box-shadow-inset)
+        v.$rounded-lg, 
+        var(--bg-darkglasses)
     ){
-        padding: 1em;
-        display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
 }
 
-@media (max-width: 1490px){
-    //калькулятор
-    .section-calculator-baner_content{
-        .feedback-form{
+.step-options_button{
+    @extend .flex-col;
+    gap: 1em;
+    padding: 1em;
+    border-radius: v.$rounded-lg;
+    transition: v.$transition-base;
+    &:hover{
+        @include m.mixin-block_transform;
+        background: var(--bg-darkglasses);
+    }
+    img{
+        border-radius: v.$rounded-lg;
+    }
+}
+
+.calculator_baner-nav{
+    .highlight-li{
+        padding: 1em;
+    }
+}
+
+.calculator_form{
+    @include m.mixin-block-construct(
+        400px,
+        auto,
+        v.$rounded-lg
+    ){
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        backdrop-filter: v.$blur-glass;
+    }
+}
+
+.calculator_form-content,
+.calculator_form-feed{
+    @include m.mixin-block-construct(
+        $width: 100%, 
+        $height: 100%, 
+        $border-radius: v.$rounded-lg, 
+        $background: var(--bg-darkglasses), 
+        $box-shadow: var(--box-shadow-inset)      
+    ){
+        flex-direction: column;
+        padding: 1em;
+        gap: 1em;
+        text-shadow: var(--text-shadow-inset);
+    }
+}
+
+.span_down{
+    opacity: 0;
+}
+
+.calculator_form-button{
+    transition: v.$transition-base;
+    margin-bottom: -1.5em;
+    &:hover{
+        margin-bottom: 0;
+        .span_down{
+            transition: v.$transition-long;
+            opacity: 1;
+        }
+    }
+    &.active {
+        ~ .calculator_form-content {
             display: none;
         }
+        
+        ~ .calculator_form-feed {
+            animation: fadeOut 0.7s ease forwards;
+            display: flex;
+        }
+    }
+}
+
+@media (max-width: 1490px){
+    //калькулятор
+    .calculator_baner-content{
+        flex-direction: column;
+        gap: 1em;
     }
 }
 
@@ -339,11 +362,11 @@ form{
         flex-direction: column;
     }
 
-    .contacs-content-block{
+    .contacs-content-top-list{
         width: 100%;
     }
 
-    .contacs-content-form{
+    .contacs-content_form{
         width: 100%;
         position: relative;
         min-height: 0;
@@ -355,7 +378,7 @@ form{
     .calculator_baner{
         width: 100%;
     }
-    .calculator-baner-step_options{
+    .calculator_baner-step-options{
         flex-wrap: wrap;
     }
 }
@@ -386,6 +409,15 @@ form{
 
 }
 
+@media (max-width: 590px){
+    .step-options_button{
+        width: 45%;
+        img{
+            width: 100%;
+        }
+    }
+}
+
 @media (max-width: 490px) {
     //контакты
     .section_advantages-list{
@@ -399,6 +431,10 @@ form{
     //преймущества
     .section_advantages-item{
         height: 150px;
+    }
+
+    .calculator_form{
+        width: 100%;
     }
 }
 

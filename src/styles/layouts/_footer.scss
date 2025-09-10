@@ -10,7 +10,7 @@
     }
 }
 
-.appfooter-section{
+.appfooter_section{
     @include m.mixin-block-construct(
         $box-shadow: var(--box-shadow-inset),
         $background: var(--bg-darkglasses-extra)
@@ -29,7 +29,7 @@
     }
 }
 
-.appfooter_section_top-logobox{
+.appfooter_section-top-logobox{
     width: clamp(200px, 500px, 100%);
     .highlight-li{
         width: clamp(200px, 100%, 500px);
@@ -38,15 +38,15 @@
     }
 }
 
-.appfooter-contacts{
+.appfooter_contacts{
     width: clamp(200px, 500px, 100%);
 }
 
-.appfooter-menu{
+.appfooter_menu{
     width: clamp(300px, 500px, 100%);
 }
 
-.appfooter-contacts-item{
+.appfooter_contacts-item{
     &:hover{
         img{
             transform: var(--transform-primary);
@@ -59,7 +59,7 @@
     .appfooter_section-top{
         flex-direction: column;
         align-items: center;
-        gap: 1em;
+        gap: 2em;
     }
 }
 

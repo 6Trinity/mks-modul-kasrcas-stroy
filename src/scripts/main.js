@@ -5,8 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const scrollThreshold = 50;
     const button_header = this.querySelector('.appheader_menu-button');
-    const header = this.querySelector('.appheader-section');
+    const header = this.querySelector('.appheader_section');
     const header_menu = this.querySelector('.appheader_menu-nav');
+    const colc_form_button = this.querySelector('.calculator_form-button');
 
     const toggleBodyScroll = (enable) => {
         document.body.style.overflow = enable ? '' : 'hidden';
@@ -24,6 +25,10 @@ document.addEventListener('DOMContentLoaded', function() {
         button_header.classList.toggle('active');
         header_menu.classList.toggle('active');
         toggleBodyScroll(!header_menu.classList.contains('active'));
+    })
+
+    colc_form_button.addEventListener('click', () =>{
+        colc_form_button.classList.toggle('active');
     })
 
     document.querySelectorAll('body a').forEach(link => {
@@ -48,9 +53,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelectorAll('.feedback-form').forEach(form => {
   
-        const phoneInput = form.querySelector('.userPhone');
+        const phoneInput = form.querySelector('.userPhone')
   
         if (phoneInput) {
+            phoneInput.addEventListener('click', function(e) {
+                if (e.target.value === '+7') {
+                    e.target.setSelectionRange(2, 2);
+                }
+            })
+
+            phoneInput.addEventListener('focus', function(e) {
+                if (e.target.value === '+7') {
+                    e.target.setSelectionRange(2, 2);
+                }
+            })
+
             phoneInput.addEventListener('input', function(e) {
                 let value = e.target.value.replace(/\D/g, '');
                 let formattedValue = '+7';
@@ -82,18 +99,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             })
         }
-
-        phoneInput.addEventListener('click', function(e) {
-            if (e.target.value === '+7') {
-                e.target.setSelectionRange(2, 2);
-            }
-        })
-
-        phoneInput.addEventListener('focus', function(e) {
-            if (e.target.value === '+7') {
-                e.target.setSelectionRange(2, 2);
-            }
-        })
 
         form.addEventListener('submit', function(e) {
             e.preventDefault();

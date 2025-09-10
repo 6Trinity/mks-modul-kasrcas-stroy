@@ -10,31 +10,29 @@
     }
 }
 
-.appheader-section{
-    &.scrolled{
-        .highlight-li{
-            border-radius: 0 v.$rounded-xl; 
-        }
-        @include m.mixin-block-construct(
-            clamp(750px, 65%, 55vw), 
-            80px, 
-            0 0 v.$rounded-xl v.$rounded-xl
-        )
-    }   
+.appheader_section{  
     @include m.mixin-block-construct(
         clamp(750px, 50%, 50vw), 
         70px, 
-        v.$rounded-xl, 
+        v.$rounded-lg, 
         var(--bg-darkglasses-deep), 
-        v.$transition-long, 
-        var(--box-shadow-primary)
+        v.$transition-long
     ){
         backdrop-filter: v.$blur-base;
     }
+
+    &.scrolled{
+        width: clamp(750px, 65%, 55vw);
+        height: 80px;
+        border-radius: 0 0 v.$rounded-xl v.$rounded-xl;
+        .highlight-li{
+            border-radius: 0 v.$rounded-lg;
+        }
+    } 
 }
 
 @media (max-width: 1090px) {
-    .appheader-section{
+    .appheader_section{
         width: clamp(190px, 50%, 80vw);
         justify-content: end;
         padding-right: 1em;

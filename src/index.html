@@ -14,10 +14,10 @@
     <body class="flex-col items-center">
         <div class="layout w-full max-w-hd flex-col min-h-screen"> 
             <header class="appheader w-full max-w-hd fixed flex-center">
-                <a class="absolute left-0" href="#">
+                <a class="absolute left-0 p-em" href="#appmain-section-baner">
                     <img class="base-img" loading="lazy" alt="логотип" src="/assets/pic/logo.png">
                 </a>
-                <section class="appheader-section flex-center">
+                <section class="appheader_section flex-center">
                     <nav class="appheader_menu-nav">
                         <ul class="appheader_menu-ul h-full flex gap-em items-center pr-em">
                             <li class="highlight-li"><a href="#appmain-section-baner">Главная</a></li>
@@ -101,7 +101,7 @@
                                 <div class="flex-col">
                                     <div class="flex-start">
                                         <img class="xs-img" loading="lazy" alt="значок" src="/assets/pic/icon/icons8-protect-80.png">
-                                        <span class="appmain_h5">Гарантии</span>
+                                        <span class="appmain_h5">Гарантия</span>
                                     </div>
                                     <p>Lorem ipsum dolor sit amet</p>
                                 </div>
@@ -120,63 +120,153 @@
                     </div>
                 </section>
                 <section class="appmain-section-calculator_baner flex justify-center" id="appmain-section-calculator_baner">
-                    <div class="section-calculator-baner flex-col items-center">
-                        <span class="appmain_h1">Нас выбирают за</span>
-                        <span class="appmain_h2 mb-em">Гойду и СВО</span>
+                    <div class="section_calculator_baner-content flex-col items-center">
+                        <span class="appmain_h1">Получите индивидуальный расчёт стоимости</span>
+                        <span class="appmain_h2 mb-em">вашей бани, ответив на <span class="text-c-dark">6 вопросов</span></span>
                         <div class="hor-bar"></div>
-                        <div class="section-calculator-baner_content flex-around w-full fade-in">
+                        <div class="calculator_baner-content flex-around w-full">
                             <div class="calculator_baner flex-col justify-between">
-                                <div class="calculator-baner_step active">
-                                    <span class="appmain_h3 ml-em">Желаемая площадь дома?</span>
-                                    <div class="calculator-baner-step_options">
-                                        <button class="baner-step-options_button" data-price="250000">
+                                <div class="calculator_baner-step p-em active" data-step="1">
+                                    <span class="appmain_h2 ml-em">Желаемая площадь бани?</span>
+                                    <div class="calculator_baner-step-options flex-between">
+                                        <button class="step-options_button" data-price="250000">
                                             <img src="/assets/pic/test-1.png">
                                             <span>Маленькая<br>до 10м²</span>
                                         </button>
-                                        <button class="baner-step-options_button" data-price="250000">
+                                        <button class="step-options_button" data-price="450000">
                                             <img src="/assets/pic/test-1.png">
                                             <span>Средняя<br>10м² - 15м²</span>
                                         </button>
-                                        <button class="baner-step-options_button" data-price="250000">
+                                        <button class="step-options_button" data-price="650000">
                                             <img src="/assets/pic/test-1.png">
                                             <span>Большая<br>от 15м²</span>
                                         </button>
                                     </div>
                                 </div>
-                                <div class="calculator-baner_nav flex-start p-em gap-em">
-                                    <button class="highlight-li">Назад</button>
+                                <div class="calculator_baner-step p-em" data-step="2">
+                                    <span class="appmain_h2 ml-em">Желаемая площадь бани?</span>
+                                    <div class="flex-between">
+                                        <button class="step-options_button" data-price="250000">
+                                            <img src="/assets/pic/test-1.png">
+                                            <span>Маленькая<br>до 10м²</span>
+                                        </button>
+                                        <button class="step-options_button" data-price="450000">
+                                            <img src="/assets/pic/test-1.png">
+                                            <span>Средняя<br>10м² - 15м²</span>
+                                        </button>
+                                        <button class="step-options_button" data-price="650000">
+                                            <img src="/assets/pic/test-1.png">
+                                            <span>Большая<br>от 15м²</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="calculator_baner-step p-em" data-step="3">
+                                    <span class="appmain_h2 ml-em">Желаемая площадь бани?</span>
+                                    <div class="flex-between">
+                                        <button class="step-options_button" data-price="250000">
+                                            <img src="/assets/pic/test-1.png">
+                                            <span>Маленькая<br>до 10м²</span>
+                                        </button>
+                                        <button class="step-options_button" data-price="450000">
+                                            <img src="/assets/pic/test-1.png">
+                                            <span>Средняя<br>10м² - 15м²</span>
+                                        </button>
+                                        <button class="step-options_button" data-price="650000">
+                                            <img src="/assets/pic/test-1.png">
+                                            <span>Большая<br>от 15м²</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="calculator_baner-step p-em" data-step="4">
+                                    <span class="appmain_h2 ml-em">Желаемая площадь бани?</span>
+                                    <div class="flex-between">
+                                        <button class="step-options_button" data-price="250000">
+                                            <img src="/assets/pic/test-1.png">
+                                            <span>Маленькая<br>до 10м²</span>
+                                        </button>
+                                        <button class="step-options_button" data-price="450000">
+                                            <img src="/assets/pic/test-1.png">
+                                            <span>Средняя<br>10м² - 15м²</span>
+                                        </button>
+                                        <button class="step-options_button" data-price="650000">
+                                            <img src="/assets/pic/test-1.png">
+                                            <span>Большая<br>от 15м²</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="calculator_baner-step p-em" data-step="5">
+                                    <span class="appmain_h2 ml-em">Желаемая площадь бани?</span>
+                                    <div class="flex-between">
+                                        <button class="step-options_button" data-price="250000">
+                                            <img src="/assets/pic/test-1.png">
+                                            <span>Маленькая<br>до 10м²</span>
+                                        </button>
+                                        <button class="step-options_button" data-price="450000">
+                                            <img src="/assets/pic/test-1.png">
+                                            <span>Средняя<br>10м² - 15м²</span>
+                                        </button>
+                                        <button class="step-options_button" data-price="650000">
+                                            <img src="/assets/pic/test-1.png">
+                                            <span>Большая<br>от 15м²</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="calculator_baner-step p-em" data-step="6">
+                                    <span class="appmain_h2 ml-em">Желаемая площадь бани?</span>
+                                    <div class="flex-between">
+                                        <button class="step-options_button" data-price="250000">
+                                            <img src="/assets/pic/test-1.png">
+                                            <span>Маленькая<br>до 10м²</span>
+                                        </button>
+                                        <button class="step-options_button" data-price="450000">
+                                            <img src="/assets/pic/test-1.png">
+                                            <span>Средняя<br>10м² - 15м²</span>
+                                        </button>
+                                        <button class="step-options_button" data-price="650000">
+                                            <img src="/assets/pic/test-1.png">
+                                            <span>Большая<br>от 15м²</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="calculator_baner-nav flex-start gap-em p-em">
+                                    <button id="calculator-baner-nav_prev" class="highlight-li">Назад</button>
                                     <span>1/6</span>
-                                    <button class="highlight-li">Следующий</button>
+                                    <button id="calculator-baner-nav_next" class="highlight-li">Следующий</button>
                                 </div>
                             </div>
-                            <form class="feedback-form flex-col justify-between" action="#" method="POST">
-                                    <span class="flex-center p-em appmain_h3">Остались вопросы?</span>
-                                    <div class="baner-content-form_content">
-                                        <div class="flex-start gap-em">
-                                            <label for="userName" class="input-label text-bold">Ваше имя</label>
-                                            <input type="text" id="userName" title="имя" name="name" placeholder="Имя">
-                                        </div>
-                                        <div class="flex-start gap-em">
-                                            <label for="userPhone" class="input-label text-bold">Телефон</label>
-                                            <input type="tel" title="телефон" id="userPhone" class="userPhone" name="phone" placeholder="Телефон" required>
-                                        </div>
-                                        <div class="flex-start gap-em">
-                                            <label for="userEmail" class="input-label text-bold">Email</label>
-                                            <input type="email" title="email" id="userEmail" name="email" placeholder="Email">
-                                        </div>
-                                        <button type="submit" class="highlight-li">Отправить заявку</button>
-                                        <p class="text-sm"> Нажимая на кнопку, вы соглашаетесь с 
-                                            <a href="pages/PolitPersondata.html" target="_blank">политикой обработки персональных данных</a>
-                                        </p>
+                            <div class="calculator_form">
+                                <button class="calculator_form-button appmain_h3 p-em">В конце теста получите<br><span class="span_down">. . .</span></button>
+                                <div class="calculator_form-content flex">
+                                    <span>Стоимость строительства по вашим параметрам</span>
+                                    <span>1 из 3 подарков на ваш выбор от нашей компании</span>
+                                    <span>Стоимость строительства по вашим параметрам</span>
+                                </div>
+                                <form class="calculator_form-feed feedback-form none">
+                                    <div class="flex-start gap-em">
+                                        <label for="userName" class="input-label text-bold">Ваше имя</label>
+                                        <input type="text" id="userName" title="имя" name="name" placeholder="Имя">
                                     </div>
-                            </form>
+                                    <div class="flex-start gap-em">
+                                        <label for="userPhone" class="input-label text-bold">Телефон</label>
+                                        <input type="tel" title="телефон" id="userPhone" class="userPhone" name="phone" placeholder="Телефон" required>
+                                    </div>
+                                    <div class="flex-start gap-em">
+                                        <label for="userEmail" class="input-label text-bold">Email</label>
+                                        <input type="email" title="email" id="userEmail" name="email" placeholder="Email">
+                                    </div>
+                                    <button type="submit" class="highlight-li">Отправить заявку</button>
+                                    <p class="text-sm"> Нажимая на кнопку, вы соглашаетесь с 
+                                        <a href="pages/PolitPersondata.html" target="_blank">политикой обработки персональных данных</a>
+                                    </p>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </section>
                 <section class="appmain-section-advantages flex justify-center" id="appmain-section-advantages">
                     <div class="section_advantages-content flex-col items-center">
-                        <span class="appmain_h1">Нас выбирают за</span>
-                        <span class="appmain_h2 mb-em">Качество и надежность</span>
+                        <span class="appmain_h1">Выбирая нас вы получите</span>
+                        <span class="appmain_h2 mb-em">современную баню <span class="text-c-dark">под ключ</span></span>
                         <div class="hor-bar"></div>
                         <div class="fade-in section_advantages-list flex justify-center gap-2em w-full p-em flex-wrap">
                             <div class="section_advantages-item">
@@ -212,7 +302,7 @@
                 <section class="appmain-section-contacs flex justify-center" id="appmain-section-contacs">
                     <div class="section_contacs-content flex-col justify-between relative gap-em">
                         <div class="contacs_content-top w-full flex gap-em">
-                            <div class="contacs-content-block flex-col gap-em">
+                            <div class="contacs-content-top-list flex-col gap-em">
                                 <span class="appmain_h1 text-bold">Как с нами связаться ?</span>
                                 <div class="hor-bar"></div>
                                 <p>
@@ -239,7 +329,7 @@
                                         <img loading="lazy" alt="значок" class="xs-img" src="/assets/pic/icon/icons8-phone-96.png">
                                         <div class="flex-col">
                                             <span class="appmain_h5">Телефон</span>
-                                            <a title="Телефон: +79990852040" href="tel:+79990852040">+7 909 085 20-40</a>
+                                            <a title="Телефон: +7 (995) 334 92-60" href="tel:+79953349260">+7 (995) 334 92-60</a>
                                         </div>
                                     </div>
                                     <div class="section_contacs-item fade-in flex-start gap-em p-em">
@@ -251,36 +341,36 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="contacs-content-form flex absolute right-0">
-                                <form class="feedback-form flex-col gap-2em p-em" id="feedbackForm" action="#" method="POST">
-                                    <div class="flex-col">
-                                        <span class="appmain_h2 text-bold">Оставьте заявку</span>
-                                        <p>Мы перезвоним вам в течение 1 часа</p>
-                                    </div>
-                                    <input type="hidden" name="subject" value="Заявка с сайта МКС Модуль Каркас Строй">
-                                    <div class="flex-col gap-em">
-                                        <label class="contacs-input-label">
-                                            Ваше имя
-                                            <input type="text" title="имя" name="name" placeholder="Имя">
-                                        </label>
-                                        <label class="contacs-input-label">
-                                            Телефон
-                                            <input type="tel" title="телефон" name="phone" placeholder="Телефон" required>
-                                        </label>
-                                        <label class="contacs-input-label">
-                                            Email
-                                            <input type="email" title="email" name="email" placeholder="Email">
-                                        </label>
-                                        <div class="gap-em flex-col">
-                                            <label for="userMessage">Сообщение</label>
-                                            <textarea id="userMessage" name="message" placeholder="Расскажите о вашей будущей бане или задайте вопрос" rows="4"></textarea>
+                            <div class="contacs-content_form absolute flex right-0">
+                                <div class="contacs-content-form_content flex-col w-full min-h-full">
+                                    <span class="appmain_h2 text-bold p-em">Оставьте заявку</span>
+                                    <form class="feedback-form flex-col gap-2em p-em" id="feedbackForm" action="#" method="POST">
+                                        <p class="text-bold">Мы перезвоним вам в течение 1 часа</p>
+                                        <input type="hidden" name="subject" value="Заявка с сайта МКС Модуль Каркас Строй">
+                                        <div class="flex-col gap-em">
+                                            <label class="contacs-input-label">
+                                                Ваше имя
+                                                <input type="text" title="имя" name="name" placeholder="Имя">
+                                            </label>
+                                            <label class="contacs-input-label">
+                                                Телефон
+                                                <input type="tel" title="телефон" name="phone" placeholder="Телефон" required>
+                                            </label>
+                                            <label class="contacs-input-label">
+                                                Email
+                                                <input type="email" title="email" name="email" placeholder="Email">
+                                            </label>
+                                            <div class="gap-em flex-col">
+                                                <label for="userMessage">Сообщение</label>
+                                                <textarea id="userMessage" name="message" placeholder="Расскажите о вашей будущей бане или задайте вопрос" rows="4"></textarea>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <button type="submit" class="highlight-li">Отправить заявку</button>
-                                    <p class="text-sm"> Нажимая на кнопку, вы соглашаетесь с 
-                                        <a href="pages/PolitPersondata.html" target="_blank">политикой обработки персональных данных</a>
-                                    </p>
-                                </form>
+                                        <button type="submit" class="highlight-li">Отправить заявку</button>
+                                        <p class="text-sm"> Нажимая на кнопку, вы соглашаетесь с 
+                                            <a href="pages/PolitPersondata.html" target="_blank">политикой обработки персональных данных</a>
+                                        </p>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                         <iframe class="appmain_map-frame w-full" src="https://yandex.ru/map-widget/v1/?from=api-maps&ll=61.417304%2C55.115877&mode=search&ol=geo&origin=jsapi21&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjA0NTgwMRJQ0KDQvtGB0YHQuNGPLCDQp9C10LvRj9Cx0LjQvdGB0LosIDEt0Y8g0K3Qu9C10LrRgtGA0L7QstC-0LfQvdCw0Y8g0YPQu9C40YbQsCwgMjQiCg1Rq3VCFah2XEI%2C&z=17" frameborder="1" allowfullscreen="true"></iframe>
@@ -288,21 +378,20 @@
                 </section>
             </main>
             <footer class="appfooter flex">
-                <section class="appfooter-section flex-col">
+                <section class="appfooter_section flex-col">
                     <div class="appfooter_section-top flex justify-between p-em w-full h-full">
-                        <div class="appfooter_section_top-logobox flex-col gap-em">
+                        <div class="appfooter_section-top-logobox flex-col gap-em">
                             <div class="flex-center">
                                 <img class="xl-img" loading="lazy" alt="Логотип" src="/assets/pic/logo.png">
                                 <span class="appmain_h2 text-bold">МКС<br>Модуль Каркас Строй</span>
                             </div>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                                sed do eiusmod tempor incididunt ut labore et dolore magna 
-                                aliqua.
+                                Поможем подобрать идеальную баню под ваш участок и бюджет.
+                                Надёжно. Красиво. Готово к использованию с первого дня
                             </p>
                             <span class="highlight-li"><a href="#">Бесплатная консультация</a></span>
                         </div>
-                        <div class="appfooter-menu flex-col gap-em items-center">
+                        <div class="appfooter_menu flex-col gap-em items-center">
                             <span class="appmain_h2 text-bold">Помощь в выборе</span>
                             <div class="hor-bar"></div>
                             <div class="flex-col gap-05">
@@ -313,31 +402,31 @@
                                 <a title="Задать нам вопрос/Ask us a question" href="#feedbackForm">Задать нам вопрос</a>
                             </div>
                         </div>
-                        <div class="appfooter-contacts flex-col items-center gap-em">
+                        <div class="appfooter_contacts flex-col items-center gap-em">
                             <span class="appmain_h2 text-bold">Связаться с нами</span>
                             <div class="hor-bar"></div>
                             <div class="flex-col items-start gap-05">
-                                <div class="appfooter-contacts-item flex-center gap-em">
+                                <div class="appfooter_contacts-item flex-center gap-em">
                                     <img loading="lazy" alt="значок" class="xs-img" src="/assets/pic/icon/icons8-calendar-96.png">
                                     <a title="График: c 08:00 до 23:00" href="#">Ежедневно с 08:00 до 23:00</a>
                                 </div>
-                                <div class="appfooter-contacts-item flex-center gap-em">
+                                <div class="appfooter_contacts-item flex-center gap-em">
                                     <img loading="lazy" alt="значок" class="xs-img" src="/assets/pic/icon/icons8-location-96.png">
                                     <a title="Адрес: Челябинск, р-н Ленинский, 1-я Электровозная ул. 24" href="https://yandex.ru/maps/56/chelyabinsk/house/1_ya_elektrovoznaya_ulitsa_24/YkgYcgZnSkUDQFtvfX1wdHRkYw==/?from=api-maps&ll=61.417304%2C55.115877&origin=jsapi21&z=17">Челябинск, р-н Ленинский, 1-я Электровозная ул. 24</a>
                                 </div>
-                                <div class="appfooter-contacts-item flex-center gap-em">
+                                <div class="appfooter_contacts-item flex-center gap-em">
                                     <img loading="lazy" alt="значок" class="xs-img" src="/assets/pic/icon/icons8-phone-96.png">
-                                    <a title="Телефон: +7 909 085 20-40" href="tel:+79990852040">+7 909 085 20-40</a>
+                                    <a title="Телефон: +7 (995) 334 92-60" href="tel:+79953349260">+7 (995) 334 92-60</a>
                                 </div>
-                                <div class="appfooter-contacts-item flex-center gap-em">
+                                <div class="appfooter_contacts-item flex-center gap-em">
                                     <img loading="lazy" alt="значок" class="xs-img" src="/assets/pic/icon/icons8-email-96.png">
                                     <a title="Почта: goida@mail.ru" href="mailto:goida@mail.ru">goida@mail.ru</a>
                                 </div>
                             </div>
                             <div class="flex">
-                                <a href="#"><img src="/assets/pic/icon/Avito.png" class="sm-img"></a>
-                                <a href="#"><img src="/assets/pic/icon/icons8-telegram-240.png" class="sm-img"></a>
-                                <a href="#"><img src="/assets/pic/icon/icons8-whatsapp-96.png" class="sm-img"></a>
+                                <a href="https://www.avito.ru/user/0e46f1446f5b50f0cd76d434861b8128/profile/all?iid=7434674965&page_from=from_item_messenger&src=messenger&id=7434674965&sellerId=0e46f1446f5b50f0cd76d434861b8128"><img src="/assets/pic/icon/Avito.png" class="sm-img"></a>
+                                <a href="https://t.me/@ghostesun"><img src="/assets/pic/icon/icons8-telegram-240.png" class="sm-img"></a>
+                                <a href="https://wa.me/79953349260"><img src="/assets/pic/icon/icons8-whatsapp-96.png" class="sm-img"></a>
                             </div>
                         </div>
                     </div>
