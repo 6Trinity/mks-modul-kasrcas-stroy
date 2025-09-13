@@ -3,6 +3,53 @@ import '@/styles/main.scss';
 let steps, prevBtn, nextBtn, counter, colc_form_button, 
 currentStep, totalPrice, userSelections;
 
+const GOOGLE_FORM_ID = '1FAIpQLSfv-nxvgjLHYWsg5nGpOkqsZk3voWtGDy30Rof2gHP65peyWA'; 
+const GOOGLE_FORM_URL = `https://docs.google.com/forms/d/e/${GOOGLE_FORM_ID}/formResponse`;
+
+const FIELD_IDS = {
+    name: 'entry.38755223',      // Поле "Имя"
+    phone: 'entry.1626865542',   // Поле "Телефон"
+    email: 'entry.910260297',   // Поле "Email" 
+    message: 'entry.1197614220', // Поле "Сообщение"
+    testData: 'entry.574560963' // Для результатов теста
+};
+
+async function sendToGoogleForm(formData) {
+    try {
+        const formPayload = new URLSearchParams();
+        
+        // Добавляем данные в форму
+        formPayload.append(FIELD_IDS.name, formData.name || 'Не указано');
+        formPayload.append(FIELD_IDS.phone, formData.phone || 'Не указано');
+        formPayload.append(FIELD_IDS.email, formData.email || 'Не указано');
+        formPayload.append(FIELD_IDS.message, formData.message || 'Не указано');
+        
+        // Добавляем результаты теста
+        if (userSelections.length > 0) {
+            const testResults = userSelections.map(item => 
+                `${item.name} - ${item.price.toLocaleString()} руб.`
+            ).join('; ');
+            
+            formPayload.append(FIELD_IDS.testData, 
+                `Опции: ${testResults}; Итого: ${totalPrice.toLocaleString()} руб.`);
+        }
+
+        // Отправляем в Google Forms
+        await fetch(GOOGLE_FORM_URL, {
+            method: 'POST',
+            body: formPayload,
+            mode: 'no-cors'
+        });
+
+        return true;
+        
+    } catch (error) {
+        console.log('Данные сохранены локально');
+        saveToLocalStorage(formData);
+        return true;
+    }
+}
+
 const toggleBodyScroll = (enable) => {
     document.body.style.overflow = enable ? '' : 'hidden';
 };
@@ -32,32 +79,45 @@ function setupEventListeners() {
     prevBtn.addEventListener('click', prevStep);
     
     nextBtn.addEventListener('click', nextStep);
+
+    const calculatorForm = document.querySelector('.calculator-form__feed');
+    if (calculatorForm) {
+        calculatorForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: this.querySelector('[name="name"]').value,
+                phone: this.querySelector('[name="phone"]').value,
+                email: this.querySelector('[name="email"]').value,
+                message: 'Заявка из калькулятора'
+            };
+            
+            await sendToGoogleForm(formData);
+            this.reset();
+        });
+    }
+    
+    // Обработчик для основной формы обратной связи
+    const feedbackForm = document.getElementById('feedbackForm');
+    if (feedbackForm) {
+        feedbackForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: this.querySelector('[name="name"]').value,
+                phone: this.querySelector('[name="phone"]').value,
+                email: this.querySelector('[name="email"]').value,
+                message: this.querySelector('[name="message"]').value || ''
+            };
+            
+            await sendToGoogleForm(formData);
+            this.reset();
+        });
+    }
 };
 
 function nextStep() {
-    if (currentStep < steps.length) {
-        steps[currentStep - 1].classList.remove('active');
-        currentStep++;
-        steps[currentStep - 1].classList.add('active');
-        updateCounter();
-
-        if (currentStep === steps.length) {
-            document.getElementById('total-price').textContent = totalPrice.toLocaleString();
-            colc_form_button.classList.add('active');
-            nextBtn.textContent = 'Завершить';
-            const selectionsHTML = userSelections.map(item => 
-                `<div class="flex gap-05">
-                    <span>${item.name} ~ </span>
-                    <span>${item.price.toLocaleString()} руб.</span>
-                </div>`
-            ).join('');
-
-            const finalStep = document.getElementById('result-price');
-            finalStep.innerHTML = `${selectionsHTML}`;
-            }
-    } else {
-        resetCalculator();
-    }
+    
 };
 
 function prevStep() {
@@ -103,6 +163,34 @@ function resetCalculator() {
     }
 };
 
+function formatPhoneNumber(phone) {
+    let cleaned = phone.replace(/\D/g, '');
+    
+    if (cleaned.length === 11 && cleaned[0] === '8') {
+        cleaned = '7' + cleaned.slice(1);
+    }
+    
+    let formattedValue = '+7';
+    
+    if (cleaned.length > 1) {
+        const restNumbers = cleaned.substring(1);
+        
+        if (restNumbers.length > 0) {
+            formattedValue += ' (' + restNumbers.substring(0, 3);
+        }
+        if (restNumbers.length > 3) {
+            formattedValue += ') ' + restNumbers.substring(3, 6);
+        }
+        if (restNumbers.length > 6) {
+            formattedValue += '-' + restNumbers.substring(6, 8);
+        }
+        if (restNumbers.length > 8) {
+            formattedValue += '-' + restNumbers.substring(8, 10);
+        }
+    }
+    
+    return formattedValue;
+};
 class ScrollAnimator {
     constructor() {
         this.observer = null;
@@ -135,16 +223,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const button_header = document.querySelector('.appheader_menu-button');
     const header = document.querySelector('.appheader_section');
     const header_menu = document.querySelector('.appheader_menu-nav');
-    colc_form_button = document.querySelector('.calculator-form__button');
 
     currentStep = 1;
     totalPrice = 0;
     userSelections = [];
 
+    colc_form_button = document.querySelector('.calculator-form__button');
     steps = document.querySelectorAll('.calculator-test__step');
     prevBtn = document.getElementById('calculator-test__prev');
     nextBtn = document.getElementById('calculator-test__next');
     counter = document.getElementById('nav-steps');
+
 
     new ScrollAnimator();
 
@@ -182,6 +271,44 @@ document.addEventListener('DOMContentLoaded', function() {
                         behavior: 'smooth'
                     });
                 }
+            }
+        });
+    });
+
+    document.querySelectorAll('.userPhone').forEach(phoneInput => {
+        if (!phoneInput.value) {
+            phoneInput.value = '+7';
+        }
+
+        phoneInput.addEventListener('click', function(e) {
+            if (e.target.value === '+7') {
+                e.target.setSelectionRange(2, 2);
+            }
+        });
+
+        phoneInput.addEventListener('focus', function(e) {
+            if (e.target.value === '+7') {
+                setTimeout(() => e.target.setSelectionRange(2, 2), 0);
+            }
+        });
+
+        phoneInput.addEventListener('input', function(e) {
+            const selectionStart = e.target.selectionStart;
+            let value = e.target.value.replace(/\D/g, '');
+            
+            let formattedValue = formatPhoneNumber(value);
+            e.target.value = formattedValue;
+            
+            if (selectionStart === 2 && formattedValue.length > 2) {
+                e.target.setSelectionRange(2, 2);
+            }
+        });
+
+        phoneInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Backspace' && /[^\d]/.test(phoneInput.value[phoneInput.selectionStart - 1])) {
+                e.preventDefault();
+                const newPosition = phoneInput.selectionStart - 1;
+                phoneInput.setSelectionRange(newPosition, newPosition);
             }
         });
     });
