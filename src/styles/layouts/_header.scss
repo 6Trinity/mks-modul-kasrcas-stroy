@@ -10,7 +10,7 @@
     }
 }
 
-.appheader_section{  
+.appheader-baner{  
     @include m.mixin-block-construct(
         clamp(750px, 50%, 50vw), 
         70px, 
@@ -32,13 +32,13 @@
 }
 
 @media (max-width: 1090px) {
-    .appheader_section{
+    .appheader-baner{
         width: clamp(190px, 50%, 80vw);
         justify-content: end;
         padding-right: 1em;
         &.scrolled{
             width: clamp(190px, 55%, 90vw);
-            .appheader_menu-nav{
+            .appheader-baner__nav{
                 margin-left: 2.5vw;
             }
         }

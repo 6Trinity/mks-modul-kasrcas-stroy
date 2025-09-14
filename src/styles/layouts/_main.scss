@@ -2,23 +2,8 @@
 @use '../utils/variables' as v;
 @use '../utils/utility';
 
-//Политика конф
-.appmain-polit-con{
-    @include m.mixin-block-construct(
-        90%,
-        null,
-        v.$rounded-lg,
-        var(--bg-darkglasses-deep),
-    ){
-        margin-top: 100px;
-        margin-bottom: 10vh;
-        backdrop-filter: v.$blur-base;
-    }
-
-}
-
 // Главная страница
-.appmain-section-baner{
+.appmain-baner{
     background: url('/assets/pic/back.png');
     background-position: 10%;
     background-size: cover;
@@ -26,7 +11,7 @@
     margin-bottom: 15vh;
 }
 
-.appmain-baner-highlight{
+.appmain-baner__highlight{
     .highlight-li{
         width: clamp(50px, 300px, 100%);
         height: 50px;
@@ -34,16 +19,16 @@
     }
 }
 
-.section_baner-content{
+.appmain-baner__conteiner{
     padding-top: 80px;
     width: clamp(200px, 90vw, 100%);
 }
 
-.baner_content_top-content{
+.appmain-baner__content{
     width: clamp(200px, 800px, 100%);
 }
 
-.appmain-board{
+.appmain-baner__board{
     @include m.mixin-block-construct(
         clamp(750px, 800px, 100%),
         auto,
@@ -55,7 +40,7 @@
     }
 }
 
-.appmain_board-item{
+.appmain-baner__item{
     &:hover{
         img{
             transform: var(--transform-highlight);
@@ -72,7 +57,7 @@
     )
 }
 
-.appmain_menu-ul{
+.appmain_baner__ul{
     li{
         height: 40px;
         width: clamp(50px, 150px, 100%);
@@ -80,22 +65,22 @@
 }
 
 // Контакты
-.appmain-section-contacs{
+.contacs-baner{
     margin-bottom: 15vh;
 }
 
-.section_contacs-content{
+.contacs-baner__conteiner{
     width: 90%
 }
 
-.contacs-content-top-list{
+.contacs-baner__board{
     width: clamp(200px, 50%, 100%);
     .hor-bar{
         width: 100%;
     }
 }
 
-.section_contacs-item{
+.contacs-baner__item{
     @include m.mixin-block-construct(
         $border-radius: v.$rounded-lg, 
         $background: var(--bg-darkglasses-extra)
@@ -110,7 +95,7 @@
     }
 }
 
-.appmain_map-frame{
+.contacs-baner__frame{
     @include m.mixin-block-construct( 
         $border-radius: v.$rounded-lg, 
         $background: none 
@@ -120,22 +105,7 @@
     }
 }
 
-form{
-    .highlight-li{
-        background: var(--text-highlight);
-        padding: 1em;
-    }
-    a[href]{
-        font-size: v.$text-sm;
-    }
-    input, 
-    textarea{
-        padding: 8px;
-        border-bottom: 2px solid var(--text-highlight); 
-    }
-}
-
-.contacs-content_form{
+.contacs-baner__form{
     @include m.mixin-block-construct(
         $width: clamp(200px, 49%, 100%), 
         $border-radius: v.$rounded-lg, 
@@ -162,45 +132,52 @@ form{
     }
 }
 
-.contacs-content-form_content{
+.contacs-form__content{
     background: var(--bg-darkglasses);
     border-radius: v.$rounded-lg;
 }
 
-.contacs-input-label{
+.contacs-form__label{
     @extend .flex-between;
     width: 310px;
 }
 
-.input-label{
-    width: 90px;
-}
-
 //Преймущества
-.appmain-section-advantages{
+.advantages-baner{
     padding-bottom: 15vh;
 }
 
-.section_advantages-content{
+.advantages-baner__conteiner{
     width: 90%;
 }
 
-.section_advantages-list{
+.advantages-baner__board{
     margin-top: 5vh;
     max-height: 80vh;
     overflow-y: auto;
-    .section_advantages-item:nth-child(1){background: url('/assets/pic/card-1.webp')}
-    .section_advantages-item:nth-child(2){background: url('/assets/pic/card-2.png')}
-    .section_advantages-item:nth-child(3){background: url('/assets/pic/card-3.png')}
-    .section_advantages-item:nth-child(4){background: url('/assets/pic/card-4.png')}
-    .section_advantages-item:nth-child(5){background: url('/assets/pic/card-5.png')}
-    .section_advantages-item:nth-child(6){background: url('/assets/pic/card-6.png')}
-    .section_advantages-item:nth-child(7){background: url('/assets/pic/card-7.png')}
-    .section_advantages-item:nth-child(8){background: url('/assets/pic/card-8.png')}
-    .section_advantages-item:nth-child(9){background: url('/assets/pic/card-9.png')}
+    .advantages-baner__item:nth-child(1){background: url('/assets/pic/card-1.webp')}
+    .advantages-baner__item:nth-child(2){background: url('/assets/pic/card-2.png')}
+    .advantages-baner__item:nth-child(3){background: url('/assets/pic/card-3.png')}
+    .advantages-baner__item:nth-child(4){background: url('/assets/pic/card-4.png')}
+    .advantages-baner__item:nth-child(5){background: url('/assets/pic/card-5.png')}
+    .advantages-baner__item:nth-child(6){background: url('/assets/pic/card-6.png')}
+    .advantages-baner__item:nth-child(7){background: url('/assets/pic/card-7.png')}
+    .advantages-baner__item:nth-child(8){background: url('/assets/pic/card-8.png')}
+    .advantages-baner__item:nth-child(9){background: url('/assets/pic/card-9.png')}
 }
 
-.section_advantages-item{
+.advantages-baner__item{
+    @extend .flex-start;
+    @include m.mixin-block-construct(
+        clamp(200px, 420px, 100%),
+        200px,
+        v.$rounded-lg,
+        none
+    ){
+        background-size: cover;
+        background-repeat: no-repeat;
+        text-shadow: var(--text-shadow-inset);
+    }
     p{
         @include m.mixin-block-construct(
             62%,
@@ -219,17 +196,6 @@ form{
             width: 63%;
             backdrop-filter: v.$blur-base;
         }
-    }
-    @extend .flex-start;
-    @include m.mixin-block-construct(
-        clamp(200px, 420px, 100%),
-        200px,
-        v.$rounded-lg,
-        none
-    ){
-        background-size: cover;
-        background-repeat: no-repeat;
-        text-shadow: var(--text-shadow-inset);
     }
 }
 
@@ -360,6 +326,20 @@ form{
     }
 }
 
+//Политика конф
+.appmain-polit-con{
+    @include m.mixin-block-construct(
+        90%,
+        null,
+        v.$rounded-lg,
+        var(--bg-darkglasses-deep),
+    ){
+        margin-top: 100px;
+        margin-bottom: 10vh;
+        backdrop-filter: v.$blur-base;
+    }
+
+}
 
 @media (max-width: 1490px){
     //калькулятор
@@ -371,15 +351,15 @@ form{
 
 @media (max-width: 1090px) {
     //контакты
-    .contacs_content-top{
+    .contacs-baner__content{
         flex-direction: column;
     }
 
-    .contacs-content-top-list{
+    .contacs-baner__board{
         width: 100%;
     }
 
-    .contacs-content_form{
+    .contacs-baner__form{
         width: 100%;
         position: relative;
         min-height: 0;
@@ -399,12 +379,12 @@ form{
 
 @media (max-width: 790px) {
     // Главная страница
-    .appmain-board{
+    .appmain-baner__board{
         width: 100%;
         flex-direction: column;
     }
 
-    .appmain_board-item{
+    .appmain-baner__item{
         flex-direction: column;
     }
 
@@ -423,23 +403,19 @@ form{
 
 }
 
-@media (max-width: 590px){
-
-}
-
 @media (max-width: 490px) {
     //контакты
-    .section_advantages-list{
-        flex-direction: column;
-    }
-
-    .contacs-input-label{
+    .contacs-form__label{
         width: 100%;
     }
 
     //преймущества
-    .section_advantages-item{
+    .advantages-baner__item{
         height: 150px;
+    }
+
+    .advantages-baner__board{
+        flex-direction: column;
     }
 
     //калькулятор
@@ -448,13 +424,9 @@ form{
     }
 }
 
-@media (max-width: 390px) {
-
-}
-
 @media (min-width: 1921px) {
     //главная
-    .appmain-section-baner{
+    .appmain-baner{
         min-height: 1080px;
     }
 }

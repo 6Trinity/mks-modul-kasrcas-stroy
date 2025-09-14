@@ -5,7 +5,7 @@ button{
     text-shadow: var(--text-shadow-inset);
 }
 
-.appheader_menu-toggle{
+.button-conteiner__toggle{
     @include m.mixin-block-construct(
         100%, 
         4px, 
@@ -16,26 +16,26 @@ button{
     )
 }
 
-.menu_button-box{
+.button-conteiner{
     width: 30px;
     height: 30px;
 }
 
-.appheader_menu-button{
+.appheader-baner__button{
     &:hover{
-        .appheader_menu-toggle{
+        .button-conteiner__toggle{
             box-shadow: var(--box-shadow-highlight)
         }
     }
     &.active{
-        .appheader_menu-toggle:nth-child(1) {transform: translateY(10px) rotate(45deg)}
-        .appheader_menu-toggle:nth-child(2) {opacity: 0}
-        .appheader_menu-toggle:nth-child(3) {transform: translateY(-10px) rotate(-45deg)}
+        .button-conteiner__toggle:nth-child(1) {transform: translateY(10px) rotate(45deg)}
+        .button-conteiner__toggle:nth-child(2) {opacity: 0}
+        .button-conteiner__toggle:nth-child(3) {transform: translateY(-10px) rotate(-45deg)}
     }
 } 
 
 @media (max-width: 1090px) {
-    .appheader_menu-button{
+    .appheader-baner__button{
         display: flex;
     }
 }

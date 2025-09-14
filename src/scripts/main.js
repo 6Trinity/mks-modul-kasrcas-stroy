@@ -243,9 +243,9 @@ class ScrollAnimator {
 document.addEventListener('DOMContentLoaded', function() {
 
     const scrollThreshold = 50;
-    const button_header = document.querySelector('.appheader_menu-button');
-    const header = document.querySelector('.appheader_section');
-    const header_menu = document.querySelector('.appheader_menu-nav');
+    const button_header = document.querySelector('.appheader-baner__button');
+    const header = document.querySelector('.appheader-baner');
+    const header_menu = document.querySelector('.appheader-baner__nav');
 
     currentStep = 1;
     totalPrice = 0;

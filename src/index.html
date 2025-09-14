@@ -17,14 +17,14 @@
                 <a class="absolute left-0 p-em" href="#appmain-section-baner">
                     <img class="base-img" loading="lazy" alt="логотип" src="/assets/pic/logo.png">
                 </a>
-                <section class="appheader_section flex-center">
-                    <nav class="appheader_menu-nav">
-                        <ul class="appheader_menu-ul h-full flex gap-em items-center pr-em">
+                <section class="appheader-baner flex-center">
+                    <nav class="appheader-baner__nav">
+                        <ul class="appheader-baner__ul h-full flex gap-em items-center pr-em">
                             <li class="highlight-li"><a href="#appmain-section-baner">Главная</a></li>
-                            <li class="appheader_dropmenu-li">
+                            <li class="appheader-dropmenu__li">
                                 <a href="#">Каталог</a>
-                                <nav class="appheader_dropmenu-nav none absolute">
-                                    <ul class="appheader_dropmenu-ul flex-col gap-em p-em">
+                                <nav class="appheader-dropmenu__nav none absolute">
+                                    <ul class="appheader-dropmenu__ul flex-col gap-em p-em">
                                         <li><a href="#">Баня для нищих</a></li>
                                         <li><a href="#">Баня для менее нищих</a></li>
                                         <li><a href="#">Баня для средних</a></li>
@@ -40,23 +40,23 @@
                             <li><a href="#appmain-section-contacs">Контакты</a></li>
                         </ul>
                     </nav>
-                    <button class="appheader_menu-button none">
-                        <div class="menu_button-box none flex-col justify-around">
-                            <div class="appheader_menu-toggle"></div>
-                            <div class="appheader_menu-toggle"></div>
-                            <div class="appheader_menu-toggle"></div>
+                    <button class="appheader-baner__button none">
+                        <div class="button-conteiner none flex-col justify-around">
+                            <div class="button-conteiner__toggle"></div>
+                            <div class="button-conteiner__toggle"></div>
+                            <div class="button-conteiner__toggle"></div>
                         </div>
                     </button>
                 </section>
             </header>
             <main class="appmain flex-col"> 
-                <section class="appmain-section-baner max-h-hd min-h-screen items-end flex justify-center p-em gap-em" id="appmain-section-baner">
-                    <div class="section_baner-content flex-col flex-between">
-                        <div class="baner_content-top flex w-full justify-start">
-                            <div class="baner_content_top-content flex-col gap-05">
+                <section class="appmain-baner max-h-hd min-h-screen items-end flex justify-center p-em gap-em" id="appmain-section-baner">
+                    <div class="appmain-baner__conteiner flex-col flex-between">
+                        <div class="flex w-full justify-start">
+                            <div class="appmain-baner__content flex-col gap-05">
                                 <span class="appmain_h">Постройка модульных каркасных бань и домов</span>
-                                <nav class="appmain_menu-nav">
-                                    <ul class="appmain_menu-ul flex gap-em">
+                                <nav>
+                                    <ul class="appmain_baner__ul flex gap-em">
                                         <li class="highlight-li"><a href="#">Бани</a></li>
                                         <li class="highlight-li"><a href="#">Дома</a></li>
                                         <li class="highlight-li"><a href="#">Услуги</a></li>
@@ -68,16 +68,15 @@
                                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
                                     ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                 </p>
-                                <span class="appmain-baner-highlight">
+                                <span class="appmain-baner__highlight">
                                     <span class="highlight-li mb-em">
                                         <a href="#">Выбрать баню</a>
                                     </span>
-                                </span>
-                                
+                                </span>                
                             </div>
                         </div>
-                        <div class="appmain-board flex p-em gap-05">
-                            <div class="appmain_board-item flex gap-05">
+                        <div class="appmain-baner__board flex p-em gap-05">
+                            <div class="appmain-baner__item flex gap-05">
                                 <div class="flex-col">
                                     <div class="flex-start">
                                         <img class="xs-img" loading="lazy" alt="значок" src="/assets/pic/icon/icons8-calendar-80.png">
@@ -87,7 +86,7 @@
                                 </div>
                                 <div class="horizontal-bar"></div>
                             </div>
-                            <div class="appmain_board-item flex gap-05">
+                            <div class="appmain-baner__item flex gap-05">
                                 <div class="flex-col">
                                     <div class="flex-start">
                                         <img class="xs-img mr-01em" loading="lazy" alt="значок" src="/assets/pic/icon/icons8-handshake-80.png">
@@ -97,7 +96,7 @@
                                 </div>
                                 <div class="horizontal-bar"></div>
                             </div>
-                            <div class="appmain_board-item flex gap-05">
+                            <div class="appmain-baner__item flex gap-05">
                                 <div class="flex-col">
                                     <div class="flex-start">
                                         <img class="xs-img" loading="lazy" alt="значок" src="/assets/pic/icon/icons8-protect-80.png">
@@ -107,7 +106,7 @@
                                 </div>
                                 <div class="horizontal-bar"></div>
                             </div>
-                            <div class="appmain_board-item flex gap-05">
+                            <div class="appmain-baner__item flex gap-05">
                                 <div class="flex-col">
                                     <div class="flex-start">
                                         <img class="xs-img" loading="lazy" alt="значок" src="/assets/pic/icon/icons8-warranty-80.png">
@@ -286,46 +285,46 @@
                         </div>
                     </div>
                 </section>
-                <section class="appmain-section-advantages flex justify-center" id="appmain-section-advantages">
-                    <div class="section_advantages-content flex-col items-center">
+                <section class="advantages-baner flex justify-center" id="appmain-section-advantages">
+                    <div class="advantages-baner__conteiner flex-col items-center">
                         <span class="appmain_h1">Выбирая нас вы получите</span>
                         <span class="appmain_h2 mb-em">современную баню <span class="text-c-dark">под ключ</span></span>
                         <div class="hor-bar"></div>
-                        <div class="fade-in section_advantages-list flex justify-center gap-2em w-full p-em flex-wrap">
-                            <div class="section_advantages-item">
+                        <div class="advantages-baner__board fade-in flex justify-center gap-2em w-full p-em flex-wrap">
+                            <div class="advantages-baner__item">
                                 <p><span class="text-bold">Утепление</span> - 100 мм (пол, стены, потолок) для сохранения тепла</p>
                             </div>
-                            <div class="section_advantages-item">
+                            <div class="advantages-baner__item">
                                 <p><span class="text-bold">Фасад</span> – планкен, фальшбрус сорт АБ и профлист С-20</p>
                             </div>
-                            <div class="section_advantages-item">
+                            <div class="advantages-baner__item">
                                 <p><span class="text-bold">Крыша</span> – утепленная металлочерепица с гидро- и пароизоляцией для надежной защиты</p>
                             </div>
-                            <div class="section_advantages-item">
+                            <div class="advantages-baner__item">
                                 <p><span class="text-bold">Фундамент</span> – винтовые сваи или ЖБ опоры</p>
                             </div>
-                            <div class="section_advantages-item">
+                            <div class="advantages-baner__item">
                                 <p><span class="text-bold">Окна</span> – пвх профиль 70 мм, двойные энергосберегающие стеклопакеты</p>
                             </div>
-                            <div class="section_advantages-item">
+                            <div class="advantages-baner__item">
                                 <p><span class="text-bold">Освещение</span> – уникальные потолки с мощными светильниками</p>
                             </div>
-                            <div class="section_advantages-item">
+                            <div class="advantages-baner__item">
                                 <p><span class="text-bold">Отопление</span> — электрокотёл, тёплый пол или ИК-панели</p>
                             </div>
-                            <div class="section_advantages-item">
+                            <div class="advantages-baner__item">
                                 <p><span class="text-bold">Электрика</span> – полностью разведена и готова, щиток, автоматы, розетки, выключатели</p>
                             </div>
-                            <div class="section_advantages-item">
+                            <div class="advantages-baner__item">
                                 <p><span class="text-bold">Отделка</span> – всё выполненно из сортов премиального дерева (красная лиственница, липа) </p>
                             </div>
                         </div>
                     </div>
                 </section>
-                <section class="appmain-section-contacs flex justify-center" id="appmain-section-contacs">
-                    <div class="section_contacs-content flex-col justify-between relative gap-em">
-                        <div class="contacs_content-top w-full flex gap-em">
-                            <div class="contacs-content-top-list flex-col gap-em">
+                <section class="contacs-baner flex justify-center" id="appmain-section-contacs">
+                    <div class="contacs-baner__conteiner flex-col justify-between relative gap-em">
+                        <div class="contacs-baner__content w-full flex gap-em">
+                            <div class="contacs-baner__board flex-col gap-em">
                                 <span class="appmain_h1 text-bold">Как с нами связаться ?</span>
                                 <div class="hor-bar"></div>
                                 <p>
@@ -334,28 +333,28 @@
                                     aliqua.
                                 </p>
                                 <div class="flex-col gap-em">
-                                    <div class="section_contacs-item fade-in flex-start gap-em p-em">
+                                    <div class="contacs-baner__item fade-in flex-start gap-em p-em">
                                         <img loading="lazy" alt="значок" class="xs-img" src="/assets/pic/icon/icons8-calendar-96.png">
                                         <div class="flex-col">
                                             <span class="appmain_h5">График</span>
                                             <a title="График: c 08:00 до 23:00" href="#">Ежедневно с 08:00 до 23:00</a>
                                         </div>
                                     </div>
-                                    <div class="section_contacs-item fade-in flex-start gap-em p-em">
+                                    <div class="contacs-baner__item fade-in flex-start gap-em p-em">
                                         <img loading="lazy" alt="значок" class="xs-img" src="/assets/pic/icon/icons8-location-96.png">
                                         <div class="flex-col">
                                             <span class="appmain_h5">Адрес</span>
                                             <a title="Челябинск, р-н Ленинский, 1-я Электровозная ул. 24" href="https://yandex.ru/maps/56/chelyabinsk/house/1_ya_elektrovoznaya_ulitsa_24/YkgYcgZnSkUDQFtvfX1wdHRkYw==/?from=api-maps&ll=61.417304%2C55.115877&origin=jsapi21&z=17">Челябинск, р-н Ленинский, 1-я Электровозная ул. 24</a>
                                         </div>
                                     </div>
-                                    <div class="section_contacs-item fade-in flex-start gap-em p-em">
+                                    <div class="contacs-baner__item fade-in flex-start gap-em p-em">
                                         <img loading="lazy" alt="значок" class="xs-img" src="/assets/pic/icon/icons8-phone-96.png">
                                         <div class="flex-col">
                                             <span class="appmain_h5">Телефон</span>
                                             <a title="Телефон: +7 (995) 334 92-60" href="tel:+79953349260">+7 (995) 334 92-60</a>
                                         </div>
                                     </div>
-                                    <div class="section_contacs-item fade-in flex-start gap-em p-em">
+                                    <div class="contacs-baner__item fade-in flex-start gap-em p-em">
                                         <img loading="lazy" alt="значок" class="xs-img" src="/assets/pic/icon/icons8-email-96.png">
                                         <div class="flex-col">
                                             <span class="appmain_h5">Почта</span>
@@ -364,22 +363,22 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="contacs-content_form absolute flex right-0">
-                                <div class="contacs-content-form_content flex-col w-full min-h-full">
+                            <div class="contacs-baner__form absolute flex right-0">
+                                <div class="contacs-form__content flex-col w-full min-h-full">
                                     <span class="appmain_h2 text-bold p-em">Оставьте заявку</span>
                                     <form class="feedback-form flex-col gap-2em p-em" id="feedbackForm" action="#" method="POST">
                                         <p class="text-bold">Мы перезвоним вам в течение 1 часа</p>
                                         <input type="hidden" name="subject" value="Заявка с сайта МКС Модуль Каркас Строй">
                                         <div class="flex-col gap-em">
-                                            <label class="contacs-input-label">
+                                            <label class="contacs-form__label">
                                                 Ваше имя
                                                 <input type="text" title="имя" name="name" placeholder="Имя">
                                             </label>
-                                            <label class="contacs-input-label">
+                                            <label class="contacs-form__label">
                                                 Телефон
                                                 <input type="tel" title="телефон" class="userPhone" name="phone" placeholder="Телефон" required>
                                             </label>
-                                            <label class="contacs-input-label">
+                                            <label class="contacs-form__label">
                                                 Email
                                                 <input type="email" title="email" name="email" placeholder="Email">
                                             </label>
@@ -396,14 +395,14 @@
                                 </div>
                             </div>
                         </div>
-                        <iframe class="appmain_map-frame w-full" src="https://yandex.ru/map-widget/v1/?from=api-maps&ll=61.417304%2C55.115877&mode=search&ol=geo&origin=jsapi21&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjA0NTgwMRJQ0KDQvtGB0YHQuNGPLCDQp9C10LvRj9Cx0LjQvdGB0LosIDEt0Y8g0K3Qu9C10LrRgtGA0L7QstC-0LfQvdCw0Y8g0YPQu9C40YbQsCwgMjQiCg1Rq3VCFah2XEI%2C&z=17" frameborder="1" allowfullscreen="true"></iframe>
+                        <iframe class="contacs-baner__frame w-full" src="https://yandex.ru/map-widget/v1/?from=api-maps&ll=61.417304%2C55.115877&mode=search&ol=geo&origin=jsapi21&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjA0NTgwMRJQ0KDQvtGB0YHQuNGPLCDQp9C10LvRj9Cx0LjQvdGB0LosIDEt0Y8g0K3Qu9C10LrRgtGA0L7QstC-0LfQvdCw0Y8g0YPQu9C40YbQsCwgMjQiCg1Rq3VCFah2XEI%2C&z=17" frameborder="1" allowfullscreen="true"></iframe>
                     </div>
                 </section>
             </main>
             <footer class="appfooter flex">
-                <section class="appfooter_section flex-col">
-                    <div class="appfooter_section-top flex justify-between p-em w-full h-full">
-                        <div class="appfooter_section-top-logobox flex-col gap-em">
+                <section class="appfooter_baner flex-col">
+                    <div class="appfooter_baner__top flex justify-between p-em w-full h-full">
+                        <div class="appfooter_baner__logobox flex-col gap-em">
                             <div class="flex-center">
                                 <img class="xl-img" loading="lazy" alt="Логотип" src="/assets/pic/logo.png">
                                 <span class="appmain_h2 text-bold">МКС<br>Модуль Каркас Строй</span>
@@ -414,7 +413,7 @@
                             </p>
                             <span class="highlight-li"><a href="#">Бесплатная консультация</a></span>
                         </div>
-                        <div class="appfooter_menu flex-col gap-em items-center">
+                        <div class="appfooter_baner__menu flex-col gap-em items-center">
                             <span class="appmain_h2 text-bold">Помощь в выборе</span>
                             <div class="hor-bar"></div>
                             <div class="flex-col gap-05">
@@ -425,23 +424,23 @@
                                 <a title="Задать нам вопрос/Ask us a question" href="#feedbackForm">Задать нам вопрос</a>
                             </div>
                         </div>
-                        <div class="appfooter_contacts flex-col items-center gap-em">
+                        <div class="appfooter_baner__contacts flex-col items-center gap-em">
                             <span class="appmain_h2 text-bold">Связаться с нами</span>
                             <div class="hor-bar"></div>
                             <div class="flex-col items-start gap-05">
-                                <div class="appfooter_contacts-item flex-center gap-em">
+                                <div class="appfooter_baner__item flex-center gap-em">
                                     <img loading="lazy" alt="значок" class="xs-img" src="/assets/pic/icon/icons8-calendar-96.png">
                                     <a title="График: c 08:00 до 23:00" href="#">Ежедневно с 08:00 до 23:00</a>
                                 </div>
-                                <div class="appfooter_contacts-item flex-center gap-em">
+                                <div class="appfooter_baner__item flex-center gap-em">
                                     <img loading="lazy" alt="значок" class="xs-img" src="/assets/pic/icon/icons8-location-96.png">
                                     <a title="Адрес: Челябинск, р-н Ленинский, 1-я Электровозная ул. 24" href="https://yandex.ru/maps/56/chelyabinsk/house/1_ya_elektrovoznaya_ulitsa_24/YkgYcgZnSkUDQFtvfX1wdHRkYw==/?from=api-maps&ll=61.417304%2C55.115877&origin=jsapi21&z=17">Челябинск, р-н Ленинский, 1-я Электровозная ул. 24</a>
                                 </div>
-                                <div class="appfooter_contacts-item flex-center gap-em">
+                                <div class="appfooter_baner__item flex-center gap-em">
                                     <img loading="lazy" alt="значок" class="xs-img" src="/assets/pic/icon/icons8-phone-96.png">
                                     <a title="Телефон: +7 (995) 334 92-60" href="tel:+79953349260">+7 (995) 334 92-60</a>
                                 </div>
-                                <div class="appfooter_contacts-item flex-center gap-em">
+                                <div class="appfooter_baner__item flex-center gap-em">
                                     <img loading="lazy" alt="значок" class="xs-img" src="/assets/pic/icon/icons8-email-96.png">
                                     <a title="Почта: goida@mail.ru" href="mailto:goida@mail.ru">goida@mail.ru</a>
                                 </div>
@@ -453,7 +452,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="appfooter_section-bot text-sm w-full flex-col items-center">
+                    <div class="appfooter_baner__bot text-sm w-full flex-col items-center">
                         <p>© 2025 МКС Модуль Каркас Строй | designed by &nbsp;<a href="#">Martynov</a></p>
                         <a href="/pages/PolitConfidenc.html" target="_blank">Политика конфиденциальности</a>
                     </div>

@@ -2,29 +2,31 @@
 @use '../utils/variables' as v;
 @use '../utils/utility';
 
-.appheader_menu-nav{
+.appheader-baner__nav{
     @include m.mixin-full-size()
 }
 
-.appheader_menu-ul{
+.appheader-baner__ul{
     li, a[href]{
         @extend .flex-center;
         @include m.mixin-full-size()
     }
 }
 
-.appheader_dropmenu-li:hover{
-    .appheader_dropmenu-nav{
-        display: flex;
+.appheader-dropmenu__li{
+    &:hover{
+        .appheader-dropmenu__nav{
+            display: flex;
+        }
     }
 }
 
-.appheader_dropmenu-nav{
+.appheader-dropmenu__nav{
     top: 70px;
     left: 150px;
 }
 
-.appheader_dropmenu-ul{
+.appheader-dropmenu__ul{
     @include m.mixin-block-construct(
         auto, 
         auto, 
@@ -38,7 +40,7 @@
 }
 
 @media (max-width: 1090px) {
-    .appheader_menu-nav{
+    .appheader-baner__nav{
         position: fixed;
         visibility: hidden;
         top: 80px;
@@ -62,13 +64,15 @@
         }
     }
 
-    .appheader_dropmenu-li:hover{
-        .appheader_dropmenu-nav{
-            display: none;
+    .appheader-dropmenu__li{
+        &:hover{
+            .appheader-dropmenu__nav{
+                display: none;
+            }
         }
     }
 
-    .appheader_menu-ul{
+    .appheader-baner__ul{
         padding: 1em;
         flex-direction: column;
         gap: 2em;
@@ -94,7 +98,7 @@
 }
 
 @media (max-width: 490px) {
-    .appheader_menu-nav{
+    .appheader-baner__nav{
         width: 80vw;
         a[href]{
             font-size: v.$text-lg;

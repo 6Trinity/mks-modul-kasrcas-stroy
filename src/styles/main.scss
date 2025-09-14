@@ -145,6 +145,25 @@ textarea:focus::placeholder{
     transform: translateY(0);
 }
 
+form{
+    .highlight-li{
+        background: var(--text-highlight);
+        padding: 1em;
+    }
+    a[href]{
+        font-size: v.$text-sm;
+    }
+    input, 
+    textarea{
+        padding: 8px;
+        border-bottom: 2px solid var(--text-highlight); 
+    }
+}
+
+.input-label{
+    width: 90px;
+}
+
 @media (max-width: 1090px) {
     .appmain_h{
         font-size: v.$text-5xl;

@@ -10,7 +10,7 @@
     }
 }
 
-.appfooter_section{
+.appfooter_baner{
     @include m.mixin-block-construct(
         $box-shadow: var(--box-shadow-inset),
         $background: var(--bg-darkglasses-extra)
@@ -19,7 +19,7 @@
     }
 }
 
-.appfooter_section-bot{
+.appfooter_baner__bot{
     height: 50px;
     background: var(--bg-darkglasses);
     color: var(--text-secondory);
@@ -29,7 +29,7 @@
     }
 }
 
-.appfooter_section-top-logobox{
+.appfooter_baner__logobox{
     width: clamp(200px, 500px, 100%);
     .highlight-li{
         width: clamp(200px, 100%, 500px);
@@ -38,15 +38,15 @@
     }
 }
 
-.appfooter_contacts{
+.appfooter_baner__contacts{
     width: clamp(200px, 500px, 100%);
 }
 
-.appfooter_menu{
+.appfooter_baner__menu{
     width: clamp(300px, 500px, 100%);
 }
 
-.appfooter_contacts-item{
+.appfooter_baner__{
     &:hover{
         img{
             transform: var(--transform-primary);
@@ -56,7 +56,7 @@
 
 
 @media (max-width: 1090px) {
-    .appfooter_section-top{
+    .appfooter_baner__top{
         flex-direction: column;
         align-items: center;
         gap: 2em;
@@ -64,7 +64,7 @@
 }
 
 @media (max-width: 390px) {
-    .appfooter_section-bot{
+    .appfooter_baner__bot{
         font-size: v.$text-xs;
     }
 }
