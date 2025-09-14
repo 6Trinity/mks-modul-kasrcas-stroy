@@ -271,15 +271,16 @@ form{
         v.$rounded-lg, 
         var(--bg-darkglasses)
     ){
-        display: none;
         flex-direction: column;
         flex-grow: 1;
         justify-content: space-between;
+        display: none;
     }
     &.active{
         display: flex;
     }
 }
+
 
 .calculator-form{
     @include m.mixin-block-construct(

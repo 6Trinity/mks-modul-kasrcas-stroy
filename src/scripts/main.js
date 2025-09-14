@@ -117,7 +117,30 @@ function setupEventListeners() {
 };
 
 function nextStep() {
-    
+    if (currentStep < steps.length) {
+        steps[currentStep - 1].classList.remove('active');
+        currentStep++;
+        steps[currentStep - 1].classList.add('active');
+
+        updateCounter();
+
+        if (currentStep === steps.length) {
+            document.getElementById('total-price').textContent = totalPrice.toLocaleString();
+            colc_form_button.classList.add('active');
+            nextBtn.textContent = 'Завершить';
+            const selectionsHTML = userSelections.map(item => 
+                `<div class="flex gap-05">
+                    <span>${item.name} ~ </span>
+                    <span>${item.price.toLocaleString()} руб.</span>
+                </div>`
+            ).join('');
+
+            const finalStep = document.getElementById('result-price');
+            finalStep.innerHTML = `${selectionsHTML}`;
+            }
+    } else {
+        resetCalculator();
+    }
 };
 
 function prevStep() {
