@@ -11,20 +11,20 @@
         <link rel="icon" type="image/x-icon" href="/assets/pic/icon/logo.ico">
         <title>МКС Модуль Каркас Строй</title>
     </head>
-    <body>
-        <div class="w-full flex-col min-h-screen"> 
+    <body class="flex-col items-center">
+        <div class="layout w-full max-w-hd flex-col min-h-screen"> 
             <header class="appheader w-full max-w-hd fixed flex-center">
                 <a class="absolute left-0 p-em" href="#appmain-section-baner">
-                    <img class="base-img" loading="lazy" alt="логотип" src="/assets/pic/logo.png">
+                    <img class="base-img" loading="lazy" alt="логотип" src="/src/assets/pic/logo.png">
                 </a>
-                <section class="appheader_section flex-center">
-                    <nav class="appheader_menu-nav">
-                        <ul class="appheader_menu-ul h-full flex gap-em items-center pr-em">
+                <section class="appheader-baner flex-center">
+                    <nav class="appheader-baner__nav">
+                        <ul class="appheader-baner__ul h-full flex gap-em items-center pr-em">
                             <li class="highlight-li"><a href="#appmain-section-baner">Главная</a></li>
-                            <li class="appheader_dropmenu-li">
+                            <li class="appheader-dropmenu__li">
                                 <a href="#">Каталог</a>
-                                <nav class="appheader_dropmenu-nav none absolute">
-                                    <ul class="appheader_dropmenu-ul flex-col gap-em p-em">
+                                <nav class="appheader-dropmenu__nav none absolute">
+                                    <ul class="appheader-dropmenu__ul flex-col gap-em p-em">
                                         <li><a href="#">Баня для нищих</a></li>
                                         <li><a href="#">Баня для менее нищих</a></li>
                                         <li><a href="#">Баня для средних</a></li>
@@ -35,22 +35,22 @@
                             </li>
                             <li><a href="#">О нас</a></li>
                             <li><a href="#">Гарантии</a></li>
-                            <li><a href="#appmain-section-advantages">Преймущества</a></li>
+                            <li><a href="#appmain-section-advantages">Преимущества</a></li>
                             <li><a href="#">Отзывы</a></li>
                             <li><a href="#appmain-section-contacs">Контакты</a></li>
                         </ul>
                     </nav>
-                    <button class="appheader_menu-button none">
-                        <div class="menu_button-box none flex-col justify-around">
-                            <div class="appheader_menu-toggle"></div>
-                            <div class="appheader_menu-toggle"></div>
-                            <div class="appheader_menu-toggle"></div>
+                    <button class="appheader-baner__button none">
+                        <div class="button-conteiner none flex-col justify-around">
+                            <div class="button-conteiner__toggle"></div>
+                            <div class="button-conteiner__toggle"></div>
+                            <div class="button-conteiner__toggle"></div>
                         </div>
                     </button>
                 </section>
             </header>
-            <main class="appmain w-full min-h-screen flex justify-center">
-                <div class="appmain-polit-con p-em">
+            <main class="appmain flex-col"> 
+                <div class="">
                     <p>
                         <span class="appmain_h2">Политика конфиденциальности</span><br>
                         1. Общие положения<br>
@@ -80,12 +80,12 @@
                     </p>
                 </div>
             </main>
-<footer class="appfooter flex">
-                <section class="appfooter_section flex-col">
-                    <div class="appfooter_section-top flex justify-between p-em w-full h-full">
-                        <div class="appfooter_section-top-logobox flex-col gap-em">
+            <footer class="appfooter flex">
+                <section class="appfooter_baner flex-col">
+                    <div class="appfooter_baner__top flex justify-between p-em w-full h-full">
+                        <div class="appfooter_baner__logobox flex-col gap-em">
                             <div class="flex-center">
-                                <img class="xl-img" loading="lazy" alt="Логотип" src="/assets/pic/logo.png">
+                                <img class="xl-img" loading="lazy" alt="Логотип" src="/src/assets/pic/logo.png">
                                 <span class="appmain_h2 text-bold">МКС<br>Модуль Каркас Строй</span>
                             </div>
                             <p>
@@ -94,7 +94,7 @@
                             </p>
                             <span class="highlight-li"><a href="#">Бесплатная консультация</a></span>
                         </div>
-                        <div class="appfooter_menu flex-col gap-em items-center">
+                        <div class="appfooter_baner__menu flex-col gap-em items-center">
                             <span class="appmain_h2 text-bold">Помощь в выборе</span>
                             <div class="hor-bar"></div>
                             <div class="flex-col gap-05">
@@ -105,41 +105,41 @@
                                 <a title="Задать нам вопрос/Ask us a question" href="#feedbackForm">Задать нам вопрос</a>
                             </div>
                         </div>
-                        <div class="appfooter_contacts flex-col items-center gap-em">
+                        <div class="appfooter_baner__contacts flex-col items-center gap-em">
                             <span class="appmain_h2 text-bold">Связаться с нами</span>
                             <div class="hor-bar"></div>
                             <div class="flex-col items-start gap-05">
-                                <div class="appfooter_contacts-item flex-center gap-em">
-                                    <img loading="lazy" alt="значок" class="xs-img" src="/assets/pic/icon/icons8-calendar-96.png">
+                                <div class="appfooter_baner__item flex-center gap-em">
+                                    <img loading="lazy" alt="значок" class="xs-img" src="/src/assets/pic/icon/icons8-calendar-96.png">
                                     <a title="График: c 08:00 до 23:00" href="#">Ежедневно с 08:00 до 23:00</a>
                                 </div>
-                                <div class="appfooter_contacts-item flex-center gap-em">
-                                    <img loading="lazy" alt="значок" class="xs-img" src="/assets/pic/icon/icons8-location-96.png">
+                                <div class="appfooter_baner__item flex-center gap-em">
+                                    <img loading="lazy" alt="значок" class="xs-img" src="/src/assets/pic/icon/icons8-location-96.png">
                                     <a title="Адрес: Челябинск, р-н Ленинский, 1-я Электровозная ул. 24" href="https://yandex.ru/maps/56/chelyabinsk/house/1_ya_elektrovoznaya_ulitsa_24/YkgYcgZnSkUDQFtvfX1wdHRkYw==/?from=api-maps&ll=61.417304%2C55.115877&origin=jsapi21&z=17">Челябинск, р-н Ленинский, 1-я Электровозная ул. 24</a>
                                 </div>
-                                <div class="appfooter_contacts-item flex-center gap-em">
-                                    <img loading="lazy" alt="значок" class="xs-img" src="/assets/pic/icon/icons8-phone-96.png">
+                                <div class="appfooter_baner__item flex-center gap-em">
+                                    <img loading="lazy" alt="значок" class="xs-img" src="/src/assets/pic/icon/icons8-phone-96.png">
                                     <a title="Телефон: +7 (995) 334 92-60" href="tel:+79953349260">+7 (995) 334 92-60</a>
                                 </div>
-                                <div class="appfooter_contacts-item flex-center gap-em">
-                                    <img loading="lazy" alt="значок" class="xs-img" src="/assets/pic/icon/icons8-email-96.png">
+                                <div class="appfooter_baner__item flex-center gap-em">
+                                    <img loading="lazy" alt="значок" class="xs-img" src="/src/assets/pic/icon/icons8-email-96.png">
                                     <a title="Почта: goida@mail.ru" href="mailto:goida@mail.ru">goida@mail.ru</a>
                                 </div>
                             </div>
                             <div class="flex">
-                                <a href="https://www.avito.ru/user/0e46f1446f5b50f0cd76d434861b8128/profile/all?iid=7434674965&page_from=from_item_messenger&src=messenger&id=7434674965&sellerId=0e46f1446f5b50f0cd76d434861b8128"><img src="/assets/pic/icon/Avito.png" class="sm-img"></a>
-                                <a href="https://t.me/@ghostesun"><img src="/assets/pic/icon/icons8-telegram-240.png" class="sm-img"></a>
-                                <a href="https://wa.me/79953349260"><img src="/assets/pic/icon/icons8-whatsapp-96.png" class="sm-img"></a>
+                                <a href="https://www.avito.ru/user/0e46f1446f5b50f0cd76d434861b8128/profile/all?iid=7434674965&page_from=from_item_messenger&src=messenger&id=7434674965&sellerId=0e46f1446f5b50f0cd76d434861b8128"><img src="/src/assets/pic/icon/Avito.png" class="sm-img"></a>
+                                <a href="https://t.me/@ghostesun"><img src="/src/assets/pic/icon/icons8-telegram-240.png" class="sm-img"></a>
+                                <a href="https://wa.me/79953349260"><img src="/src/assets/pic/icon/icons8-whatsapp-96.png" class="sm-img"></a>
                             </div>
                         </div>
                     </div>
-                    <div class="appfooter_section-bot text-sm w-full flex-col items-center">
+                    <div class="appfooter_baner__bot text-sm w-full flex-col items-center">
                         <p>© 2025 МКС Модуль Каркас Строй | designed by &nbsp;<a href="#">Martynov</a></p>
                         <a href="/pages/PolitConfidenc.html" target="_blank">Политика конфиденциальности</a>
                     </div>
                 </section>
             </footer>
         </div>
-        <script type="module" src="/scripts/main.js"></script>
+        <script type="module" src="/src/scripts/main.js"></script>
   </body>
 </html>
