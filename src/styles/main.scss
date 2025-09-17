@@ -15,15 +15,9 @@
 
 
 body{
-    background: var(--bg-primary);
     @include m.mixin-text_construct;
     scrollbar-width: thin;
     scrollbar-color: var(--text-highlight) transparent;
-}
-
-.layout{
-    background-image: url('/src/assets/pic/fon-listja.png');
-    background-attachment: fixed;
 }
 
 a[href]{
@@ -47,6 +41,10 @@ a[href]{
 
 .sm-img{
     @include m.mixin-img-constructor(60px, 60px)
+}
+
+.lg-img{
+    @include m.mixin-img-constructor(45px, 45px)
 }
 
 .xs-img{

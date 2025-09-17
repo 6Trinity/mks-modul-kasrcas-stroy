@@ -8,7 +8,7 @@
     background-position: 10%;
     background-size: cover;
     box-shadow: var(--box-shadow-primary);
-    margin-bottom: 15vh;
+    margin-bottom: 200px;
 }
 
 .appmain-baner__highlight{
@@ -66,7 +66,7 @@
 
 // Контакты
 .contacs-baner{
-    margin-bottom: 15vh;
+    margin-bottom: 200px;
 }
 
 .contacs-baner__conteiner{
@@ -144,7 +144,7 @@
 
 //Преймущества
 .advantages-baner{
-    padding-bottom: 15vh;
+    margin-bottom: 200px;
 }
 
 .advantages-baner__conteiner{
@@ -201,19 +201,19 @@
 
 //Калькулятор банер
 .calculator-baner{
-    margin-bottom: 10vh;
+    margin-bottom: 200px;;
     min-height: 800px;
 }
 
 .calculator-baner__conteiner{
     width: 90%;
-    text-shadow: var(--text-shadow-inset);
     .hor-bar{
         margin-bottom: 5vh;
     }
 }
 
 .calculator-baner__content{
+    text-shadow: var(--text-shadow-inset);
     .hor-bar{
         margin-bottom: 0;
     }
@@ -326,6 +326,98 @@
     }
 }
 
+//отзывы
+.reviews-baner{
+    margin-bottom: 200px;
+}
+
+.reviews-baner__conteiner{
+    width: 90%;
+}
+
+.reviews-baner__board{
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.reviews-baner__item{
+    @include m.mixin-block-construct(
+        800px,
+        450px,
+        v.$rounded-lg
+    )
+}
+
+.reviews-baner__galery{
+    width: 500px;
+    height: 400px;
+    position: relative;
+    @extend .flex-center
+}
+
+.reviews-galery{
+    display: flex;
+    @include m.mixin-full-size
+}
+
+.reviews-galery__nav{
+    position: absolute;
+    width: 100%;
+    @extend .flex-between;
+    padding: 1em;
+    img{
+        &:hover{
+            transform: var(--transform-highlight);
+        }
+    }
+}
+
+.reviews-galery__item{
+    @include m.mixin-block-construct(
+        $width: 100%, 
+        $height: 100%, 
+        $border-radius: v.$rounded-lg, 
+        $background: none, 
+    ){
+        display: none;
+    }
+    &.active{
+        display: flex;
+    }
+}
+
+.reviews-baner__content{
+    @extend .flex-col;
+    width: clamp(0%, 300px, 100%);
+    gap: 0.5em;
+    padding: 1em;
+    text-shadow: var(--text-shadow-inset);
+    img{
+        border-radius: v.$rounded-lg;
+    }
+}
+
+.politdata-baner,
+.politcon-baner{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 200px;
+    text-shadow: var(--text-shadow-inset);
+}
+
+.politdata-baner__conteiner,
+.politcon-baner__conteiner{
+    @include m.mixin-block-construct(
+        90%,
+        100%,
+        v.$rounded-lg
+    ){
+        padding: 1em;
+    }
+}
+
 @media (max-width: 1490px){
     //калькулятор
     .calculator-baner__content{
@@ -360,6 +452,27 @@
     .calculator-test__options{
         flex-wrap: wrap;
     }
+    //отзывы
+    .reviews-baner__item{
+        flex-direction: column;
+        height: fit-content;
+        width: 100%;
+    }
+
+    .reviews-baner__content{
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+    }
+
+    .reviews-baner__description{
+        min-width:40%;
+    }
+
+    .reviews-baner__galery{
+        width: 100%;
+        height: auto;
+    }
 }
 
 @media (max-width: 790px) {
@@ -385,7 +498,14 @@
             width: 100%;
         }
     }
+}
 
+@media (max-width: 590px) {
+    //отзывы
+    .reviews-baner__content{
+        flex-direction: column;
+        align-items: start;
+    }
 }
 
 @media (max-width: 490px) {

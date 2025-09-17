@@ -240,12 +240,63 @@ class ScrollAnimator {
     }
 };
 
+class ReviewGallery {
+    constructor(galleryContainer) {
+        this.gallery = galleryContainer;
+        this.items = this.gallery.querySelectorAll('.reviews-galery__item');
+        this.prevBtn = this.gallery.querySelector('.reviews-galery__prev');
+        this.nextBtn = this.gallery.querySelector('.reviews-galery__next');
+        this.currentIndex = 0;
+    
+        this.init();
+    }
+  
+    init() {
+
+        this.prevBtn.addEventListener('click', () => {
+            this.showPrevious();
+        });
+    
+        this.nextBtn.addEventListener('click', () => {
+            this.showNext();
+        });
+    
+        this.updateGallery();
+    }
+  
+    showPrevious() {
+        this.currentIndex--;
+            if (this.currentIndex < 0) {
+                this.currentIndex = this.items.length - 1;
+            }
+        this.updateGallery();
+    }
+  
+    showNext() {
+        this.currentIndex++;
+        if (this.currentIndex >= this.items.length) {
+            this.currentIndex = 0;
+        }
+        this.updateGallery();
+    }
+  
+    updateGallery() {
+
+        this.items.forEach(item => {
+            item.classList.remove('active');
+        });
+
+        this.items[this.currentIndex].classList.add('active');
+    }
+};
+
 document.addEventListener('DOMContentLoaded', function() {
 
     const scrollThreshold = 50;
     const button_header = document.querySelector('.appheader-baner__button');
     const header = document.querySelector('.appheader-baner');
     const header_menu = document.querySelector('.appheader-baner__nav');
+    const galleries = document.querySelectorAll('.reviews-baner__galery');
 
     currentStep = 1;
     totalPrice = 0;
@@ -334,6 +385,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 phoneInput.setSelectionRange(newPosition, newPosition);
             }
         });
+    });
+
+    galleries.forEach(gallery => {
+        const reviewGallery = new ReviewGallery(gallery);
     });
 
     initCalculator();
