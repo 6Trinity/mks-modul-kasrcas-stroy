@@ -17,6 +17,7 @@
 body{
     @include m.mixin-text_construct;
     scrollbar-width: thin;
+    background: var(--bg-primary);
     scrollbar-color: var(--text-highlight) transparent;
 }
 

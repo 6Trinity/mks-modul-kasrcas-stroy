@@ -31,22 +31,7 @@
 
 
 :root{
-    --bg-primary: 
-        radial-gradient(
-            ellipse at 20% 30%, 
-            rgba(70, 180, 129, 0.4) 0%,
-            transparent 60%
-        ),
-        radial-gradient(
-            ellipse at 80% 70%, 
-            rgba(89, 218, 168, 0.5) 0%,
-            transparent 50%
-        ),
-        linear-gradient(
-            to bottom, 
-            #ade7d1, 
-            #73998a 
-        );
+    --bg-primary: #c7c7c7;
 
     --bg-highlight: rgba(0, 0, 0, 0.9);
     --bg-darkglasses: rgba(0, 0, 0, 0.3);
@@ -55,12 +40,12 @@
 
     --text-primary: rgb(255, 255, 255);
     --text-secondory: rgb(226, 226, 226);
-    --text-highlight: #73998a;
+    --text-highlight: #62756dee;
 
     --box-shadow-primary: 
-    6px 6px 12px rgba(0, 0, 0, 0.4),
-    3px 3px 8px rgba(0, 0, 0, 0.3),
-    2px 2px 4px rgba(0, 0, 0, 0.2);
+    8px 8px 16px rgba(0, 0, 0, 0.5),
+    4px 4px 12px rgba(0, 0, 0, 0.4),
+    3px 3px 8px rgba(0, 0, 0, 0.3);
     --box-shadow-highlight: 
     8px 8px 16px rgba(0, 0, 0, 0.5),
     4px 4px 12px rgba(0, 0, 0, 0.4),

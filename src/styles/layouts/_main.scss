@@ -357,7 +357,8 @@
 
 .reviews-galery{
     display: flex;
-    @include m.mixin-full-size
+    @include m.mixin-full-size;
+    padding: 1em;
 }
 
 .reviews-galery__nav{
@@ -394,9 +395,98 @@
     text-shadow: var(--text-shadow-inset);
     img{
         border-radius: v.$rounded-lg;
+        box-shadow: var(--box-shadow-primary);
     }
 }
 
+//каталог
+.catalog-baner{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 200px;
+}
+
+.catalog-baner__conteiner{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+}
+
+.catalog-baner__board{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: space-around;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.catalog-baner__item{
+    @include m.mixin-block-construct(
+        clamp(320px, 530px, 100%),
+        fit-content,
+        v.$rounded-lg
+    ){
+        display: flex;
+        flex-direction: column;
+        padding: 1em;
+        text-shadow: var(--text-shadow-inset);
+    }
+    &:hover{
+        @include m.mixin-block_transform
+    }
+    .highlight-li{
+        padding: 0.5em;
+    }
+}
+
+.catalog-item__top{
+    img{
+        border-radius: v.$rounded-lg;
+        width: 100%;
+        box-shadow: var(--box-shadow-primary);
+    }
+}
+
+.catalog-item__bot{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.catalog-item__point{
+    display: flex;
+    gap: 0.5em;
+    min-width: 150px;
+    align-items: center;
+}
+
+.catalog-baner__additional{
+    display: flex;
+    margin-top: 50px;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.catalog-additional__conteiner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.catalog-additional__content{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+//политика
 .politdata-baner,
 .politcon-baner{
     margin-top: 100px;
@@ -526,6 +616,15 @@
     //калькулятор
     .calculator-form{
         width: 100%;
+    }
+
+    //каталог
+    .catalog-item__point{
+        min-width: 120px;
+        .xs-img{
+            width: 30px;
+            height: 30px;
+        }
     }
 }
 
