@@ -8,7 +8,7 @@
     background-position: 10%;
     background-size: cover;
     box-shadow: var(--box-shadow-primary);
-    margin-bottom: 200px;
+    margin-bottom: 100px;
 }
 
 .appmain-baner__highlight{
@@ -66,7 +66,7 @@
 
 // Контакты
 .contacs-baner{
-    margin-bottom: 200px;
+    margin-bottom: 100px;
 }
 
 .contacs-baner__conteiner{
@@ -144,7 +144,7 @@
 
 //Преймущества
 .advantages-baner{
-    margin-bottom: 200px;
+    margin-bottom: 100px;
 }
 
 .advantages-baner__conteiner{
@@ -201,8 +201,8 @@
 
 //Калькулятор банер
 .calculator-baner{
-    margin-bottom: 200px;;
-    min-height: 800px;
+    margin-bottom: 100px;
+    min-height: 600px;
 }
 
 .calculator-baner__conteiner{
@@ -328,7 +328,7 @@
 
 //отзывы
 .reviews-baner{
-    margin-bottom: 200px;
+    margin-bottom: 100px;
 }
 
 .reviews-baner__conteiner{
@@ -401,26 +401,16 @@
 
 //каталог
 .catalog-baner{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
 }
 
 .catalog-baner__conteiner{
-    display: flex;
-    flex-direction: column;
     width: 90%;
-    align-items: center;
 }
 
 .catalog-baner__board{
-    display: flex;
     flex-wrap: wrap;
-    gap: 2em;
-    justify-content: space-around;
     margin-top: 50px;
-    width: 100%;
 }
 
 .catalog-baner__item{
@@ -429,16 +419,13 @@
         fit-content,
         v.$rounded-lg
     ){
-        display: flex;
-        flex-direction: column;
-        padding: 1em;
         text-shadow: var(--text-shadow-inset);
-    }
-    &:hover{
-        @include m.mixin-block_transform
-    }
-    .highlight-li{
-        padding: 0.5em;
+        &:hover{
+            @include m.mixin-block_transform
+        }
+        .highlight-li{
+            padding: 0.5em;
+        }
     }
 }
 
@@ -451,38 +438,17 @@
 }
 
 .catalog-item__bot{
-    display: flex;
+    @extend .flex-between;
     flex-wrap: wrap;
-    justify-content: space-between;
     gap: 1em;
     padding-top: 1em;
     padding-bottom: 1em;
 }
 
 .catalog-item__point{
-    display: flex;
+    @extend .flex-start;
     gap: 0.5em;
     min-width: 150px;
-    align-items: center;
-}
-
-.catalog-baner__additional{
-    display: flex;
-    margin-top: 50px;
-    width: 100%;
-    justify-content: space-around;
-}
-
-.catalog-additional__conteiner{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-}
-
-.catalog-additional__content{
-    display: flex;
-    justify-content: space-between;
 }
 
 

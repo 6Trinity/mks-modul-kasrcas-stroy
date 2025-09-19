@@ -52,13 +52,13 @@
                 <section class="appmain-baner max-h-hd min-h-screen items-end flex justify-center p-em gap-em" id="appmain-baner">
                     <div class="appmain-baner__conteiner flex-col flex-between">
                         <div class="flex w-full justify-start">
-                            <div class="appmain-baner__content flex-col gap-05">
+                            <div class="appmain-baner__content flex-col gap-05 fade-in">
                                 <span class="appmain_h">Постройка модульных каркасных бань и домов</span>
                                 <nav>
-                                    <ul class="appmain_baner__ul flex gap-em">
+                                    <ul class="appmain_baner__ul flex gap-em fade-in">
                                         <li class="highlight-li"><a href="#catalog-baner">Бани</a></li>
                                         <li class="highlight-li"><a href="#catalog-baner">Дома</a></li>
-                                        <li class="highlight-li"><a href="#">Услуги</a></li>
+                                        <li class="highlight-li"><a href="#catalog-additional__services">Услуги</a></li>
                                     </ul>
                                 </nav>
                                 <p>
@@ -74,7 +74,7 @@
                                 </span>                
                             </div>
                         </div>
-                        <div class="appmain-baner__board flex p-em gap-05">
+                        <div class="appmain-baner__board flex p-em gap-05 fade-in">
                             <div class="appmain-baner__item flex gap-05">
                                 <div class="flex-col">
                                     <div class="flex-start">
@@ -284,13 +284,13 @@
                         </div>
                     </div>
                 </section>
-                <section class="catalog-baner" id="catalog-baner">
-                    <div class="catalog-baner__conteiner">
+                <section class="catalog-baner flex justify-center w-full" id="catalog-baner">
+                    <div class="catalog-baner__conteiner flex-col items-center">
                         <span class="appmain_h1">Готовые проекты</span>
                         <span class="appmain_h2 mb-em">Адаптируем любой проект <span class="text-c-dark">под вас</span></span>
                         <div class="hor-bar"></div>
-                        <div class="catalog-baner__board fade-in">
-                            <div class="catalog-baner__item">
+                        <div class="catalog-baner__board flex-around gap-2em w-full fade-in">
+                            <div class="catalog-baner__item flex-col p-em">
                                 <div class="catalog-item__top">
                                     <img src="/src/assets/pic/75053ec34942f60bd319bd40ae4d278e.png">
                                 </div>  
@@ -300,52 +300,54 @@
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/rooms.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Размеры</span>
+                                            <span class="text-sm text-bold">Размеры</span>
                                             <span>2.5x6м = 15м²</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/fire.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Утепление</span>
+                                            <span class="text-sm text-bold">Утепление</span>
                                             <span>100/150mm</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/layers.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Планировка</span>
+                                            <span class="text-sm text-bold">Планировка</span>
                                             <span>3 отдела</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/bonus.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Подарок</span>
+                                            <span class="text-sm text-bold">Подарок</span>
                                             <span>Мебель</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/sale.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Выгода</span>
+                                            <span class="text-sm text-bold">Выгода</span>
                                             <span>до 100тыс. р.</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/otoplenie.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Отопление</span>
+                                            <span class="text-sm text-bold">Отопление</span>
                                             <span>Печь Ахtоn</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="flex-between">
-                                    <span class="appmain_h5">900 000 р.</span>
+                                    <div class="appmain_h5">
+                                        <span>900 000 р.</span>
+                                    </div>
                                     <span class="highlight-li"><a href="#">Подробнее</a></span>
                                 </div>
                             </div>
-                            <div class="catalog-baner__item">
+                            <div class="catalog-baner__item flex-col p-em">
                                 <div class="catalog-item__top">
                                     <img src="/src/assets/pic/75053ec34942f60bd319bd40ae4d278e.png">
                                 </div>  
@@ -355,42 +357,42 @@
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/rooms.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Размеры</span>
+                                            <span class="text-sm text-bold">Размеры</span>
                                             <span>2.5x6м = 15м²</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/fire.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Утепление</span>
+                                            <span class="text-sm text-bold">Утепление</span>
                                             <span>100/150mm</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/layers.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Планировка</span>
+                                            <span class="text-sm text-bold">Планировка</span>
                                             <span>3 отдела</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/bonus.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Подарок</span>
+                                            <span class="text-sm text-bold">Подарок</span>
                                             <span>Мебель</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/sale.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Выгода</span>
+                                            <span class="text-sm text-bold">Выгода</span>
                                             <span>до 100тыс. р.</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/otoplenie.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Отопление</span>
+                                            <span class="text-sm text-bold">Отопление</span>
                                             <span>Печь Ахtоn</span>
                                         </div>
                                     </div>
@@ -398,12 +400,12 @@
                                 <div class="flex-between">
                                     <div class="appmain_h5">
                                         <span class="text-line_through">900 000 р.</span>
-                                        <span class="text-c-dark"> 750 000 р.</span>
+                                        <span class="text-c-dark">790 000 р.</span>
                                     </div>
                                     <span class="highlight-li"><a href="#">Подробнее</a></span>
                                 </div>
                             </div>
-                            <div class="catalog-baner__item">
+                            <div class="catalog-baner__item flex-col p-em">
                                 <div class="catalog-item__top">
                                     <img src="/src/assets/pic/75053ec34942f60bd319bd40ae4d278e.png">
                                 </div>  
@@ -413,52 +415,54 @@
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/rooms.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Размеры</span>
+                                            <span class="text-sm text-bold">Размеры</span>
                                             <span>2.5x6м = 15м²</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/fire.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Утепление</span>
+                                            <span class="text-sm text-bold">Утепление</span>
                                             <span>100/150mm</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/layers.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Планировка</span>
+                                            <span class="text-sm text-bold">Планировка</span>
                                             <span>3 отдела</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/bonus.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Подарок</span>
+                                            <span class="text-sm text-bold">Подарок</span>
                                             <span>Мебель</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/sale.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Выгода</span>
+                                            <span class="text-sm text-bold">Выгода</span>
                                             <span>до 100тыс. р.</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/otoplenie.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Отопление</span>
+                                            <span class="text-sm text-bold">Отопление</span>
                                             <span>Печь Ахtоn</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="flex-between">
-                                    <span class="appmain_h5">900 000 р.</span>
+                                    <div class="appmain_h5">
+                                        <span>900 000 р.</span>
+                                    </div>
                                     <span class="highlight-li"><a href="#">Подробнее</a></span>
                                 </div>
                             </div>
-                            <div class="catalog-baner__item">
+                            <div class="catalog-baner__item flex-col p-em">
                                 <div class="catalog-item__top">
                                     <img src="/src/assets/pic/75053ec34942f60bd319bd40ae4d278e.png">
                                 </div>  
@@ -468,52 +472,54 @@
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/rooms.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Размеры</span>
+                                            <span class="text-sm text-bold">Размеры</span>
                                             <span>2.5x6м = 15м²</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/fire.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Утепление</span>
+                                            <span class="text-sm text-bold">Утепление</span>
                                             <span>100/150mm</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/layers.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Планировка</span>
+                                            <span class="text-sm text-bold">Планировка</span>
                                             <span>3 отдела</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/bonus.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Подарок</span>
+                                            <span class="text-sm text-bold">Подарок</span>
                                             <span>Мебель</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/sale.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Выгода</span>
+                                            <span class="text-sm text-bold">Выгода</span>
                                             <span>до 100тыс. р.</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/otoplenie.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Отопление</span>
+                                            <span class="text-sm text-bold">Отопление</span>
                                             <span>Печь Ахtоn</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="flex-between">
-                                    <span class="appmain_h5">900 000 р.</span>
+                                    <div class="appmain_h5">
+                                        <span>900 000 р.</span>
+                                    </div>
                                     <span class="highlight-li"><a href="#">Подробнее</a></span>
                                 </div>
                             </div>
-                            <div class="catalog-baner__item">
+                            <div class="catalog-baner__item flex-col p-em">
                                 <div class="catalog-item__top">
                                     <img src="/src/assets/pic/75053ec34942f60bd319bd40ae4d278e.png">
                                 </div>  
@@ -523,52 +529,54 @@
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/rooms.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Размеры</span>
+                                            <span class="text-sm text-bold">Размеры</span>
                                             <span>2.5x6м = 15м²</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/fire.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Утепление</span>
+                                            <span class="text-sm text-bold">Утепление</span>
                                             <span>100/150mm</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/layers.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Планировка</span>
+                                            <span class="text-sm text-bold">Планировка</span>
                                             <span>3 отдела</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/bonus.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Подарок</span>
+                                            <span class="text-sm text-bold">Подарок</span>
                                             <span>Мебель</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/sale.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Выгода</span>
+                                            <span class="text-sm text-bold">Выгода</span>
                                             <span>до 100тыс. р.</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/otoplenie.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Отопление</span>
+                                            <span class="text-sm text-bold">Отопление</span>
                                             <span>Печь Ахtоn</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="flex-between">
-                                    <span class="appmain_h5">900 000 р.</span>
+                                    <div class="appmain_h5">
+                                        <span>900 000 р.</span>
+                                    </div>
                                     <span class="highlight-li"><a href="#">Подробнее</a></span>
                                 </div>
                             </div>
-                            <div class="catalog-baner__item">
+                            <div class="catalog-baner__item flex-col p-em">
                                 <div class="catalog-item__top">
                                     <img src="/src/assets/pic/75053ec34942f60bd319bd40ae4d278e.png">
                                 </div>  
@@ -578,63 +586,52 @@
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/rooms.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Размеры</span>
+                                            <span class="text-sm text-bold">Размеры</span>
                                             <span>2.5x6м = 15м²</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/fire.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Утепление</span>
+                                            <span class="text-sm text-bold">Утепление</span>
                                             <span>100/150mm</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/layers.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Планировка</span>
+                                            <span class="text-sm text-bold">Планировка</span>
                                             <span>3 отдела</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/bonus.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Подарок</span>
+                                            <span class="text-sm text-bold">Подарок</span>
                                             <span>Мебель</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/sale.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Выгода</span>
+                                            <span class="text-sm text-bold">Выгода</span>
                                             <span>до 100тыс. р.</span>
                                         </div>
                                     </div>
                                     <div class="catalog-item__point">
                                         <img src="/src/assets/pic/icon/otoplenie.png" class="xs-img">
                                         <div class="flex-col">
-                                            <span class="text-sm">Отопление</span>
+                                            <span class="text-sm text-bold">Отопление</span>
                                             <span>Печь Ахtоn</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="flex-between">
-                                    <span class="appmain_h5">900 000 р.</span>
+                                    <div class="appmain_h5">
+                                        <span>900 000 р.</span>
+                                    </div>
                                     <span class="highlight-li"><a href="#">Подробнее</a></span>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="catalog-baner__additional">
-                            <div class="catalog-additional__conteiner">
-                                <span class="appmain_h2 mb-em">Доп. услуги</span>
-                                <div class="hor-bar"></div>
-                                <div class="catalog-additional__content">
-                                    
-                                </div>
-                            </div>
-                            <div class="catalog-additional__conteiner">
-                                <span class="appmain_h2 mb-em">Беседки и другое</span>
-                                <div class="hor-bar"></div>
                             </div>
                         </div>
                     </div>
