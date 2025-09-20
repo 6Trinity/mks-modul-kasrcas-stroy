@@ -82,16 +82,10 @@
 
 .contacs-baner__item{
     @include m.mixin-block-construct(
-        $border-radius: v.$rounded-lg, 
-        $background: var(--bg-darkglasses-extra)
+        $border-radius: v.$rounded-lg
     ){
         text-shadow: var(--text-shadow-inset);
         backdrop-filter: blur(1em);
-        &:hover{
-            img{
-                transform: var(--transform-highlight)
-            }
-        }
     }
 }
 
@@ -416,10 +410,11 @@
 
 .catalog-baner__item{
     @include m.mixin-block-construct(
-        clamp(320px, 530px, 100%),
+        clamp(200px, 530px, 100%),
         fit-content,
         v.$rounded-lg
     ){
+        min-height: 553px;
         text-shadow: var(--text-shadow-inset);
         &:hover{
             @include m.mixin-block_transform
@@ -452,6 +447,52 @@
     min-width: 150px;
 }
 
+.catalog-baner__additional{
+    margin-top: 50px;
+}
+
+.catalog-additional__conteiner{
+    margin-top: 50px;
+}
+
+.catalog-additional__item{
+    @include m.mixin-block-construct(
+        355px,
+        fit-content,
+        v.$rounded-lg
+    ){
+        text-shadow:  var(--text-shadow-inset);
+        &:hover{
+            @include m.mixin-block_transform
+        }
+    }
+}
+
+.catalog-additional__servis{
+    flex-grow: 1;
+}
+
+.catalog-servis__item{
+    @include m.mixin-block-construct(
+        clamp(200px, 450px, 100%),
+        fit-content,
+        v.$rounded-lg
+    ){
+        text-shadow: var(--text-shadow-inset);
+        &:hover{
+            @include m.mixin-block_transform
+        }
+    }
+}
+
+.servis-item__img{
+    @include m.mixin-block-construct(
+        fit-content,
+        100%,
+        v.$rounded-lg
+    )
+}
+
 
 //политика
 .politdata-baner,
@@ -479,7 +520,12 @@
     //калькулятор
     .calculator-baner__content{
         flex-direction: column;
+        align-items: center;
         gap: 1em;
+    }
+
+    .calculator-form{
+        width: clamp(0px, 800px, 100%)
     }
 }
 
@@ -498,6 +544,20 @@
         position: relative;
         min-height: 0;
     }
+
+    //каталог
+    .catalog-additional__conteiner{
+        flex-direction: column;
+    }
+
+    .catalog-baner__conteiner{
+        width: 100%;
+        padding: 1em;
+    }
+
+    .catalog-baner__item{
+        width: 360px;
+    }
 }
 
 @media (max-width: 890px){
@@ -509,6 +569,7 @@
     .calculator-test__options{
         flex-wrap: wrap;
     }
+
     //отзывы
     .reviews-baner__item{
         flex-direction: column;
@@ -529,6 +590,15 @@
     .reviews-baner__galery{
         width: 100%;
         height: auto;
+    }
+
+    //каталог
+    .catalog-additional__item{
+        width: 47%;
+    }
+    
+    .catalog-baner__item{
+        min-height: 0;
     }
 }
 
