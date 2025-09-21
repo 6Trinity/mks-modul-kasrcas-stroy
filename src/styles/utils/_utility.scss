@@ -217,7 +217,10 @@
 .text-c-highlight{color: var(--text-highlight)}
 
 .bg-dark{background: var(--bg-darkglasses-deep)}
+.bg-light_dark{background: var(--bg-darkglasses)}
 .bg-highlight{background: var(--text-highlight)}
+
+.br-lg{border-radius: v.$rounded-lg}
 
 .text-line_through{text-decoration: line-through}
 

@@ -474,7 +474,7 @@
 
 .catalog-servis__item{
     @include m.mixin-block-construct(
-        clamp(200px, 450px, 100%),
+        clamp(200px, 600px, 100%),
         fit-content,
         v.$rounded-lg
     ){
@@ -493,6 +493,36 @@
     )
 }
 
+
+//банер
+.promotion-baner{
+    margin-bottom: 150px;
+}
+
+.promotion-baner__conteiner{
+    @include m.mixin-block-construct(
+        clamp(350px, 70%, 100%),
+        fit-content,
+        v.$rounded-lg,
+        url('/src/assets/pic/mm01-christian-tonko_15.jpg')
+    ){
+        text-shadow: var(--text-shadow-inset);
+        background-position: 10% 50%;
+        .highlight-li{
+            padding: 1em;
+            background: var(--text-highlight);
+            width: clamp(300px, 40%, 100%);
+        }   
+    }
+}
+
+.promotion-baner__left{
+    @include m.mixin-block-construct(
+        70%,
+        100%,
+        v.$rounded-lg
+    )
+}
 
 //политика
 .politdata-baner,
@@ -526,6 +556,16 @@
 
     .calculator-form{
         width: clamp(0px, 800px, 100%)
+    }
+
+    //каталог
+    .promotion-baner__content{
+        flex-direction: column;
+    }
+
+    .promotion-baner__left{
+        width: 100%;
+        margin-bottom: 5em;
     }
 }
 
