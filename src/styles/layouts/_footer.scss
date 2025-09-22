@@ -29,11 +29,11 @@
     }
 }
 
-.appfooter_baner__logobox{
+.appfooter-baner__logobox{
     width: clamp(200px, 500px, 100%);
     .highlight-li{
-        width: clamp(200px, 100%, 500px);
-        height: 50px;
+        width: 300px;
+        padding: 1em;
         background: var(--text-highlight);
     }
 }

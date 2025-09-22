@@ -219,6 +219,7 @@
 .bg-dark{background: var(--bg-darkglasses-deep)}
 .bg-light_dark{background: var(--bg-darkglasses)}
 .bg-highlight{background: var(--text-highlight)}
+.bg-blur_base{backdrop-filter: v.$blur-base;}
 
 .br-lg{border-radius: v.$rounded-lg}
 

@@ -1,7 +1,7 @@
 import '@/styles/main.scss';
 
 let steps, prevBtn, nextBtn, counter, colc_form_button, 
-currentStep, totalPrice, userSelections;
+currentStep, totalPrice, userSelections, popupForm, feedbackForm;
 
 const GOOGLE_FORM_ID = '1FAIpQLSfv-nxvgjLHYWsg5nGpOkqsZk3voWtGDy30Rof2gHP65peyWA'; 
 const GOOGLE_FORM_URL = `https://docs.google.com/forms/d/e/${GOOGLE_FORM_ID}/formResponse`;
@@ -18,13 +18,11 @@ async function sendToGoogleForm(formData) {
     try {
         const formPayload = new URLSearchParams();
         
-        // Добавляем данные в форму
         formPayload.append(FIELD_IDS.name, formData.name || 'Не указано');
         formPayload.append(FIELD_IDS.phone, formData.phone || 'Не указано');
         formPayload.append(FIELD_IDS.email, formData.email || 'Не указано');
         formPayload.append(FIELD_IDS.message, formData.message || 'Не указано');
         
-        // Добавляем результаты теста
         if (userSelections.length > 0) {
             const testResults = userSelections.map(item => 
                 `${item.name} - ${item.price.toLocaleString()} руб.`
@@ -34,7 +32,6 @@ async function sendToGoogleForm(formData) {
                 `Опции: ${testResults}; Итого: ${totalPrice.toLocaleString()} руб.`);
         }
 
-        // Отправляем в Google Forms
         await fetch(GOOGLE_FORM_URL, {
             method: 'POST',
             body: formPayload,
@@ -96,11 +93,28 @@ function setupEventListeners() {
             this.reset();
         });
     }
-    
-    // Обработчик для основной формы обратной связи
-    const feedbackForm = document.getElementById('feedbackForm');
+};
+
+function setupFormListeners(){
+
     if (feedbackForm) {
         feedbackForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: this.querySelector('[name="name"]').value,
+                phone: this.querySelector('[name="phone"]').value,
+                email: this.querySelector('[name="email"]').value,
+                message: this.querySelector('[name="message"]').value || ''
+            };
+            
+            await sendToGoogleForm(formData);
+            this.reset();
+        });
+    };
+
+    if (popupForm) {
+        popupForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
             const formData = {
@@ -297,6 +311,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const header = document.querySelector('.appheader-baner');
     const header_menu = document.querySelector('.appheader-baner__nav');
     const galleries = document.querySelectorAll('.reviews-baner__galery');
+    const popup_button = document.querySelectorAll('.popup-button');
+    const popup_baner = document.querySelector('.popup-baner'); 
+    const popup_baner_close = document.querySelectorAll('.popup-button__close');
 
     currentStep = 1;
     totalPrice = 0;
@@ -307,6 +324,9 @@ document.addEventListener('DOMContentLoaded', function() {
     prevBtn = document.getElementById('calculator-test__prev');
     nextBtn = document.getElementById('calculator-test__next');
     counter = document.getElementById('nav-steps');
+
+    popupForm = document.getElementById('popup-baner__form');
+    feedbackForm = document.getElementById('feedbackForm');
 
 
     new ScrollAnimator();
@@ -391,8 +411,47 @@ document.addEventListener('DOMContentLoaded', function() {
         const reviewGallery = new ReviewGallery(gallery);
     });
 
+    popup_button.forEach(button => {
+        button.addEventListener('click', function() {
+            popupForm.classList.add('active'); 
+            popup_baner.classList.add('active');
+            toggleBodyScroll(false);
+        });
+    });
+
+    popup_baner_close.forEach(button => {
+        button.addEventListener('click', function() {
+            popupForm.classList.remove('active'); 
+            popup_baner.classList.remove('active');
+            toggleBodyScroll(true);
+        });
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!popup_baner || !popup_baner.classList.contains('active')) return;
+    
+        const isClickInsideForm = popupForm.contains(e.target);
+        const isClickOnPopupButton = e.target.closest('.popup-button');
+        const isClickOnOpenButton = e.target.closest('.popup-form__button'); 
+    
+        if (!isClickInsideForm && !isClickOnPopupButton && !isClickOnOpenButton) {
+            popup_baner.classList.remove('active');
+            popupForm.classList.remove('active');
+            toggleBodyScroll(true);
+        } 
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && popup_baner && popup_baner.classList.contains('active')) {
+            popup_baner.classList.remove('active');
+            popupForm.classList.remove('active');
+            toggleBodyScroll(true);
+        }
+    });
+
     initCalculator();
-})
+    setupFormListeners();
+});
 
 
 

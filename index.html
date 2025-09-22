@@ -801,7 +801,7 @@
                                     Не нашли подходящий вариант?
                                 </p>
                                 <div class="hor-bar"></div>
-                                <p class="appmain_h3">
+                                <p class="text-2xl">
                                     Тогда соберите в конфигураторе свой идеальный проект и свяжитесь с нами, чтоб воплотить его
                                 </p>
                                 <span class="highlight-li"><a class="h-full w-full" href="#calculator-baner">Рассчитать</a></span>
@@ -913,7 +913,7 @@
                             <div class="contacs-baner__form absolute flex right-0">
                                 <div class="contacs-form__content flex-col w-full min-h-full">
                                     <span class="appmain_h2 text-bold p-em">Оставьте заявку</span>
-                                    <form class="feedback-form flex-col gap-2em p-em" id="feedbackForm" action="#" method="POST">
+                                    <form class="feedback-form flex-col gap-2em p-em" id="feedbackForm">
                                         <p class="text-bold">Мы перезвоним вам в течение 1 часа</p>
                                         <input type="hidden" name="subject" value="Заявка с сайта МКС Модуль Каркас Строй">
                                         <div class="flex-col gap-em">
@@ -1110,11 +1110,40 @@
                         </div>
                     </div>
                 </section>
+                <div class="popup-baner">
+                    <form class="popup-baner__form feedback-form flex-col gap-2em p-em relative" id="popup-baner__form">
+                        <p class="text-bold">Мы перезвоним вам в течение 1 часа</p>
+                        <button type="button" class="popup-button__close absolute right-0 top-0 p-em"><img class="xs-img" src="/src/assets/pic/icon/close.png"></button>
+                        <input type="hidden" name="subject" value="Заявка с сайта МКС Модуль Каркас Строй">
+                        <div class="flex-col gap-em">
+                            <label class="contacs-form__label">
+                                Ваше имя
+                                <input type="text" title="имя" name="name" placeholder="Имя">
+                            </label>
+                            <label class="contacs-form__label">
+                                Телефон
+                                <input type="tel" title="телефон" class="userPhone" name="phone" placeholder="Телефон">
+                            </label>
+                            <label class="contacs-form__label">
+                                Email
+                                <input type="email" title="email" name="email" placeholder="Email">
+                            </label>
+                            <div class="gap-em flex-col">
+                                <label for="userMessage">Сообщение</label>
+                                <textarea id="userMessage" name="message" placeholder="Расскажите о вашей будущей бане или задайте вопрос" rows="4"></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="highlight-li">Отправить заявку</button>
+                        <p class="text-sm"> Нажимая на кнопку, вы соглашаетесь с 
+                            <a href="PolitPersondata.html" target="_blank">политикой обработки персональных данных</a>
+                        </p>
+                    </form>
+                </div>
             </main>
             <footer class="appfooter flex">
                 <section class="appfooter_baner flex-col">
                     <div class="appfooter_baner__top flex justify-between p-em w-full h-full">
-                        <div class="appfooter_baner__logobox flex-col gap-em">
+                        <div class="appfooter-baner__logobox flex-col gap-em">
                             <div class="flex-center">
                                 <img class="xl-img" loading="lazy" alt="Логотип" src="/src/assets/pic/logo.png">
                                 <span class="appmain_h2 text-bold">МКС<br>Модуль Каркас Строй</span>
@@ -1123,13 +1152,13 @@
                                 Поможем подобрать идеальную баню под ваш участок и бюджет.
                                 Надёжно. Красиво. Готово к использованию с первого дня
                             </p>
-                            <span class="highlight-li"><a href="#">Бесплатная консультация</a></span>
+                            <button class="popup-button highlight-li">Бесплатная консультация</button>
                         </div>
                         <div class="appfooter_baner__menu flex-col gap-em items-center">
                             <span class="appmain_h2 text-bold">Помощь в выборе</span>
                             <div class="hor-bar"></div>
                             <div class="flex-col gap-05">
-                                <a title="Сроки и стоимость/Timing and cost" href="#">Сроки и стоимость</a>
+                                <a title="Наш подход в строительстве" href="#advantages-baner">Наш подход в строительстве</a>
                                 <a title="Типовые проекты/Typical projects" href="#catalog-baner">Типовые проекты</a>
                                 <a title="Подбор по параметрам/Selection by parameters" href="#calculator-baner">Подбор по параметрам</a>
                                 <a title="Что о нас говорят/What they say about us" href="#reviews-baner">Что о нас говорят</a>
