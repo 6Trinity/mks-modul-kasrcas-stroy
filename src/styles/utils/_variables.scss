@@ -42,9 +42,39 @@
     --text-secondory: rgb(226, 226, 226);
     --text-highlight: #62756dee;
 
-    --box-shadow-primary: ;
-    --box-shadow-highlight: ;
-    --box-shadow-inset: ;
+    --box-shadow-primary:  3px 3px 3px rgba(0, 0, 0, 0.35),
+    6px 6px 6px rgba(0, 0, 0, 0.3),
+    12px 12px 12px rgba(0, 0, 0, 0.25),
+    18px 18px 18px rgba(0, 0, 0, 0.2),
+    24px 24px 24px rgba(0, 0, 0, 0.15),
+    30px 30px 30px rgba(0, 0, 0, 0.1);
+    --box-shadow-highlight: 3px 3px 3px rgba(0, 0, 0, 0.40),
+    6px 6px 6px rgba(0, 0, 0, 0.35),
+    12px 12px 12px rgba(0, 0, 0, 0.3),
+    18px 18px 18px rgba(0, 0, 0, 0.25),
+    24px 24px 24px rgba(0, 0, 0, 0.2),
+    30px 30px 30px rgba(0, 0, 0, 0.15),
+    36px 36px 36px rgba(0, 0, 0, 0.1);
+    --box-shadow-top: 0px -1px 1px rgba(0, 0, 0, 0.40),
+    0px -3px 3px rgba(0, 0, 0, 0.35),
+    0px -6px 6px rgba(0, 0, 0, 0.3),
+    0px -9px 9px rgba(0, 0, 0, 0.25),
+    0px -12px 12px rgba(0, 0, 0, 0.2);
+    --box-shadow-bot: 0px 1px 1px rgba(0, 0, 0, 0.40),
+    0px 3px 3px rgba(0, 0, 0, 0.35),
+    0px 6px 6px rgba(0, 0, 0, 0.3),
+    0px 9px 9px rgba(0, 0, 0, 0.25),
+    0px 12px 12px rgba(0, 0, 0, 0.2);
+    --box-shadow-right: 1px 0px 1px rgba(0, 0, 0, 0.40),
+    3px 0px 3px rgba(0, 0, 0, 0.35),
+    6px 0px 6px rgba(0, 0, 0, 0.3),
+    9px 0px 9px rgba(0, 0, 0, 0.25),
+    12px 0px 12px rgba(0, 0, 0, 0.2);
+    --box-shadow-light: 1px 1px 1px rgba(0, 0, 0, 0.35),
+    3px 3px 3px rgba(0, 0, 0, 0.30),
+    6px 6px 6px rgba(0, 0, 0, 0.25),
+    9px 9px 9px rgba(0, 0, 0, 0.2),
+    12px 12px 12px rgba(0, 0, 0, 0.1);
 
     --text-shadow-primary: 0 0 1px rgba(0, 0, 0, 0.7),
     1px 1px 1px rgba(0, 0, 0, 0.5),

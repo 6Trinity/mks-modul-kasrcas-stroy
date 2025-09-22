@@ -116,7 +116,7 @@
             $height: 100%, 
             $border-radius: v.$rounded-lg, 
             $background: var(--bg-darkglasses), 
-            $box-shadow: var(--box-shadow-inset)
+            $box-shadow: var(--box-shadow-top)
         ){
             backdrop-filter: v.$blur-base
         }
@@ -178,7 +178,9 @@
             62%,
             100%,
             v.$rounded-lg,
-            var(--bg-darkglasses-deep)
+            var(--bg-darkglasses-deep),
+            v.$transition-base,
+            var(--box-shadow-right)
         ){
             padding: 1em;
         }
@@ -230,7 +232,9 @@
         100%, 
         100%,
         v.$rounded-lg, 
-        var(--bg-darkglasses)
+        var(--bg-darkglasses),
+        v.$transition-base,
+        var(--box-shadow-bot)
     ){
         flex-direction: column;
         flex-grow: 1;
@@ -247,10 +251,11 @@
     @include m.mixin-block-construct(
         400px,
         auto,
-        v.$rounded-lg
+        v.$rounded-lg 
     ){
         min-height: 540px;
         backdrop-filter: v.$blur-glass;
+        
     }
 }
 
@@ -261,7 +266,8 @@
     border-radius: v.$rounded-lg;
     transition: v.$transition-base;
     &:hover{
-        @include m.mixin-block_transform;
+        transform: var(--transform-primary);
+        box-shadow: var(--box-shadow-light);
         background: var(--bg-darkglasses)
     }
     img{
@@ -282,7 +288,8 @@
         $height: 100%, 
         $border-radius: v.$rounded-lg, 
         $background: var(--bg-darkglasses), 
-        $box-shadow: var(--box-shadow-inset)      
+        $box-shadow: var(--box-shadow-top)    
+          
     ){
         flex-grow: 1;
         flex-direction: column;
@@ -303,7 +310,7 @@
 
 .calculator-form__button{
     transition: v.$transition-base;
-    margin-bottom: -1.5em;
+    margin-bottom: -1em;
     &:hover{
         margin-bottom: 0;
         .span_down{
@@ -374,6 +381,8 @@
         $height: 100%, 
         $border-radius: v.$rounded-lg, 
         $background: none, 
+        $transition: v.$transition-base, 
+        $box-shadow: var(--box-shadow-light)
     ){
         display: none;
     }
@@ -390,7 +399,7 @@
     text-shadow: var(--text-shadow-inset);
     img{
         border-radius: v.$rounded-lg;
-        box-shadow: var(--box-shadow-primary);
+        box-shadow: var(--box-shadow-light);
     }
 }
 
@@ -429,7 +438,7 @@
     img{
         border-radius: v.$rounded-lg;
         width: 100%;
-        box-shadow: var(--box-shadow-primary);
+        box-shadow: var(--box-shadow-light);
     }
 }
 
@@ -489,7 +498,10 @@
     @include m.mixin-block-construct(
         fit-content,
         100%,
-        v.$rounded-lg
+        v.$rounded-lg,
+        var(--bg-darkglasses-deep),
+        v.$transition-base,
+        var(--box-shadow-light)
     )
 }
 
@@ -505,12 +517,14 @@
         clamp(350px, 70%, 100%),
         fit-content,
         v.$rounded-lg,
-        url('/src/assets/pic/back.png')
+        url('/src/assets/pic/baner.png')
     ){
-        background-position: 10% 50%; 
+        background-position: 50% 50%; 
+        background-size: cover;
+        background-repeat: no-repeat;
         .highlight-li{
-            padding: 1em;
             width: clamp(250px, 40%, 100%);
+            height: 60px;
             background: var(--text-highlight);
         }  
     }
@@ -520,22 +534,19 @@
     @include m.mixin-block-construct(
         70%,
         100%,
-        v.$rounded-lg
+        v.$rounded-lg,
+        var(--bg-darkglasses-deep),
+        v.$transition-base,
+        var(--box-shadow-right)
     ){
-        backdrop-filter: blur(0.1em);
+        backdrop-filter: blur(0.1em);   
     }
 }
 
 
 //всплывающая форма
 .popup-baner{
-    position: fixed;
-    display: none;
-    align-items: center;
-    justify-content: center;
     backdrop-filter: v.$blur-base;
-    width: 100%;
-    height: 100%;
     &.active{
         display: flex;
     }
@@ -547,7 +558,6 @@
         fit-content,
         v.$rounded-lg
     ){
-        display: none;
         &.active{
             display: flex;
         }

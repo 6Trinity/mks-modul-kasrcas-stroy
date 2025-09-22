@@ -103,7 +103,9 @@ a[href]{
         auto, 
         auto, 
         v.$rounded-lg, 
-        var(--bg-highlight)
+        var(--bg-highlight),
+        v.$transition-base,
+        var(--box-shadow-light)
     ){
         padding: 0 1em;
         @extend .flex-center;
