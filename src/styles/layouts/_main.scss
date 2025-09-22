@@ -556,7 +556,8 @@
     @include m.mixin-block-construct(
         fit-content,
         fit-content,
-        v.$rounded-lg
+        v.$rounded-lg,
+        var(--bg-darkglasses-extra)
     ){
         &.active{
             display: flex;
