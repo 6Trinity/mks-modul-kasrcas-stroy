@@ -9,8 +9,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="icon" type="image/x-icon" href="/assets/logo-CIuf402O.ico">
         <title>МКС Модуль Каркас Строй</title>
-      <script type="module" crossorigin src="/assets/index-CbvmcCOG.js"></script>
-      <link rel="stylesheet" crossorigin href="/assets/index-B47lWNA2.css">
+        <link rel="stylesheet" crossorigin href="/assets/index-uQgB9Jog.css">
     </head>
     <body class="flex-col items-center">
         <div class="layout w-full max-w-hd flex-col min-h-screen"> 
@@ -80,6 +79,35 @@
                         7.1. Настоящая Политика может быть изменена в одностороннем порядке. Изменения вступают в силу с момента их размещения на Сайте.<br>
                     </div>
                 </section>
+                <div class="popup-baner fade-in fixed none items-center justify-center w-full h-full">
+                    <form class="popup-baner__form none feedback-form flex-col gap-2em p-em relative" id="popup-baner__form">
+                        <p class="text-bold">Мы перезвоним вам в течение 1 часа</p>
+                        <button type="button" class="popup-button__close absolute right-0 top-0 p-em"><img class="xs-img" src="/src/assets/pic/icon/close.png"></button>
+                        <input type="hidden" name="subject" value="Заявка с сайта МКС Модуль Каркас Строй">
+                        <div class="flex-col gap-em">
+                            <label class="contacs-form__label">
+                                Ваше имя
+                                <input type="text" title="имя" name="name" placeholder="Имя">
+                            </label>
+                            <label class="contacs-form__label">
+                                Телефон
+                                <input type="tel" title="телефон" class="userPhone" name="phone" placeholder="Телефон">
+                            </label>
+                            <label class="contacs-form__label">
+                                Email
+                                <input type="email" title="email" name="email" placeholder="Email">
+                            </label>
+                            <div class="gap-em flex-col">
+                                <label for="userMessage">Сообщение</label>
+                                <textarea id="userMessage" name="message" placeholder="Расскажите о вашей будущей бане или задайте вопрос" rows="4"></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="highlight-li">Отправить заявку</button>
+                        <p class="text-sm"> Нажимая на кнопку, вы соглашаетесь с 
+                            <a href="PolitPersondata.html" target="_blank">политикой обработки персональных данных</a>
+                        </p>
+                    </form>
+                </div>
             </main>
             <footer class="appfooter flex">
                 <section class="appfooter_baner flex-col">
@@ -87,7 +115,7 @@
                         <div class="appfooter_baner__logobox flex-col gap-em">
                             <div class="flex-center">
                                 <img class="xl-img" loading="lazy" alt="Логотип" src="/assets/logo-BjiakK5i.png">
-                                <span class="appmain_h2 text-bold">МКС<br>Модуль Каркас Строй</span>
+                                <button class="popup-button highlight-li">Бесплатная консультация</button>
                             </div>
                             <p>
                                 Поможем подобрать идеальную баню под ваш участок и бюджет.

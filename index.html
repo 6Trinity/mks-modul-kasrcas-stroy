@@ -8,6 +8,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="icon" type="image/x-icon" href="/src/assets/pic/icon/logo.ico">
+        <link rel="preload" as="image" href="/src/assets/pic/back.png">
         <title>МКС Модуль Каркас Строй</title>
     </head>
     <body class="flex-col items-center">
@@ -32,11 +33,11 @@
                                     </ul>
                                 </nav>
                             </li>
+                            <li><a href="#contacs-baner">Контакты</a></li>
+                            <li><a href="#advantages-baner">Преимущества</a></li>
+                            <li><a href="#reviews-baner">Отзывы</a></li>
                             <li><a href="#">О нас</a></li>
                             <li><a href="#">Гарантии</a></li>
-                            <li><a href="#advantages-baner">Преимущества</a></li>
-                            <li><a href="#contacs-baner">Контакты</a></li>
-                            <li><a href="#reviews-baner">Отзывы</a></li>
                         </ul>
                     </nav>
                     <button class="appheader-baner__button none">
@@ -69,7 +70,7 @@
                                 </p>
                                 <span class="appmain-baner__highlight">
                                     <span class="highlight-li mb-em">
-                                        <a href="#">Выбрать баню</a>
+                                        <a href="#calculator-baner">Получить расчет стоимости</a>
                                     </span>
                                 </span>                
                             </div>
@@ -237,7 +238,7 @@
                             </div>
                             <div class="calculator-form flex-col justify-between fade-in">
                                 <button class="calculator-form__button appmain_h3 p-em">В конце теста получите<br><span class="span_down">. . .</span></button>
-                                <div class="calculator-form__content flex p-em gap-em">
+                                <div class="calculator-form__content  flex p-em gap-em">
                                     <span>После получения ваших ответов я смогу назвать точную стоимость с точностью</span>
                                     <div class="hor-bar"></div>
                                     <div class="flex-start gap-em">
@@ -634,7 +635,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="catalog-baner__additional flex-col items-center w-full">
+                        <div class="catalog-baner__additional fade-in flex-col items-center w-full">
                             <span class="appmain_h1">Готовые проекты</span>
                             <span class="appmain_h2 mb-em">Беседки, мебель, <span class="text-c-dark">перголы</span></span>
                             <div class="hor-bar"></div>
@@ -793,7 +794,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="promotion-baner w-full flex justify-center">
+                <section class="promotion-baner fade-in w-full flex justify-center">
                     <div class="promotion-baner__conteiner">
                         <div class="promotion-baner__content bg-light_dark w-full h-full br-lg flex gap-em">
                             <div class="promotion-baner__left flex-col gap-2em p-em">
@@ -810,42 +811,6 @@
                                     <a href="#"><img class="sm-img" src="/src/assets/pic/icon/icons8-whatsapp-96.png"></a>
                                     <a href="#"><img class="sm-img" src="/src/assets/pic/icon/Avito.png"></a>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="advantages-baner flex justify-center" id="advantages-baner">
-                    <div class="advantages-baner__conteiner flex-col items-center">
-                        <span class="appmain_h1">Выбирая нас вы получите</span>
-                        <span class="appmain_h2 mb-em">современную баню <span class="text-c-dark">под ключ</span></span>
-                        <div class="hor-bar"></div>
-                        <div class="advantages-baner__board fade-in flex justify-center gap-2em w-full p-em flex-wrap">
-                            <div class="advantages-baner__item">
-                                <p><span class="text-bold">Утепление</span> - 100 мм (пол, стены, потолок) для сохранения тепла</p>
-                            </div>
-                            <div class="advantages-baner__item">
-                                <p><span class="text-bold">Фасад</span> – планкен, фальшбрус сорт АБ и профлист С-20</p>
-                            </div>
-                            <div class="advantages-baner__item">
-                                <p><span class="text-bold">Крыша</span> – утепленная металлочерепица с гидро- и пароизоляцией для надежной защиты</p>
-                            </div>
-                            <div class="advantages-baner__item">
-                                <p><span class="text-bold">Фундамент</span> – винтовые сваи или ЖБ опоры</p>
-                            </div>
-                            <div class="advantages-baner__item">
-                                <p><span class="text-bold">Окна</span> – пвх профиль 70 мм, двойные энергосберегающие стеклопакеты</p>
-                            </div>
-                            <div class="advantages-baner__item">
-                                <p><span class="text-bold">Освещение</span> – уникальные потолки с мощными светильниками</p>
-                            </div>
-                            <div class="advantages-baner__item">
-                                <p><span class="text-bold">Отопление</span> — электрокотёл, тёплый пол или ИК-панели</p>
-                            </div>
-                            <div class="advantages-baner__item">
-                                <p><span class="text-bold">Электрика</span> – полностью разведена и готова, щиток, автоматы, розетки, выключатели</p>
-                            </div>
-                            <div class="advantages-baner__item">
-                                <p><span class="text-bold">Отделка</span> – всё выполненно из сортов премиального дерева (красная лиственница, липа) </p>
                             </div>
                         </div>
                     </div>
@@ -925,6 +890,42 @@
                             </div>
                         </div>
                         <iframe class="contacs-baner__frame w-full" src="https://yandex.ru/map-widget/v1/?from=api-maps&ll=61.417304%2C55.115877&mode=search&ol=geo&origin=jsapi21&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjA0NTgwMRJQ0KDQvtGB0YHQuNGPLCDQp9C10LvRj9Cx0LjQvdGB0LosIDEt0Y8g0K3Qu9C10LrRgtGA0L7QstC-0LfQvdCw0Y8g0YPQu9C40YbQsCwgMjQiCg1Rq3VCFah2XEI%2C&z=17" frameborder="1" allowfullscreen="true"></iframe>
+                    </div>
+                </section>
+                <section class="advantages-baner flex justify-center" id="advantages-baner">
+                    <div class="advantages-baner__conteiner flex-col items-center">
+                        <span class="appmain_h1">Выбирая нас вы получите</span>
+                        <span class="appmain_h2 mb-em">современную баню <span class="text-c-dark">под ключ</span></span>
+                        <div class="hor-bar"></div>
+                        <div class="advantages-baner__board fade-in flex justify-center gap-2em w-full p-em flex-wrap">
+                            <div class="advantages-baner__item">
+                                <p><span class="text-bold">Утепление</span> - 100 мм (пол, стены, потолок) для сохранения тепла</p>
+                            </div>
+                            <div class="advantages-baner__item">
+                                <p><span class="text-bold">Фасад</span> – планкен, фальшбрус сорт АБ и профлист С-20</p>
+                            </div>
+                            <div class="advantages-baner__item">
+                                <p><span class="text-bold">Крыша</span> – утепленная металлочерепица с гидро- и пароизоляцией для надежной защиты</p>
+                            </div>
+                            <div class="advantages-baner__item">
+                                <p><span class="text-bold">Фундамент</span> – винтовые сваи или ЖБ опоры</p>
+                            </div>
+                            <div class="advantages-baner__item">
+                                <p><span class="text-bold">Окна</span> – пвх профиль 70 мм, двойные энергосберегающие стеклопакеты</p>
+                            </div>
+                            <div class="advantages-baner__item">
+                                <p><span class="text-bold">Освещение</span> – уникальные потолки с мощными светильниками</p>
+                            </div>
+                            <div class="advantages-baner__item">
+                                <p><span class="text-bold">Отопление</span> — электрокотёл, тёплый пол или ИК-панели</p>
+                            </div>
+                            <div class="advantages-baner__item">
+                                <p><span class="text-bold">Электрика</span> – полностью разведена и готова, щиток, автоматы, розетки, выключатели</p>
+                            </div>
+                            <div class="advantages-baner__item">
+                                <p><span class="text-bold">Отделка</span> – всё выполненно из сортов премиального дерева (красная лиственница, липа) </p>
+                            </div>
+                        </div>
                     </div>
                 </section>
                 <section class="reviews-baner flex justify-center w-full" id="reviews-baner">
@@ -1092,7 +1093,7 @@
                         </div>
                     </div>
                 </section>
-                <div class="popup-baner fixed none items-center justify-center w-full h-full">
+                <div class="popup-baner fade-in fixed none items-center justify-center w-full h-full">
                     <form class="popup-baner__form none feedback-form flex-col gap-2em p-em relative" id="popup-baner__form">
                         <p class="text-bold">Мы перезвоним вам в течение 1 часа</p>
                         <button type="button" class="popup-button__close absolute right-0 top-0 p-em"><img class="xs-img" src="/src/assets/pic/icon/close.png"></button>
@@ -1122,6 +1123,11 @@
                     </form>
                 </div>
             </main>
+            <div class="popup-cal">
+                <button class="popup-button highlight-li">
+                    <img class="xs-img" src="/src/assets/pic/icon/icons8-phone-96.png">
+                </button>
+            </div>
             <footer class="appfooter flex">
                 <section class="appfooter_baner flex-col">
                     <div class="appfooter_baner__top flex justify-between p-em w-full h-full">

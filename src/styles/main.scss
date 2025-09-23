@@ -127,12 +127,13 @@ a[href]{
 
 input::placeholder, 
 textarea::placeholder{ 
-    transition: opacity 0.3s 
+    transition: opacity 0.3s;
+    text-shadow: var(--text-shadow-inset);
 }
 
 input:focus::placeholder, 
 textarea:focus::placeholder{ 
-    opacity: 0.5 
+    opacity: 0.5;
 }
 
 .fade-in {
@@ -163,6 +164,29 @@ form{
 
 .input-label{
     width: 90px;
+}
+
+@keyframes phone-attention {
+    0%, 80% {
+        transform: scale(1);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
+    85% {
+        transform: scale(1.1) rotate(5deg);
+        box-shadow: 0 8px 20px #62756dee;
+    }
+    90% {
+        transform: scale(1.1) rotate(-5deg);
+        box-shadow: 0 8px 20px #62756db6;
+    }
+    95% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 16px #62756d83;
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
 }
 
 @media (max-width: 1090px) {

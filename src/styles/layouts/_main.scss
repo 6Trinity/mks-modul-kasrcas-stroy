@@ -565,6 +565,21 @@
     }
 }
 
+.popup-cal{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 1em;
+    transition: v.$transition-long;
+    .highlight-li{
+        animation: phone-attention  10s infinite;
+        padding: 1em;
+    }
+    &:hover{
+        transform: translateY(-5px);
+    }
+}
+
 //политика
 .politdata-baner,
 .politcon-baner{
