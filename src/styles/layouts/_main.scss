@@ -249,16 +249,10 @@
         v.$transition-base,
         var(--box-shadow-bot)
     ){
-        flex-direction: column;
-        display: flex;
         min-height: 447px;
         flex-grow: 1;
-        justify-content: space-between;
         opacity: 0;
         visibility: hidden;
-        position: absolute;
-        top: 0;
-        left: 0;
     }
     &.active{
         visibility: visible;

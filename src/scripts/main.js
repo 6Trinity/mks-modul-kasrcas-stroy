@@ -138,7 +138,7 @@ function nextStep() {
         setTimeout(() =>{
             steps[currentStep - 1].classList.remove('hiding');
             steps[currentStep - 1].classList.add('active');
-        }, 300);
+        }, 350);
 
         updateCounter();
 
@@ -175,7 +175,7 @@ function prevStep() {
         setTimeout(() =>{
             steps[currentStep - 1].classList.remove('hiding');;
             steps[currentStep - 1].classList.add('active');
-        }, 300);
+        }, 350);
 
         updateCounter();
         
