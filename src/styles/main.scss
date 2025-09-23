@@ -149,7 +149,7 @@ textarea:focus::placeholder{
 
 form{
     .highlight-li{
-        background: var(--text-highlight);
+        background: var(--gradient-highlight);
         padding: 1em;
     }
     a[href]{
@@ -173,19 +173,65 @@ form{
     }
     85% {
         transform: scale(1.1) rotate(5deg);
-        box-shadow: 0 8px 20px #62756dee;
+        box-shadow: 0 8px 30px #62756dee;
     }
     90% {
         transform: scale(1.1) rotate(-5deg);
-        box-shadow: 0 8px 20px #62756db6;
+        box-shadow: 0 8px 30px #62756dd2;
     }
     95% {
         transform: scale(1.05);
-        box-shadow: 0 6px 16px #62756d83;
+        box-shadow: 0 6px 20px #62756d83;
     }
     100% {
         transform: scale(1);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    }
+}
+
+@keyframes slideOut{
+    0% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    20% {
+        transform: translateY(3px);
+    }
+    40% {
+        transform: translateY(6px);
+    }
+    60% {
+        transform: translateY(9px);
+    }
+    80% {
+        transform: translateY(12px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+}
+
+@keyframes slideIn{
+    0% {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    20% {
+        transform: translateY(-12px);
+    }
+    40% {
+        transform: translateY(-9px);
+    }
+    60% {
+        transform: translateY(-6px);
+    }
+    80% {
+        transform: translateY(-3px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
     }
 }
 

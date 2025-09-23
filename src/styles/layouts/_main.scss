@@ -196,6 +196,14 @@
     }
 }
 
+.advantages-baner__scrolling{
+    display: none;
+    transition: v.$transition-long;
+    &:hover{
+        transform: translateY(-5px);
+    }
+}
+
 //Калькулятор банер
 .calculator-baner{
     margin-bottom: 150px;
@@ -227,22 +235,40 @@
     }
 }
 
+.calculator-test__conteiner{
+    display: flex;
+    flex-grow: 1;
+}
+
 .calculator-test__step{
     @include m.mixin-block-construct(
         100%, 
-        100%,
+        auto,
         v.$rounded-lg, 
         var(--bg-darkglasses),
         v.$transition-base,
         var(--box-shadow-bot)
     ){
         flex-direction: column;
+        display: flex;
+        min-height: 447px;
         flex-grow: 1;
         justify-content: space-between;
-        display: none;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
     &.active{
-        display: flex;
+        visibility: visible;
+        position: relative;
+        animation-iteration-count: 1;
+        animation: slideIn 0.3s forwards;
+    }
+    &.hiding{
+        animation-iteration-count: 1;
+        animation: slideOut 0.3s ease forwards;
     }
 }
 
@@ -525,7 +551,7 @@
         .highlight-li{
             width: clamp(250px, 40%, 100%);
             height: 60px;
-            background: var(--text-highlight);
+            background: var(--gradient-highlight);
         }  
     }
 }
@@ -546,6 +572,7 @@
 
 //всплывающая форма
 .popup-baner{
+    z-index: 200;
     backdrop-filter: v.$blur-base;
     &.active{
         display: flex;
@@ -751,6 +778,10 @@
 
     .advantages-baner__board{
         flex-direction: column;
+    }
+
+    .advantages-baner__scrolling{
+        display: flex;
     }
 
     //калькулятор

@@ -133,8 +133,12 @@ function setupFormListeners(){
 function nextStep() {
     if (currentStep < steps.length) {
         steps[currentStep - 1].classList.remove('active');
+        steps[currentStep - 1].classList.add('hiding');
         currentStep++;
-        steps[currentStep - 1].classList.add('active');
+        setTimeout(() =>{
+            steps[currentStep - 1].classList.remove('hiding');
+            steps[currentStep - 1].classList.add('active');
+        }, 300);
 
         updateCounter();
 
@@ -154,6 +158,8 @@ function nextStep() {
             }
     } else {
         resetCalculator();
+        steps[currentStep - 1].classList.remove('hiding');
+        steps[currentStep - 1].classList.add('active');
     }
 };
 
@@ -161,9 +167,16 @@ function prevStep() {
     if (currentStep > 1) {
         resetCurrentStepSelection(currentStep);
 
-        steps[currentStep - 1].classList.remove('active');
+        
+        steps[currentStep - 1].classList.remove('active');;
+        steps[currentStep - 1].classList.add('hiding');
         currentStep--;
-        steps[currentStep - 1].classList.add('active');
+
+        setTimeout(() =>{
+            steps[currentStep - 1].classList.remove('hiding');;
+            steps[currentStep - 1].classList.add('active');
+        }, 300);
+
         updateCounter();
         
         resetCurrentStepSelection(currentStep);
