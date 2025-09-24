@@ -358,9 +358,11 @@ document.addEventListener('DOMContentLoaded', function() {
         toggleBodyScroll(!header_menu.classList.contains('active'));
     });
 
-    colc_form_button.addEventListener('click', () =>{
-        colc_form_button.classList.toggle('active');
-    });
+    if(colc_form_button){
+        colc_form_button.addEventListener('click', () =>{
+            colc_form_button.classList.toggle('active');
+        });
+    }
 
     document.querySelectorAll('body a').forEach(link => {
         link.addEventListener('click', (e) => {
