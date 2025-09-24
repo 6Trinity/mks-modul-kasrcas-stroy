@@ -117,12 +117,20 @@ function setupFormListeners(){
         popupForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
+            const modelInput = document.getElementById('model_name');
+            const modelName = modelInput ? modelInput.value : 'Не указана';
+
             const formData = {
                 name: this.querySelector('[name="name"]').value,
                 phone: this.querySelector('[name="phone"]').value,
                 email: this.querySelector('[name="email"]').value,
                 message: this.querySelector('[name="message"]').value || ''
             };
+
+            if (modelName !== 'Не указана') {
+                formData.message = `Модель: ${modelName}. ${formData.message}`;
+            }
+
             await sendToGoogleForm(formData);
             this.reset();
         });
