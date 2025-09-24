@@ -57,6 +57,7 @@ a[href]{
     border-radius: v.$rounded-lg;
 }
 
+
 .hor-bar{
     @include m.mixin-block-construct(
         70%,

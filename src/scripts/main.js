@@ -123,7 +123,6 @@ function setupFormListeners(){
                 email: this.querySelector('[name="email"]').value,
                 message: this.querySelector('[name="message"]').value || ''
             };
-            
             await sendToGoogleForm(formData);
             this.reset();
         });
@@ -267,6 +266,48 @@ class ScrollAnimator {
     }
 };
 
+class BanyaGallery {
+    constructor(container) {
+        this.mainPhoto = container.querySelector('#main-photo');
+        this.thumbs = container.querySelectorAll('.thumb');
+        this.prevBtn = container.querySelector('.banya-button_prev');
+        this.nextBtn = container.querySelector('.banya-button_next');
+        this.currentIndex = 0;
+        
+        this.init();
+    }
+    
+    init() {
+        this.thumbs.forEach((thumb, index) => {
+            thumb.addEventListener('click', () => {
+                this.setActivePhoto(index);
+            });
+        });
+        
+        this.prevBtn.addEventListener('click', () => this.prevPhoto());
+        this.nextBtn.addEventListener('click', () => this.nextPhoto());
+    }
+    
+    setActivePhoto(index) {
+        this.currentIndex = index;
+        
+        this.mainPhoto.src = this.thumbs[index].src;
+        
+        this.thumbs.forEach(thumb => thumb.classList.remove('active'));
+        this.thumbs[index].classList.add('active');
+    }
+    
+    nextPhoto() {
+        let nextIndex = (this.currentIndex + 1) % this.thumbs.length;
+        this.setActivePhoto(nextIndex);
+    }
+    
+    prevPhoto() {
+        let prevIndex = (this.currentIndex - 1 + this.thumbs.length) % this.thumbs.length;
+        this.setActivePhoto(prevIndex);
+    }
+};
+
 class ReviewGallery {
     constructor(galleryContainer) {
         this.gallery = galleryContainer;
@@ -324,6 +365,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const header = document.querySelector('.appheader-baner');
     const header_menu = document.querySelector('.appheader-baner__nav');
     const galleries = document.querySelectorAll('.reviews-baner__galery');
+    const banyagalleries = document.querySelectorAll('.banya-baner__galery');
     const popup_button = document.querySelectorAll('.popup-button');
     const popup_baner = document.querySelector('.popup-baner'); 
     const popup_baner_close = document.querySelectorAll('.popup-button__close');
@@ -341,8 +383,9 @@ document.addEventListener('DOMContentLoaded', function() {
     popupForm = document.getElementById('popup-baner__form');
     feedbackForm = document.getElementById('feedbackForm');
 
-
     new ScrollAnimator();
+
+    banyagalleries.forEach(gallery => new BanyaGallery(gallery));
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > scrollThreshold) {
@@ -464,8 +507,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    initCalculator();
     setupFormListeners();
+    initCalculator();
 });
 
 

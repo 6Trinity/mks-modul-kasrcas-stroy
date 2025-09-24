@@ -262,7 +262,7 @@
     }
     &.hiding{
         animation-iteration-count: 1;
-        animation: slideOut 0.3s ease forwards;
+        animation: slideOut 0.3s forwards;
     }
 }
 
@@ -593,12 +593,89 @@
     margin: 1em;
     transition: v.$transition-long;
     .highlight-li{
-        animation: phone-attention  10s infinite;
+        animation: phone-attention  7s infinite;
         padding: 1em;
     }
     &:hover{
         transform: translateY(-5px);
     }
+}
+
+//карточка бани
+.banya-baner{
+    margin-top: 150px;
+    margin-bottom: 100px;
+}
+
+.banya-baner__conteiner{
+    width: 90%;
+}
+
+.banya-baner__galery{
+    width: clamp(700px, 55%, 100%);
+    img{
+        border-radius: v.$rounded-lg;
+        box-shadow: var(--box-shadow-light);
+    }
+}
+
+.banya-galery__nav{
+    img{
+        cursor: pointer;
+        box-shadow: none;
+    }
+}
+
+.thumb{
+    transition: v.$transition-base;
+    width: 23%;
+    opacity: 0.8;
+    cursor: pointer;
+    &:hover{
+        transform: var(--transform-primary);
+    }
+    &.active{
+        opacity: 1;
+    }
+}
+
+.banya-baner__price{
+    @include m.mixin-block-construct(
+        $width: clamp(300px, 35%, 100%),
+        $border-radius: v.$rounded-lg
+    )
+}
+
+.banya-price{
+    @include m.mixin-block-construct(
+        $width: 100%,
+        $border-radius: v.$rounded-lg,
+        $box-shadow: var(--box-shadow-bot)
+    ){
+        text-shadow: var(--text-shadow-inset);
+        .popup-button{
+            padding: 1em;
+            width: clamp(100px, 400px, 100%);
+            background: var(--gradient-highlight);
+        }
+        a[href]{
+            font-size: v.$text-xs;
+        }
+    }
+}
+
+.banya-price__content{
+    width: 100%;
+    display: flex;
+    padding: 1em;
+    flex-direction: column;
+}
+
+.banya-price__board{
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 1em;
+    justify-content: space-around;
 }
 
 
@@ -625,6 +702,19 @@
 
     .promotion-baner__board{
         flex-direction: row;
+    }
+}
+
+@media (max-width: 1345px){
+    //карточки бань
+    .banya-baner__conteiner{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .banya-baner__price,
+    .banya-baner__galery{
+        width: clamp(0px, 700px, 100%);
     }
 }
 
@@ -770,6 +860,11 @@
             width: 30px;
             height: 30px;
         }
+    }
+
+    //карточки бань
+    .banya-galery__mini{
+        display: none;
     }
 }
 
