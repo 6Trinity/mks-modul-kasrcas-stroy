@@ -534,7 +534,7 @@
 
 .promotion-baner__conteiner{
     @include m.mixin-block-construct(
-        clamp(350px, 70%, 100%),
+        clamp(300px, 70%, 100%),
         fit-content,
         v.$rounded-lg,
         url('/src/assets/pic/baner.png')
@@ -669,9 +669,6 @@
 }
 
 .info-baner{
-    width: 100%;
-    display: flex;
-    justify-content: center;
     margin-bottom: 50px;
 }
 
@@ -682,24 +679,41 @@
 }
 
 .info-content__opis{
-    display: flex;
-    flex-direction: column;
     @include m.mixin-block-construct(
-        $width: clamp(300px, 35%, 100%),
+        $width: clamp(300px, 38%, 100%),
         $border-radius: v.$rounded-lg
     ){
-        padding: 1em;
+        text-shadow: var(--text-shadow-inset);
     }
 }
 
 .info-content__compl{
-    display: flex;
-    flex-direction: column;
     @include m.mixin-block-construct(
-        $width: clamp(300px, 55%, 100%),
+        $width: clamp(300px, 60%, 100%),
         $border-radius: v.$rounded-lg
     ){
-        padding: 1em;
+        text-shadow: var(--text-shadow-inset);
+    }
+}
+
+.info-compl__grid{
+    display: grid;
+    height: 100%;
+    gap: 0.5em;
+    grid-template: repeat(16, auto)/ auto 1fr 1fr 1fr;
+
+    & > div:nth-child(4n) {
+        border-right: none;
+    }
+    
+    // Добавляем границы для ячеек
+    & > div {
+        border-bottom: 2px solid var(--bg-darkglasses-deep); // горизонтальные линии
+        padding: 0.5em 0;
+        
+        &:nth-last-child(-n+4) {
+            border-bottom: none;
+        }
     }
 }
 
@@ -739,6 +753,19 @@
     .banya-baner__price,
     .banya-baner__galery{
         width: clamp(0px, 700px, 100%);
+    }
+
+    .info-baner__content{
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .info-content__opis{
+        width: 100%;
+    }
+
+    .info-content__compl{
+        width: 100%;
     }
 }
 
@@ -889,6 +916,10 @@
     //карточки бань
     .banya-galery__mini{
         display: none;
+    }
+
+    .info-baner__content{
+        width: 95%;
     }
 }
 
