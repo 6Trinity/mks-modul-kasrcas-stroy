@@ -37,6 +37,9 @@
     ){
         backdrop-filter: blur(0.2em);
         text-shadow: var(--text-shadow-inset);
+        p{
+            max-width: 180px;
+        }
     }
 }
 
@@ -559,7 +562,10 @@
         v.$transition-base,
         var(--box-shadow-right)
     ){
-        backdrop-filter: blur(0.1em);   
+        backdrop-filter: blur(0.1em);
+        img{
+            margin-left: -1em;
+        }   
     }
 }
 
@@ -580,6 +586,7 @@
         v.$rounded-lg,
         var(--bg-darkglasses-extra)
     ){
+        margin: 1em;
         &.active{
             display: flex;
         }
@@ -647,7 +654,9 @@
     @include m.mixin-block-construct(
         $width: clamp(300px, 35%, 100%),
         $border-radius: v.$rounded-lg
-    )
+    ){
+        text-shadow: var(--text-shadow-inset);
+    }
 }
 
 .banya-price{
@@ -656,7 +665,6 @@
         $border-radius: v.$rounded-lg,
         $box-shadow: var(--box-shadow-bot)
     ){
-        text-shadow: var(--text-shadow-inset);
         .popup-button{
             padding: 1em;
             width: clamp(100px, 400px, 100%);
@@ -717,6 +725,67 @@
     }
 }
 
+//о нас + гарантии
+.aboutus-baner{
+    margin-bottom: 150px;
+}
+
+.aboutus-baner__conteiner{
+    width: 90%;
+}
+
+.aboutus-baner__content{
+    margin-top: 40px;
+    text-shadow: var(--text-shadow-inset);
+}
+
+.aboutus-baner__guarantees{
+    width: 50%;
+}
+
+.aboutus-guarantees__item{
+    @include m.mixin-block-construct(
+        100%,
+        150px,
+        v.$rounded-lg
+    )
+    {
+        .highlight-li{
+            padding: 0;
+            min-width: 120px;
+            height: 100%;
+        }
+    }
+}
+
+.aboutus-baner__biography{
+    @include m.mixin-block-construct(
+        45%,
+        100%,
+        v.$rounded-lg
+    ){
+        img{
+            width: 100%;
+            box-shadow: var(--box-shadow-top);
+            border-radius: v.$rounded-lg;
+        }
+    }
+}
+
+//политика
+.privacy-baner{
+    @include m.mixin-block-construct(
+        90%,
+        auto,
+        v.$rounded-lg
+    ){
+        padding: 1em;
+        margin: 150px 0;
+        line-height: 2;
+        text-shadow: var(--text-shadow-inset);
+    }
+}
+
 @media (max-width: 1490px){
     //калькулятор
     .calculator-baner__content{
@@ -766,6 +835,20 @@
 
     .info-content__compl{
         width: 100%;
+    }
+
+    //о нас
+    .aboutus-baner__content{
+        flex-direction: column;
+    }
+
+    .aboutus-baner__guarantees,
+    .aboutus-baner__biography{
+        width: 100%;
+    }
+    
+    .aboutus-guarantees__item{
+        height: fit-content;
     }
 }
 
@@ -851,6 +934,9 @@
     .appmain-baner__board{
         width: 100%;
         flex-direction: column;
+        p{
+            max-width: 100%;
+        }
     }
 
     .appmain-baner__item{

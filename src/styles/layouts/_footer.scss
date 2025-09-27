@@ -38,6 +38,12 @@
     }
 }
 
+.appfooter_baner__social{
+    img{
+        margin-left: -1em;
+    }
+}
+
 .appfooter_baner__contacts{
     width: clamp(200px, 500px, 100%);
 }
