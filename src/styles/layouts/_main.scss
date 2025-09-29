@@ -269,6 +269,9 @@
     }
 }
 
+.calculator-test__options{
+    flex-grow: 1;
+}
 
 .calculator-form{
     @include m.mixin-block-construct(
@@ -294,6 +297,8 @@
         background: var(--bg-darkglasses)
     }
     img{
+        width: 210px;
+        height: 170px;
         border-radius: v.$rounded-lg;
     }
 }
@@ -368,9 +373,11 @@
 .reviews-baner__item{
     @include m.mixin-block-construct(
         800px,
-        450px,
+        fit-content,
         v.$rounded-lg
-    )
+    ){
+        min-height: 500px;
+    }
 }
 
 .reviews-baner__galery{
@@ -489,7 +496,7 @@
 
 .catalog-additional__item{
     @include m.mixin-block-construct(
-        355px,
+        380px,
         fit-content,
         v.$rounded-lg
     ){
@@ -707,7 +714,11 @@
 .info-compl__grid{
     display: grid;
     height: 100%;
+    overflow-x: auto;
     gap: 0.5em;
+    .text-2xl{
+        white-space: nowrap;
+    }
     grid-template: repeat(16, auto)/ auto 1fr 1fr 1fr;
 
     & > div:nth-child(4n) {
@@ -927,6 +938,15 @@
     .promotion-baner__board{
         flex-direction: column;
     }
+
+    //карточки бань
+    .info-compl__scroll{
+        display: flex;
+    }
+    .info-compl__grid{
+        font-size: v.$text-xs;
+        mask-image: linear-gradient(90deg, #000 90%, transparent 100%);
+    }
 }
 
 @media (max-width: 790px) {
@@ -950,9 +970,10 @@
 
     //калькулятор
     .calculator-test__button{
-        width: clamp(140px, 40%, 100%);
+        width: clamp(140px, 50%, 100%);
         img{
             width: 100%;
+            height: auto;
         }
     }
 }

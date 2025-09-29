@@ -377,6 +377,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const popup_button = document.querySelectorAll('.popup-button');
     const popup_baner = document.querySelector('.popup-baner'); 
     const popup_baner_close = document.querySelectorAll('.popup-button__close');
+    const img_b_scale = document.querySelector('.img-big__scale');
+    const img_scale = document.querySelector('.img-scale');
 
     currentStep = 1;
     totalPrice = 0;
@@ -394,6 +396,20 @@ document.addEventListener('DOMContentLoaded', function() {
     new ScrollAnimator();
 
     banyagalleries.forEach(gallery => new BanyaGallery(gallery));
+
+    if(img_b_scale){
+        img_b_scale.addEventListener('click', ()=>{
+            img_scale.classList.add('active');
+            toggleBodyScroll(false);
+        })
+    };
+
+    if (img_scale) {
+    img_scale.addEventListener('click', function() {
+        this.classList.remove('active');
+        toggleBodyScroll(true);
+    });
+}
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > scrollThreshold) {
@@ -511,6 +527,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.key === 'Escape' && popup_baner && popup_baner.classList.contains('active')) {
             popup_baner.classList.remove('active');
             popupForm.classList.remove('active');
+            toggleBodyScroll(true);
+        }
+        if (img_scale && e.key === 'Escape' && img_scale.classList.contains('active')) {
+            img_scale.classList.remove('active');
             toggleBodyScroll(true);
         }
     });
