@@ -248,6 +248,76 @@ function formatPhoneNumber(phone) {
     
     return formattedValue;
 };
+
+function initGalleryDragScroll() {
+    const galleryMinis = document.querySelectorAll('.banya-galery__mini');
+    
+    galleryMinis.forEach(container => {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        container.addEventListener('mousedown', (e) => {
+            e.preventDefault();
+            isDown = true;
+            container.classList.add('active');
+            startX = e.pageX - container.offsetLeft;
+            scrollLeft = container.scrollLeft;
+        });
+
+        container.addEventListener('mouseleave', () => {
+            isDown = false;
+            container.classList.remove('active');
+        });
+
+        container.addEventListener('mouseup', () => {
+            isDown = false;
+            container.classList.remove('active');
+        });
+
+        container.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault(); 
+            const x = e.pageX - container.offsetLeft;
+            const walk = (x - startX) * 2;
+            container.scrollLeft = scrollLeft - walk;
+        });
+
+        container.addEventListener('touchstart', (e) => {
+            const isClick = e.touches.length === 1;
+            const touch = e.touches[0];
+            const target = document.elementFromPoint(touch.clientX, touch.clientY);
+    
+            if (isClick && target?.classList.contains('thumb')) {
+                return;
+            }
+
+            e.preventDefault();
+            isDown = true;
+            startX = touch.pageX - container.offsetLeft;
+            scrollLeft = container.scrollLeft;
+        });
+
+        container.addEventListener('touchend', () => {
+            isDown = false;
+        });
+
+        container.addEventListener('touchmove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const touch = e.touches[0];
+            const x = touch.pageX - container.offsetLeft;
+            const walk = (x - startX) * 2;
+            container.scrollLeft = scrollLeft - walk;
+        });
+
+        container.querySelectorAll('img').forEach(img => {
+            img.addEventListener('dragstart', (e) => {
+                e.preventDefault();
+            });
+        });
+    });
+};
 class ScrollAnimator {
     constructor() {
         this.observer = null;
@@ -273,7 +343,6 @@ class ScrollAnimator {
         });
     }
 };
-
 class BanyaGallery {
     constructor(container) {
         this.mainPhoto = container.querySelector('#main-photo');
@@ -281,9 +350,29 @@ class BanyaGallery {
         this.prevBtn = container.querySelector('.banya-button_prev');
         this.nextBtn = container.querySelector('.banya-button_next');
         this.currentIndex = 0;
+
+        this.preloadAllImages();
         
         this.init();
-    }
+    };
+
+    preloadAllImages() {
+        this.thumbs.forEach(thumb => {
+            const img = new Image();
+            img.src = thumb.src;
+        });
+    };
+
+     preloadAdjacentImages() {
+        const nextIndex = (this.currentIndex + 1) % this.thumbs.length;
+        const prevIndex = (this.currentIndex - 1 + this.thumbs.length) % this.thumbs.length;
+        
+        const nextImg = new Image();
+        nextImg.src = this.thumbs[nextIndex].src;
+        
+        const prevImg = new Image();
+        prevImg.src = this.thumbs[prevIndex].src;
+    };
     
     init() {
         this.thumbs.forEach((thumb, index) => {
@@ -303,6 +392,20 @@ class BanyaGallery {
         
         this.thumbs.forEach(thumb => thumb.classList.remove('active'));
         this.thumbs[index].classList.add('active');
+
+        this.scrollToActiveThumb();
+        this.preloadAdjacentImages();
+    }
+
+    scrollToActiveThumb() {
+        const activeThumb = this.thumbs[this.currentIndex];
+        
+        // Плавный скролл к активной миниатюре
+        activeThumb.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest',
+            inline: 'center'
+        });
     }
     
     nextPhoto() {
@@ -315,7 +418,6 @@ class BanyaGallery {
         this.setActivePhoto(prevIndex);
     }
 };
-
 class ReviewGallery {
     constructor(galleryContainer) {
         this.gallery = galleryContainer;
@@ -323,8 +425,28 @@ class ReviewGallery {
         this.prevBtn = this.gallery.querySelector('.reviews-galery__prev');
         this.nextBtn = this.gallery.querySelector('.reviews-galery__next');
         this.currentIndex = 0;
+
+        this.preloadAllImages();
     
         this.init();
+    };
+
+    preloadAllImages() {
+        this.items.forEach(item => {
+            const img = new Image();
+            img.src = item.src;
+        });
+    };
+
+    preloadAdjacentImages() {
+        const nextIndex = (this.currentIndex + 1) % this.items.length;
+        const prevIndex = (this.currentIndex - 1 + this.items.length) % this.items.length;
+        
+        const nextImg = new Image();
+        nextImg.src = this.items[nextIndex].src;
+        
+        const prevImg = new Image();
+        prevImg.src = this.items[prevIndex].src;
     }
   
     init() {
@@ -346,14 +468,22 @@ class ReviewGallery {
                 this.currentIndex = this.items.length - 1;
             }
         this.updateGallery();
+        this.preloadAdjacentImages();
     }
   
+    preloadNextImage() {
+        const nextIndex = (this.currentIndex + 1) % this.items.length;
+        const nextImg = new Image();
+        nextImg.src = this.items[nextIndex].src;
+    }
+
     showNext() {
         this.currentIndex++;
         if (this.currentIndex >= this.items.length) {
             this.currentIndex = 0;
         }
         this.updateGallery();
+        this.preloadAdjacentImages();
     }
   
     updateGallery() {
@@ -535,9 +665,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    initGalleryDragScroll();
     setupFormListeners();
     initCalculator();
 });
-
-
-

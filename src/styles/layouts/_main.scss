@@ -4,7 +4,7 @@
 
 // Главная страница
 .appmain-baner{
-    background: url('/src/assets/pic/back.png');
+    background: url('/src/assets/pic/back.webp');
     background-position: 10%;
     background-size: cover;
     box-shadow: var(--box-shadow-primary);
@@ -106,7 +106,7 @@
     @include m.mixin-block-construct(
         $width: clamp(200px, 49%, 100%), 
         $border-radius: v.$rounded-lg, 
-        $background: url('/src/assets/pic/75053ec34942f60bd319bd40ae4d278e.png'), 
+        $background: url('/src/assets/pic/75053ec34942f60bd319bd40ae4d278e.webp'), 
         $box-shadow: var(--box-shadow-primary)
     ){
         background-size: cover;
@@ -383,6 +383,7 @@
 .reviews-baner__galery{
     width: 500px;
     height: 400px;
+    min-height: 250px;
     position: relative;
     @extend .flex-center
 }
@@ -547,7 +548,7 @@
         clamp(300px, 70%, 100%),
         fit-content,
         v.$rounded-lg,
-        url('/src/assets/pic/baner.png')
+        url('/src/assets/pic/baner.webp')
     ){
         background-position: 50% 50%; 
         background-size: cover;
@@ -644,17 +645,34 @@
     }
 }
 
+.banya-galery__mini{
+    gap: 1em;
+    overflow-x: auto;
+    padding: 0 0.5em 1em 0;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    cursor: grab;
+    &.active {
+        cursor: grabbing;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+    scroll-behavior: smooth;
+}
+
 .thumb{
     transition: v.$transition-base;
-    width: 23%;
+    width: 23.1%;
     opacity: 0.8;
+    flex-shrink: 0;
     cursor: pointer;
-    &:hover{
-        transform: var(--transform-primary);
-    }
     &.active{
         opacity: 1;
     }
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .banya-baner__price{
@@ -907,7 +925,6 @@
     //отзывы
     .reviews-baner__item{
         flex-direction: column;
-        height: fit-content;
         width: 100%;
     }
 
