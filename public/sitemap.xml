@@ -1,51 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
   <url>
     <loc>https://modulkarkas.ru/</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-12-08</lastmod>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
     <loc>https://modulkarkas.ru/modulnye-bani-corvus-5x7.html</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-12-08</lastmod>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://modulkarkas.ru/src/assets/pic/catalog/banya-corvus1__1.webp</image:loc>
+      <image:title>Модульная баня CORVUS 5x7 метров</image:title>
+      <image:caption>Готовая модульная баня 35м² с террасой в Челябинске</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://modulkarkas.ru/modulnye-bani-eclips-5x6.html</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-12-08</lastmod>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://modulkarkas.ru/src/assets/pic/catalog/banya-eclips5__1.webp</image:loc>
+      <image:title>Модульная баня ECLIPS 5x6 метров</image:title>
+      <image:caption>Готовая модульная баня 30м² с террасой в Челябинске</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://modulkarkas.ru/modulnye-bani-spider-5x6.html</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-12-08</lastmod>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://modulkarkas.ru/src/assets/pic/catalog/banya-spider2__1.webp</image:loc>
+      <image:title>Модульная баня SPIDER 5x6 метров</image:title>
+      <image:caption>Готовая модульная баня 30м² с террасой в Челябинске</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://modulkarkas.ru/modulnye-bani-prelud-2.5x6.html</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-12-08</lastmod>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://modulkarkas.ru/src/assets/pic/catalog/banya-prelud3__1.webp</image:loc>
+      <image:title>Модульная баня PRELUD 2.5x6 метров</image:title>
+      <image:caption>Готовая модульная баня 15м² в Челябинске</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://modulkarkas.ru/modulnye-bani-strap-2.5x7.html</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-12-08</lastmod>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://modulkarkas.ru/src/assets/pic/catalog/banya-strap4__1.webp</image:loc>
+      <image:title>Модульная баня STRAP 2.5x7 метров</image:title>
+      <image:caption>Готовая модульная баня 17.5м² в Челябинске</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://modulkarkas.ru/modulnye-dom-mirus-3x6.html</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-12-08</lastmod>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://modulkarkas.ru/src/assets/pic/catalog/dom-mirus6__1.webp</image:loc>
+      <image:title>Модульный дом MIRUS 3x6 метров</image:title>
+      <image:caption>Готовый модульный дом 18м² в Челябинске</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://modulkarkas.ru/privacy-policy.html</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-12-08</lastmod>
     <priority>0.3</priority>
     <changefreq>yearly</changefreq>
   </url>
+
 </urlset>

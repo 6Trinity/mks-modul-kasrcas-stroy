@@ -318,6 +318,143 @@ function initGalleryDragScroll() {
         });
     });
 };
+
+function initCustomBuilder() {
+    const form = document.getElementById('custom-project-form');
+    if (!form) return;
+    
+    const builderContainer = document.querySelector('.custom-builder');
+    if (!builderContainer) return;
+    
+    const widthSlider = builderContainer.querySelector('#width-slider');
+    const lengthSlider = builderContainer.querySelector('#length-slider');
+    const widthValue = builderContainer.querySelector('#custom-width');
+    const lengthValue = builderContainer.querySelector('#custom-length');
+    const areaValue = builderContainer.querySelector('#custom-area');
+    
+    const previewSize = builderContainer.querySelector('#preview-size');
+    const previewArea = builderContainer.querySelector('#preview-area');
+    const previewOptions = builderContainer.querySelector('#preview-options');
+    const previewTotal = builderContainer.querySelector('#preview-total');
+    
+    const hiddenSize = document.getElementById('hidden-size');
+    const hiddenArea = document.getElementById('hidden-area');
+    const hiddenOptions = document.getElementById('hidden-options');
+    const hiddenTotal = document.getElementById('hidden-total');
+    
+    const BASE_PRICE_PER_M2 = 35000;
+    
+    function updateBuilder() {
+        const width = parseFloat(widthSlider.value);
+        const length = parseFloat(lengthSlider.value);
+        const area = width * length;
+        
+        let totalPrice = area * BASE_PRICE_PER_M2;
+        
+        const checkboxes = builderContainer.querySelectorAll('input[name="custom-option"]:checked');
+        let selectedOptions = [];
+        let optionsPrice = 0;
+        
+        checkboxes.forEach(checkbox => {
+            const optionName = checkbox.value;
+            const optionPrice = parseInt(checkbox.dataset.price) || 0;
+            
+            selectedOptions.push(optionName);
+            optionsPrice += optionPrice;
+        });
+    
+        totalPrice += optionsPrice;
+        
+        widthValue.textContent = width;
+        lengthValue.textContent = length;
+        areaValue.textContent = area.toFixed(1);
+        
+        previewSize.textContent = `${width}x${length} м`;
+        previewArea.textContent = `${area.toFixed(1)} м²`;
+        previewOptions.textContent = selectedOptions.length > 0 
+            ? selectedOptions.join(', ') 
+            : 'Нет';
+        previewTotal.textContent = totalPrice.toLocaleString();
+        
+        hiddenSize.value = `${width}x${length} м`;
+        hiddenArea.value = area.toFixed(1);
+        hiddenOptions.value = selectedOptions.length > 0 ? selectedOptions.join(', ') : 'Нет';
+        hiddenTotal.value = totalPrice;
+        
+        return {
+            width,
+            length,
+            area,
+            totalPrice,
+            selectedOptions,
+            optionsPrice
+        };
+    }
+    
+    widthSlider.addEventListener('input', updateBuilder);
+    lengthSlider.addEventListener('input', updateBuilder);
+    
+    builderContainer.querySelectorAll('input[name="custom-option"]').forEach(checkbox => {
+        checkbox.addEventListener('change', updateBuilder);
+    });
+    
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const projectData = updateBuilder();
+        
+        const formName = this.querySelector('[name="name"]').value.trim();
+        const formPhone = this.querySelector('[name="phone"]').value.trim();
+        const formEmail = this.querySelector('[name="email"]').value.trim();
+        const formMessage = this.querySelector('[name="message"]').value.trim();
+               
+        const fullMessage = 
+            `ИНДИВИДУАЛЬНЫЙ ПРОЕКТ\n` +
+            `Размеры: ${projectData.width}x${projectData.length} м\n` +
+            `Площадь: ${projectData.area.toFixed(1)} м²\n` +
+            `Примерная стоимость: ${projectData.totalPrice.toLocaleString()} руб.\n` +
+            `Опции: ${projectData.selectedOptions.length > 0 
+                ? projectData.selectedOptions.join(', ') 
+                : 'Нет'}\n` +
+            `Пожелания: ${formMessage || 'Нет'}`;
+        
+        const submissionData = {
+            name: formName,
+            phone: formPhone,
+            email: formEmail,
+            message: fullMessage
+        };
+        
+        const originalSelections = userSelections ? [...userSelections] : [];
+        const originalTotal = totalPrice || 0;
+        
+        try {
+            userSelections = [];
+            totalPrice = 0;
+            
+            await sendToGoogleForm(submissionData);
+            this.reset();
+            
+            widthSlider.value = 3;
+            lengthSlider.value = 6;
+            
+            builderContainer.querySelectorAll('input[name="custom-option"]').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            
+            updateBuilder();
+            
+        } catch (error) {
+            console.error('Ошибка отправки конструктора:', error);
+        } finally {
+            userSelections = originalSelections;
+            totalPrice = originalTotal;
+        }
+    });
+    
+    updateBuilder();
+};
+
 class ScrollAnimator {
     constructor() {
         this.observer = null;
@@ -343,6 +480,7 @@ class ScrollAnimator {
         });
     }
 };
+
 class BanyaGallery {
     constructor(container) {
         this.mainPhoto = container.querySelector('#main-photo');
@@ -418,6 +556,7 @@ class BanyaGallery {
         this.setActivePhoto(prevIndex);
     }
 };
+
 class ReviewGallery {
     constructor(galleryContainer) {
         this.gallery = galleryContainer;
@@ -509,6 +648,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const popup_baner_close = document.querySelectorAll('.popup-button__close');
     const img_b_scale = document.querySelector('.img-big__scale');
     const img_scale = document.querySelector('.img-scale');
+    const menu_switch = document.querySelector('.catalog-menu__switch');
+    const catalogMenu = document.querySelector('.catalog-baner__menu');
+    const catalogSection = document.getElementById('catalog-baner');
 
     currentStep = 1;
     totalPrice = 0;
@@ -535,11 +677,11 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     if (img_scale) {
-    img_scale.addEventListener('click', function() {
-        this.classList.remove('active');
-        toggleBodyScroll(true);
-    });
-}
+        img_scale.addEventListener('click', function() {
+            this.classList.remove('active');
+            toggleBodyScroll(true);
+        });
+    }
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > scrollThreshold) {
@@ -566,6 +708,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             header_menu.classList.remove('active');
             button_header.classList.remove('active');
+            catalogMenu.classList.remove('active');
             toggleBodyScroll(true);
 
             const targetId = link.getAttribute('href');
@@ -665,7 +808,28 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    menu_switch.addEventListener('click', () =>{
+        catalogMenu.classList.toggle('active');
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                catalogMenu.style.opacity = '1';
+                catalogMenu.style.pointerEvents = 'all';
+            } else {
+                catalogMenu.style.opacity = '0';
+                catalogMenu.style.pointerEvents = 'none';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    if (catalogSection && catalogMenu) {
+        observer.observe(catalogSection);
+    }
+
     initGalleryDragScroll();
     setupFormListeners();
     initCalculator();
+    initCustomBuilder();
 });

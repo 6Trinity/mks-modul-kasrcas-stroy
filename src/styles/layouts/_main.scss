@@ -356,6 +356,13 @@
     }
 }
 
+.calculator-test__step{
+    a[href]{
+        font-size: v.$text-2xl;
+        font-weight: v.$font-bold;
+    }
+}
+
 //отзывы
 .reviews-baner{
     margin-bottom: 150px;
@@ -434,118 +441,15 @@
     }
 }
 
-//каталог
-.catalog-baner{
-    margin-bottom: 150px;
-}
-
-.catalog-baner__conteiner{
-    width: 90%;
-}
-
-.catalog-baner__board{
-    flex-wrap: wrap;
-    margin-top: 50px;
-}
-
-.catalog-baner__item{
-    @include m.mixin-block-construct(
-        clamp(200px, 530px, 100%),
-        fit-content,
-        v.$rounded-lg
-    ){
-        min-height: 553px;
-        text-shadow: var(--text-shadow-inset);
-        &:hover{
-            @include m.mixin-block_transform
-        }
-        .highlight-li{
-            padding: 0.5em;
-        }
-    }
-}
-
-.catalog-item__top{
-    img{
-        border-radius: v.$rounded-lg;
-        width: 100%;
-        box-shadow: var(--box-shadow-light);
-    }
-}
-
-.catalog-item__bot{
-    @extend .flex-between;
-    flex-wrap: wrap;
-    gap: 1em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-}
-
-.catalog-item__point{
-    @extend .flex-start;
-    gap: 0.5em;
-    min-width: 150px;
-}
-
-.catalog-baner__additional{
-    margin-top: 50px;
-}
-
-.catalog-additional__conteiner{
-    margin-top: 50px;
-}
-
-.catalog-additional__item{
-    @include m.mixin-block-construct(
-        380px,
-        fit-content,
-        v.$rounded-lg
-    ){
-        text-shadow:  var(--text-shadow-inset);
-        &:hover{
-            @include m.mixin-block_transform
-        }
-    }
-}
-
-.catalog-additional__servis{
-    flex-grow: 1;
-}
-
-.catalog-servis__item{
-    @include m.mixin-block-construct(
-        clamp(200px, 600px, 100%),
-        fit-content,
-        v.$rounded-lg
-    ){
-        text-shadow: var(--text-shadow-inset);
-        &:hover{
-            @include m.mixin-block_transform
-        }
-    }
-}
-
-.servis-item__img{
-    @include m.mixin-block-construct(
-        fit-content,
-        100%,
-        v.$rounded-lg,
-        var(--bg-darkglasses-deep),
-        v.$transition-base,
-        var(--box-shadow-light)
-    )
-}
-
-
 //банер
 .promotion-baner{
-    margin-bottom: 150px;
+    margin: 100px 0;
     text-shadow: var(--text-shadow-inset);
 }
 
 .promotion-baner__conteiner{
     @include m.mixin-block-construct(
-        clamp(300px, 70%, 100%),
+        100%,
         fit-content,
         v.$rounded-lg,
         url('/src/assets/pic/baner.webp')
@@ -574,9 +478,33 @@
         img{
             margin-left: -1em;
         }   
+        .hor-bar{
+            margin: 1em 0;
+        }
     }
 }
 
+.custom-slider,
+.builder-check{
+    accent-color: var(--text-highlight);
+}
+
+.option-price{
+    white-space: nowrap;
+}
+
+.custom-project-inp{
+    max-width: 400px;
+}
+
+.builder-form{
+    flex-grow: 1;
+}
+
+.preview-options{
+    min-height: 3em;
+    max-width: 500px;
+}
 
 //всплывающая форма
 .popup-baner{
@@ -619,6 +547,10 @@
 //карточка бани
 .banya-title{
     margin-top: 100px;
+    width: 90%;
+}
+
+.banya-promotion{
     width: 90%;
 }
 
@@ -815,6 +747,146 @@
     }
 }
 
+//каталог
+.catalog-baner{
+    margin-bottom: 150px;
+}
+
+.catalog-baner__conteiner{
+    width: 90%;
+}
+
+.catalog-baner__board{
+    flex-wrap: wrap;
+    margin: 50px 0;
+}
+
+.catalog-baner__item{
+    @include m.mixin-block-construct(
+        clamp(200px, 530px, 100%),
+        fit-content,
+        v.$rounded-lg
+    ){
+        min-height: 553px;
+        text-shadow: var(--text-shadow-inset);
+        &:hover{
+            @include m.mixin-block_transform
+        }
+        .highlight-li{
+            padding: 0.5em;
+        }
+    }
+}
+
+.catalog-item__top{
+    img{
+        border-radius: v.$rounded-lg;
+        width: 100%;
+        box-shadow: var(--box-shadow-light);
+    }
+}
+
+.catalog-item__bot{
+    @extend .flex-between;
+    flex-wrap: wrap;
+    gap: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.catalog-item__point{
+    @extend .flex-start;
+    gap: 0.5em;
+    min-width: 150px;
+}
+
+.catalog-baner__additional{
+    margin-top: 50px;
+}
+
+.catalog-additional__conteiner{
+    margin-top: 50px;
+}
+
+.catalog-additional__item{
+    @include m.mixin-block-construct(
+        380px,
+        fit-content,
+        v.$rounded-lg
+    ){
+        min-height: 380px;
+        text-shadow:  var(--text-shadow-inset);
+        &:hover{
+            @include m.mixin-block_transform
+        }
+    }
+}
+
+.catalog-additional__content{
+    max-width: 1200px;
+}
+
+.catalog-additional__servis{
+    flex-grow: 1;
+}
+
+.catalog-servis__item{
+    @include m.mixin-block-construct(
+        clamp(200px, 600px, 100%),
+        fit-content,
+        v.$rounded-lg
+    ){
+        text-shadow: var(--text-shadow-inset);
+        &:hover{
+            @include m.mixin-block_transform
+        }
+    }
+}
+
+.servis-item__img{
+    @include m.mixin-block-construct(
+        fit-content,
+        100%,
+        v.$rounded-lg,
+        var(--bg-darkglasses-deep),
+        v.$transition-base,
+        var(--box-shadow-light)
+    )
+}
+
+.catalog-baner__menu{
+    @include m.mixin-block-construct(
+        fit-content,
+        fit-content,
+        v.$rounded-lg 0 0 v.$rounded-lg
+    ){
+        top: 50%;
+        transform: translateX(75px);
+        z-index: 100;
+        padding: 0.5em;
+        backdrop-filter: v.$blur-base;
+        &.active{
+            transform: translateX(0);
+        }
+        .hor-bar{
+            width: 4px;
+            height: 120px;
+        }
+    }
+}
+
+.catalog-menu__switch{
+    cursor: pointer;
+    min-height: 200px;
+}
+
+.catalog-menu__nav{
+    a[href]{
+        font-size: v.$text-sm;
+    }
+}
+
+
 @media (max-width: 1490px){
     //калькулятор
     .calculator-baner__content{
@@ -827,7 +899,7 @@
         width: clamp(0px, 800px, 100%)
     }
 
-    //каталог
+    //банер
     .promotion-baner__content{
         flex-direction: column;
     }
@@ -943,15 +1015,6 @@
         height: auto;
     }
 
-    //каталог
-    .catalog-additional__item{
-        width: 47%;
-    }
-    
-    .catalog-baner__item{
-        min-height: 0;
-    }
-
     .promotion-baner__board{
         flex-direction: column;
     }
@@ -963,6 +1026,19 @@
     .info-compl__grid{
         font-size: v.$text-xs;
         mask-image: linear-gradient(90deg, #000 90%, transparent 100%);
+    }
+
+    //каталог
+    .catalog-additional__item{
+        width: 47%;
+    }
+    
+    .catalog-baner__item{
+        min-height: 0;
+    }
+
+    .promotion-baner__board{
+        flex-direction: column;
     }
 }
 
@@ -992,6 +1068,11 @@
             width: 100%;
             height: auto;
         }
+    }
+
+    //каталог
+    .builder-wrapper{
+        flex-direction: column;
     }
 }
 
@@ -1028,6 +1109,15 @@
         min-height: 450px;
     }
 
+    //карточки бань
+    .banya-galery__mini{
+        display: none;
+    }
+
+    .info-baner__content{
+        width: 95%;
+    }
+
     //каталог
     .catalog-item__point{
         min-width: 120px;
@@ -1037,13 +1127,27 @@
         }
     }
 
-    //карточки бань
-    .banya-galery__mini{
-        display: none;
+    .catalog-baner__menu{
+        transform: translateX(0) translateY(75px);
+        bottom: 0;
+        top: auto;
+        border-radius: v.$rounded-lg v.$rounded-lg 0 0;
+        flex-direction: column;
+        width: 100%;
+        .hor-bar{
+            width: 80%;
+            height: 3px;
+        }
     }
 
-    .info-baner__content{
-        width: 95%;
+    .catalog-menu__nav{
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 1em;
+    }
+
+    .catalog-menu__switch{
+        min-height: 0;
     }
 }
 
