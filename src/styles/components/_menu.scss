@@ -7,7 +7,7 @@
 }
 
 .appheader-baner__ul{
-    li, a[href]{
+    li, a[href], span{
         @extend .flex-center;
         @include m.mixin-full-size()
     }
@@ -33,7 +33,7 @@
         v.$rounded-base, 
         var(--bg-highlight)
     ){
-        a[href]{
+        a[href], span{
             justify-content: start;
         }
     }

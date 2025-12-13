@@ -759,6 +759,10 @@
 .catalog-baner__board{
     flex-wrap: wrap;
     margin: 50px 0;
+    a[href]:hover{
+        color: var(--text-primary);
+        text-shadow: var(--text-shadow-inset);
+    }
 }
 
 .catalog-baner__item{
@@ -814,7 +818,7 @@
         fit-content,
         v.$rounded-lg
     ){
-        min-height: 380px;
+        min-height: 475px;
         text-shadow:  var(--text-shadow-inset);
         &:hover{
             @include m.mixin-block_transform
@@ -1082,6 +1086,11 @@
         flex-direction: column;
         align-items: start;
     }
+
+    //всплывающая трубка
+    .popup-cal{
+        display: none;
+    }
 }
 
 @media (max-width: 490px) {
@@ -1125,6 +1134,10 @@
             width: 30px;
             height: 30px;
         }
+    }
+
+    .catalog-additional__item{
+        min-height: 380px;
     }
 
     .catalog-baner__menu{

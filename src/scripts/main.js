@@ -342,7 +342,7 @@ function initCustomBuilder() {
     const hiddenOptions = document.getElementById('hidden-options');
     const hiddenTotal = document.getElementById('hidden-total');
     
-    const BASE_PRICE_PER_M2 = 35000;
+    const BASE_PRICE_PER_M2 = 45000;
     
     function updateBuilder() {
         const width = parseFloat(widthSlider.value);
@@ -808,9 +808,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    menu_switch.addEventListener('click', () =>{
-        catalogMenu.classList.toggle('active');
-    });
+    if(menu_switch){
+        menu_switch.addEventListener('click', () =>{
+            catalogMenu.classList.toggle('active');
+        })
+    };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -830,6 +832,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     initGalleryDragScroll();
     setupFormListeners();
-    initCalculator();
     initCustomBuilder();
+    if(colc_form_button){
+        initCalculator();
+    }
 });
