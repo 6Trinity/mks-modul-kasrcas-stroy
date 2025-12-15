@@ -708,7 +708,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             header_menu.classList.remove('active');
             button_header.classList.remove('active');
-            catalogMenu.classList.remove('active');
+            if(catalogMenu){
+                catalogMenu.classList.remove('active');
+            }
             toggleBodyScroll(true);
 
             const targetId = link.getAttribute('href');
