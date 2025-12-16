@@ -68,8 +68,63 @@
     <changefreq>monthly</changefreq>
     <image:image>
       <image:loc>https://modulkarkas.ru/static/mirus-3x6.webp</image:loc>
-      <image:title>Модульный дом MIRUS 3x6 метров</image:title>
-      <image:caption>Готовый модульный дом 18м² в Челябинске</image:caption>
+      <image:title>Каркасный дом MIRUS 3x6 метров</image:title>
+      <image:caption>Готовый каркасный дом 18м² в Челябинске</image:caption>
+    </image:image>
+  </url>
+    <url>
+    <loc>https://modulkarkas.ru/doma/erangel-5.5x6.html</loc>
+    <lastmod>2025-12-15</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://modulkarkas.ru/static/erangel-5.5x6.webp</image:loc>
+      <image:title>Модульный дом ERANGEL 5.5x6 метров</image:title>
+      <image:caption>Готовый модульный дом 33м² в Челябинске</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://modulkarkas.ru/doma/corsair-6x7.5.html</loc>
+    <lastmod>2025-12-15</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://modulkarkas.ru/static/corsair-6x7.5.webp</image:loc>
+      <image:title>Модульный дом CORSAIR 6x7.5 метров</image:title>
+      <image:caption>Готовый модульный дом 33м² в Челябинске</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://modulkarkas.ru/doma/kris-6x8.html</loc>
+    <lastmod>2025-12-15</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://modulkarkas.ru/static/kris-6x8.webp</image:loc>
+      <image:title>Модульный дом KRIS 6x8 метров</image:title>
+      <image:caption>Готовый модульный дом 48м² в Челябинске</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://modulkarkas.ru/doma/lancer-5x7.html</loc>
+    <lastmod>2025-12-15</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://modulkarkas.ru/static/lancer-5x7.webp</image:loc>
+      <image:title>Модульный дом LANCER 5x7 метров</image:title>
+      <image:caption>Готовый модульный дом 35м² в Челябинске</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://modulkarkas.ru/doma/octavia-6x7.html</loc>
+    <lastmod>2025-12-15</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://modulkarkas.ru/static/octavia-6x7.webp</image:loc>
+      <image:title>Модульный дом OCTAVIA 6x7 метров</image:title>
+      <image:caption>Готовый модульный дом 42м² в Челябинске</image:caption>
     </image:image>
   </url>
   <url>
