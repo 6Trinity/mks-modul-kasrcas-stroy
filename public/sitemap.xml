@@ -62,6 +62,17 @@
     </image:image>
   </url>
   <url>
+    <loc>https://modulkarkas.ru/bani/book-2.5x6.html</loc>
+    <lastmod>2025-12-15</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://modulkarkas.ru/static/book-2.5x6.webp</image:loc>
+      <image:title>Каркасная баня BOOK 2.5x6 метров</image:title>
+      <image:caption>Готовая каркасная баня 15м² в Челябинске</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://modulkarkas.ru/doma/mirus-3x6.html</loc>
     <lastmod>2025-12-15</lastmod>
     <priority>0.9</priority>
@@ -136,6 +147,28 @@
       <image:loc>https://modulkarkas.ru/static/kramp-2.5x6.webp</image:loc>
       <image:title>Терраса KRAMP 2.5x6 метров</image:title>
       <image:caption>Готовая терраса 15м² в Челябинске</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://modulkarkas.ru/besed/prime-2.5x6.html</loc>
+    <lastmod>2025-12-15</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://modulkarkas.ru/static/prime-2.5x6.webp</image:loc>
+      <image:title>Терраса PRIME 2.5x6 метров</image:title>
+      <image:caption>Готовая терраса 15м² в Челябинске</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://modulkarkas.ru/besed/urgan-3x6html</loc>
+    <lastmod>2025-12-15</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://modulkarkas.ru/static/urgan-3x6.webp</image:loc>
+      <image:title>Терраса URGAN 3x6 метров</image:title>
+      <image:caption>Готовая терраса 18м² в Челябинске</image:caption>
     </image:image>
   </url>
   <url>

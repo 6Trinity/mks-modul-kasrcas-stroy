@@ -650,7 +650,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const img_scale = document.querySelector('.img-scale');
     const menu_switch = document.querySelector('.catalog-menu__switch');
     const catalogMenu = document.querySelector('.catalog-baner__menu');
-    const catalogSection = document.getElementById('catalog-baner');
+    const catalogSection = document.querySelector('.catalog-baner');
 
     currentStep = 1;
     totalPrice = 0;
@@ -810,23 +810,26 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            catalogMenu.style.opacity = '1';
+            catalogMenu.style.pointerEvents = 'all';
+        } else {
+            catalogMenu.style.opacity = '0';
+            catalogMenu.style.pointerEvents = 'none';
+        }
+    });
+}, { 
+    threshold: [0, 0.1, 0.2, 0.3, 0.5, 0.7, 1.0], // Множественные пороги
+    rootMargin: '-50px 0px -50px 0px' // Добавляем отступы
+});
+
     if(menu_switch){
         menu_switch.addEventListener('click', () =>{
             catalogMenu.classList.toggle('active');
         })
     };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                catalogMenu.style.opacity = '1';
-                catalogMenu.style.pointerEvents = 'all';
-            } else {
-                catalogMenu.style.opacity = '0';
-                catalogMenu.style.pointerEvents = 'none';
-            }
-        });
-    }, { threshold: 0.1 });
 
     if (catalogSection && catalogMenu) {
         observer.observe(catalogSection);
