@@ -193,7 +193,7 @@
                     <div class="banya-baner__conteiner justify-between gap-em flex">
                         <div class="banya-baner__galery flex-col gap-2em" >
                             <div class="banya-galery__content flex-center w-full relative">
-                                <img alt="Модульная баня CORVUS 5x7 метров с террасой - готовый проект под ключ" loading="lazy" class="w-full" src="../src/assets/pic/catalog/dom-carsair11__1.webp" id="main-photo">
+                                <img alt="Модульная баня CORVUS 5x7 метров с террасой - готовый проект под ключ" loading="lazy" class="w-full main-photo" src="../src/assets/pic/catalog/dom-carsair11__1.webp">
                                 <div class="banya-galery__nav absolute flex-between w-full p-em">
                                     <img class="banya-button_prev xs-img" src="../src/assets/pic/icon/arrow-back.png">
                                     <img class="banya-button_next xs-img" src="../src/assets/pic/icon/arrow-farward.png">
@@ -508,8 +508,13 @@
                         </p>
                     </form>
                 </div>
-                <div class="img-scale fixed w-full h-full none">
-                    <img src="../src/assets/pic/catalog/dom-corsair11__plan.webp">
+                <div id="custom-lightbox" class="lightbox-overlay fixed none justify-center items-center">
+                    <div class="lightbox-wrapper relative flex-center">
+                        <button class="lightbox-close absolute"><img class="xs-img" src="../src/assets/pic/icon/close.png"></button>
+                        <button class="lightbox-btn prev-btn p-em absolute h-full"><img alt="значок назад" loading="lazy" class="banya-button_prev xs-img" src="../src/assets/pic/icon/arrow-back.png"></button>
+                        <img src="" class="lightbox-img max-w-full max-h-full" alt="Full screen view">
+                        <button class="lightbox-btn next-btn p-em absolute h-full"><img alt="значок вперед" loading="lazy" class="banya-button_next xs-img" src="../src/assets/pic/icon/arrow-farward.png"></button>
+                    </div>
                 </div>
             </main>
             <div class="popup-cal">

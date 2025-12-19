@@ -14,6 +14,79 @@ const FIELD_IDS = {
     testData: 'entry.574560963' // Для результатов теста
 };
 
+const initUniversalLightbox = () => {
+    const lightbox = document.getElementById('custom-lightbox');
+    const lightboxImg = lightbox.querySelector('.lightbox-img');
+    const closeBtn = lightbox.querySelector('.lightbox-close');
+    const prevBtn = lightbox.querySelector('.prev-btn');
+    const nextBtn = lightbox.querySelector('.next-btn');
+
+    let currentImages = [];
+    let currentIndex = 0;
+
+    const openLightbox = (src, imagesArray = []) => {
+        currentImages = imagesArray;
+        currentIndex = imagesArray.indexOf(src);
+        
+        lightboxImg.src = src;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+
+        const showNav = currentImages.length > 1;
+        prevBtn.style.display = showNav ? 'block' : 'none';
+        nextBtn.style.display = showNav ? 'block' : 'none';
+    };
+
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('main-photo')) {
+            const galleryContainer = e.target.closest('.banya-baner__galery');
+            const thumbs = Array.from(galleryContainer.querySelectorAll('.thumb'));
+            const srcArray = thumbs.map(img => img.src);
+            openLightbox(e.target.src, srcArray);
+        }
+        
+        if (e.target.classList.contains('img-big__scale')) {
+            openLightbox(e.target.src);
+        }
+    });
+
+    const showNext = () => {
+        currentIndex = (currentIndex + 1) % currentImages.length;
+        lightboxImg.src = currentImages[currentIndex];
+    };
+
+    const showPrev = () => {
+        currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+        lightboxImg.src = currentImages[currentIndex];
+    };
+
+    nextBtn.addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
+    prevBtn.addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
+    
+    lightbox.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+
+        if (e.key === 'Escape') {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    
+        if (currentImages.length > 1) {
+            if (e.key === 'ArrowRight') {
+                showNext();
+            }
+            if (e.key === 'ArrowLeft') {
+                showPrev();
+            }
+        }
+    });
+};
+
 async function sendToGoogleForm(formData) {
     try {
         const formPayload = new URLSearchParams();
@@ -483,14 +556,13 @@ class ScrollAnimator {
 
 class BanyaGallery {
     constructor(container) {
-        this.mainPhoto = container.querySelector('#main-photo');
+        this.mainPhoto = container.querySelector('.main-photo');
         this.thumbs = container.querySelectorAll('.thumb');
         this.prevBtn = container.querySelector('.banya-button_prev');
         this.nextBtn = container.querySelector('.banya-button_next');
         this.currentIndex = 0;
 
         this.preloadAllImages();
-        
         this.init();
     };
 
@@ -669,13 +741,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     banyagalleries.forEach(gallery => new BanyaGallery(gallery));
 
-    if(img_b_scale){
-        img_b_scale.addEventListener('click', ()=>{
-            img_scale.classList.add('active');
-            toggleBodyScroll(false);
-        })
-    };
-
     if (img_scale) {
         img_scale.addEventListener('click', function() {
             this.classList.remove('active');
@@ -810,20 +875,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            catalogMenu.style.opacity = '1';
-            catalogMenu.style.pointerEvents = 'all';
-        } else {
-            catalogMenu.style.opacity = '0';
-            catalogMenu.style.pointerEvents = 'none';
-        }
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                catalogMenu.style.opacity = '1';
+                catalogMenu.style.pointerEvents = 'all';
+            } else {
+                catalogMenu.style.opacity = '0';
+                catalogMenu.style.pointerEvents = 'none';
+            }
+        });
+    }, { 
+        threshold: [0, 0.1, 0.2, 0.3, 0.5, 0.7, 1.0],
+        rootMargin: '-50px 0px -50px 0px'
     });
-}, { 
-    threshold: [0, 0.1, 0.2, 0.3, 0.5, 0.7, 1.0], // Множественные пороги
-    rootMargin: '-50px 0px -50px 0px' // Добавляем отступы
-});
 
     if(menu_switch){
         menu_switch.addEventListener('click', () =>{
@@ -835,6 +900,7 @@ const observer = new IntersectionObserver((entries) => {
         observer.observe(catalogSection);
     }
 
+    initUniversalLightbox();
     initGalleryDragScroll();
     setupFormListeners();
     initCustomBuilder();

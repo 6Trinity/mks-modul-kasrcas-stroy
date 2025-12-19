@@ -607,6 +607,48 @@
     -webkit-user-select: none;
 }
 
+.lightbox-overlay {
+    inset: 0;
+    z-index: 9999;
+    opacity: 0;
+    background: var(--bg-darkglasses-deep);
+    backdrop-filter: v.$blur-base;
+
+    &.active {
+        display: flex;
+        opacity: 1;
+    }
+}
+
+.lightbox-wrapper {
+    width: 90%;
+    height: 90%;
+}
+
+.lightbox-img {
+    object-fit: contain;
+    border-radius: v.$rounded-lg;
+    box-shadow: var(--box-shadow-light);
+}
+
+.lightbox-btn {
+    cursor: pointer;
+    transition: v.$transition-long;
+    &:hover { transform: translateY(-2px)}
+    &.prev-btn { left: 10px; }
+    &.next-btn { right: 10px; }
+}
+
+.main-photo{
+    cursor: zoom-in;
+}
+
+.lightbox-close {
+    top: -40px;
+    right: 0;
+    cursor: pointer;
+}
+
 .banya-baner__price{
     @include m.mixin-block-construct(
         $width: clamp(300px, 35%, 100%),
