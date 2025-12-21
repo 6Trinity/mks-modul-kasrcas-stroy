@@ -723,6 +723,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const menu_switch = document.querySelector('.catalog-menu__switch');
     const catalogMenu = document.querySelector('.catalog-baner__menu');
     const catalogSection = document.querySelector('.catalog-baner');
+    const lightbox = document.getElementById('custom-lightbox');
 
     currentStep = 1;
     totalPrice = 0;
@@ -740,13 +741,6 @@ document.addEventListener('DOMContentLoaded', function() {
     new ScrollAnimator();
 
     banyagalleries.forEach(gallery => new BanyaGallery(gallery));
-
-    if (img_scale) {
-        img_scale.addEventListener('click', function() {
-            this.classList.remove('active');
-            toggleBodyScroll(true);
-        });
-    }
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > scrollThreshold) {
@@ -869,10 +863,6 @@ document.addEventListener('DOMContentLoaded', function() {
             popupForm.classList.remove('active');
             toggleBodyScroll(true);
         }
-        if (img_scale && e.key === 'Escape' && img_scale.classList.contains('active')) {
-            img_scale.classList.remove('active');
-            toggleBodyScroll(true);
-        }
     });
 
     const observer = new IntersectionObserver((entries) => {
@@ -898,13 +888,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (catalogSection && catalogMenu) {
         observer.observe(catalogSection);
-    }
+    };
 
-    initUniversalLightbox();
+    if(colc_form_button){
+        initCalculator()
+    };
+    
+    if(lightbox){
+        initUniversalLightbox()
+    };
+
     initGalleryDragScroll();
     setupFormListeners();
     initCustomBuilder();
-    if(colc_form_button){
-        initCalculator();
-    }
 });
